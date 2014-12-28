@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "_default": {
+            "link": "m2xdemo"
+        }, 
+        "m2xdemo": {
+            "applicationId": "PARSE_APP_ID_TOKEN", 
+            "masterKey": "PARSE_MASTER_KEY_TOKEN"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.2"
+    }
+}

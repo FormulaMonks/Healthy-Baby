@@ -1,0 +1,12 @@
+[submodule "BEMSimpleLineGraph"]
+	path = BEMSimpleLineGraph
+	url = git@github.com:Boris-Em/BEMSimpleLineGraph.git
+[submodule "NMRangeSlider"]
+	path = NMRangeSlider
+	url = git@github.com:muZZkat/NMRangeSlider.git
+[submodule "m2x-ios"]
+	path = m2x-ios
+	url = git@github.com:attm2x/m2x-ios.git
+[submodule "JVFloatLabeledTextField"]
+	path = JVFloatLabeledTextField
+	url = git@github.com:jverdi/JVFloatLabeledTextField.git
