@@ -24,6 +24,10 @@ class MainViewController: BaseViewController {
     @IBOutlet var profileBackground: UIView!
     @IBOutlet var settingsBackground: UIView!
     
+    var buttons: [UIButton]! {
+        return [kickButton, weightButton, exerciseButton, glucoseButton, profileButton, settingsButton]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +73,28 @@ class MainViewController: BaseViewController {
 //        }
     }
     
+    @IBAction func touchDown(sender: UIButton) {
+        for button in buttons {
+            button.superview?.alpha = 1.0
+            if sender == button {
+                button.superview?.alpha = 0.5
+                break
+            }
+        }
+    }
+
+    @IBAction func touchUp(sender: UIButton) {
+        for button in buttons {
+            button.superview?.alpha = 1.0
+        }
+        
+        if sender == profileButton {
+            showProfile(sender)
+        } else if sender == settingsButton {
+            showSettings(sender)
+        }
+    }
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
