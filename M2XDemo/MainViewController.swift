@@ -39,38 +39,6 @@ class MainViewController: BaseViewController {
         glucoseBackground.backgroundColor = Colors.glucoseColor
         profileBackground.backgroundColor = Colors.profileColor
         settingsBackground.backgroundColor = Colors.settingsColor
-        
-//        var image = UIImage(named: "WeightIcon")?.imageWithRenderingMode(.AlwaysTemplate)
-//        weightButton.setImage(image, forState: .Normal)
-//        weightButton.tintColor = WeightViewController.themeColor
-//        weightButton.setTitleColor(weightButton.tintColor, forState: .Normal)
-//
-//        image = UIImage(named: "ExerciseIcon")?.imageWithRenderingMode(.AlwaysTemplate)
-//        exerciseButton.setImage(image, forState: .Normal)
-//        exerciseButton.tintColor = ExerciseViewController.themeColor
-//        exerciseButton.setTitleColor(exerciseButton.tintColor, forState: .Normal)
-//
-//        image = UIImage(named: "GlucoseIcon")?.imageWithRenderingMode(.AlwaysTemplate)
-//        glucoseButton.setImage(image, forState: .Normal)
-//        glucoseButton.tintColor = GlucoseViewController.themeColor
-//        glucoseButton.setTitleColor(glucoseButton.tintColor, forState: .Normal)
-//
-//        image = UIImage(named: "ActivityIcon")?.imageWithRenderingMode(.AlwaysTemplate)
-//        kickButton.setImage(image, forState: .Normal)
-//        kickButton.tintColor = KicksViewController.themeColor
-//        kickButton.setTitleColor(kickButton.tintColor, forState: .Normal)
-
-//        let offset = CGFloat(6.0)
-//        let buttons = [weightButton, exerciseButton, kickButton, glucoseButton]
-//        
-//        for button in buttons {
-//            let border = CALayer()
-//            border.cornerRadius = 6
-//            border.frame = CGRectMake(-offset * 2, -offset, button.frame.size.width + offset * 4, button.frame.size.height + offset * 2)
-//            border.borderWidth = 1
-//            border.borderColor = view.tintColor.CGColor
-//            button.layer.addSublayer(border)
-//        }
     }
     
     @IBAction func touchDown(sender: UIButton) {
@@ -78,7 +46,6 @@ class MainViewController: BaseViewController {
             button.superview?.alpha = 1.0
             if sender == button {
                 button.superview?.alpha = 0.5
-                break
             }
         }
     }
