@@ -78,7 +78,7 @@ class WeightViewController: BaseViewController, ChartViewControllerDelegate {
     }
     
     func updateOnNewValues() {
-        chartViewController!.deviceIdLabel.text = "ID: \(deviceId!)"
+        chartViewController!.deviceIdLabel.text = "ID: Fitbit Scale"
         let color = WeightViewController.themeColor
         chartViewController!.color = color
 

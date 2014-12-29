@@ -79,7 +79,7 @@ class ExerciseViewController: BaseViewController, ChartViewControllerDelegate {
     func updateOnNewValues() {
         let color = ExerciseViewController.themeColor
         chartViewController!.color = color
-        chartViewController!.deviceIdLabel.text = "ID: \(deviceId!)"
+        chartViewController!.deviceIdLabel.text = "ID: Apple Watch"
 
         chartViewController!.updateOnNewValues()
         

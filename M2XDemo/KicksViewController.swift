@@ -135,7 +135,7 @@ class KicksViewController: BaseViewController, AddKickViewControllerDelegate, Ch
     }
 
     func updateOnNewValues() {
-        chartViewController!.deviceIdLabel.text = "ID: \(deviceId!)"
+        chartViewController!.deviceIdLabel.text = "ID: Healthy Baby App"
         let color = KicksViewController.themeColor
         chartViewController!.color = color
         chartViewController!.graphView.enableBezierCurve = false

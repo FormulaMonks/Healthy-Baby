@@ -78,7 +78,7 @@ class GlucoseViewController: BaseViewController, ChartViewControllerDelegate {
     }
     
     func updateOnNewValues() {
-        chartViewController!.deviceIdLabel.text = "ID: \(deviceId!)"
+        chartViewController!.deviceIdLabel.text = "ID: Glucose Sensor"
         let color = GlucoseViewController.themeColor
         chartViewController!.color = color
 
