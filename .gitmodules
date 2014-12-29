@@ -1,6 +1,6 @@
 [submodule "BEMSimpleLineGraph"]
 	path = BEMSimpleLineGraph
-	url = git@github.com:Boris-Em/BEMSimpleLineGraph.git
+	url = git@github.com:citrusbyte/BEMSimpleLineGraph.git
 [submodule "NMRangeSlider"]
 	path = NMRangeSlider
 	url = git@github.com:muZZkat/NMRangeSlider.git
