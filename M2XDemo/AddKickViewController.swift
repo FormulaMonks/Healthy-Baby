@@ -81,6 +81,12 @@ class AddKickViewController : BaseViewController {
         tick()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        ProgressHUD.cancelCBBProgress()
+    }
+    
     override func viewDidLayoutSubviews() {
         let newAddKickButton = MRoundedButton(frame: addKickButton.frame, buttonStyle: MRoundedButtonStyle.Default)
         newAddKickButton.addTarget(self, action: "addKickAction:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -161,7 +167,7 @@ class AddKickViewController : BaseViewController {
     }
     
     @IBAction func touchUp(sender: AnyObject?) {
-        addKickButton.foregroundColor = view.backgroundColor;
+        addKickButton.foregroundColor = UIColor.whiteColor();
     }
 
     func addKickAction(sender: AnyObject) {

@@ -26,4 +26,9 @@ Note that the the app uses some services like parse.com and crashlytics. If you 
 * Since M2X API is asynchronous, there could be some delay of the created data to appear on the charts
 
 ### Attributions
+
 Written by [Luis Floreani](https://github.com/lucholaf), sponsored by [Citrusbyte](https://citrusbyte.com/)
+
+## License
+
+This app is available under the MIT license. See the [LICENSE](LICENSE) file for more information.

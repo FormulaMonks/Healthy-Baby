@@ -73,14 +73,25 @@ class KicksViewController: BaseViewController, AddKickViewControllerDelegate, Ch
                 
                 self?.updateOnNewValues()
 
-                // parse installation update
-                var installation = PFInstallation.currentInstallation()
-                installation.setObject(self?.deviceId, forKey: "kicksDeviceId")
-                installation.saveInBackgroundWithBlock(nil)
+                self?.updateInstallation()
             }
         }
     }
     
+    func updateInstallation() {
+        if let deviceId = self.deviceId {
+            var installation = PFInstallation.currentInstallation()
+            installation.setObject(deviceId, forKey: "kicksDeviceId")
+            installation.saveInBackgroundWithBlock(nil)
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        ProgressHUD.cancelCBBProgress()
+    }
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         

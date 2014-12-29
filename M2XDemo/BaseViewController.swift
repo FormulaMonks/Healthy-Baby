@@ -20,7 +20,7 @@ class BaseViewController: UIViewController {
         nav?.translucent = false
         nav?.tintColor = UIColor.whiteColor()        
     }
-    
+        
     func handleErrorAlert(error: NSError) {
         var message: String = error.localizedDescription
         if error.localizedFailureReason != nil {

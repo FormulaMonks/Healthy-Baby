@@ -50,7 +50,7 @@ class PreKickViewController : BaseViewController, AddKickViewControllerDelegate 
     }
 
     @IBAction func touchUp(sender: AnyObject?) {
-        startCountingBackgroundView.backgroundColor = Colors.backgroundColor;
+        startCountingBackgroundView.backgroundColor = UIColor.whiteColor();
     }
 
     @IBAction func dismissFromSegue(segue: UIStoryboardSegue) {

@@ -65,6 +65,12 @@ class WeightViewController: BaseViewController, ChartViewControllerDelegate {
         }
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        ProgressHUD.cancelCBBProgress()
+    }
+    
     func updateOnNewValuesAnimated() {
         UIView.animateWithDuration(1.0) {
             self.updateOnNewValues()

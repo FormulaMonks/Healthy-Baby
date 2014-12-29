@@ -9,10 +9,16 @@ import Foundation
 
 let CBBProgresViewTag = 23452
 
+class M2XHUD : M13ProgressHUD {
+    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+        return nil // allow to touch on any other place of the UI without blocking
+    }
+}
+
 class ProgressHUD {
     class func showCBBProgress(status: String? = nil) -> M13ProgressHUD {
         let window = (UIApplication.sharedApplication().delegate as AppDelegate).window
-        var hud = M13ProgressHUD(progressView: M13ProgressViewRing())
+        var hud = M2XHUD(progressView: M13ProgressViewRing())
         hud.primaryColor = UIColor.grayColor()
         hud.secondaryColor = UIColor.grayColor()
         hud.statusColor = UIColor.grayColor()
@@ -28,6 +34,8 @@ class ProgressHUD {
         window?.addSubview(hud)
         hud.show(true)
         
+        
+        
         return hud
     }
     
@@ -39,6 +47,15 @@ class ProgressHUD {
                 hud.indeterminate = false
                 hud.dismiss(true)                
             }
+        }
+    }
+    
+    class func cancelCBBProgress() {
+        let window = (UIApplication.sharedApplication().delegate as AppDelegate).window
+        if let hud = window?.viewWithTag(CBBProgresViewTag) as? M13ProgressHUD {
+            hud.performAction(M13ProgressViewActionFailure, animated: true)
+            hud.indeterminate = false
+            hud.dismiss(true)
         }
     }
     
