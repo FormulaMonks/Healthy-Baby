@@ -1,5 +1,5 @@
 # M2X Healthy Baby app
-Healthy Baby is an iOS application that demonstrates how a consumer facing health and wellness application can utilize the [AT&T M2X](https://m2x.att.com) service.  
+Healthy Baby is an iOS application that demonstrates how a consumer facing health and wellness application can utilize the [AT&T M2X](https://m2x.att.com) service using the [M2X iOS Client](https://github.com/attm2x/m2x-ios).
 
 ## Installation
 
