@@ -43,6 +43,7 @@ class KicksViewController: BaseViewController, AddKickViewControllerDelegate, Ch
         detailNoDataLabel.textColor = Colors.grayColor
 
         chartViewController?.view.alpha = 0
+        chartViewController?.showPoints = true
         detailNoDataLabel.alpha = 0
         detailNoDataLabel.textColor = Colors.grayColor
 
@@ -69,7 +70,9 @@ class KicksViewController: BaseViewController, AddKickViewControllerDelegate, Ch
                 self?.addButtonItem.enabled = true
                 self?.triggerButtonItem.enabled = true
                 
-                self?.chartViewController!.values = values
+                if let vals = values {
+                    self?.chartViewController!.values = self?.generateValuesForAllDays(vals)
+                }
                 
                 self?.updateOnNewValues()
 
@@ -78,12 +81,64 @@ class KicksViewController: BaseViewController, AddKickViewControllerDelegate, Ch
         }
     }
     
+    func generateValuesForAllDays(values: [AnyObject]) -> [AnyObject] {
+        if values.count == 0 {
+            return values
+        }
+        
+        let first = values[values.count - 1] as [String: AnyObject]
+        let firstTimestamp = first["timestamp"] as String
+        let firstDate = NSDate.fromISO8601(firstTimestamp)
+        
+        let days = NSDate().daysFrom(firstDate)
+        
+        var gen = [String: NSMutableArray]()
+        var arrays = [NSMutableArray]()
+        for i in 0...days + 1 {
+            let date = firstDate.dateByAddingDays(i)
+            let formatted = date.formattedDateWithFormat("LLL dd YYYY")
+
+            var array = NSMutableArray()
+            gen[formatted] = array
+            arrays.insert(array, atIndex:0)
+        }
+        
+        for val in values {
+            let timestamp = val["timestamp"] as String
+            let date = NSDate.fromISO8601(timestamp)
+            let formatted = date.formattedDateWithFormat("LLL dd YYYY")
+
+            var array = gen[formatted]! as NSMutableArray
+            array.addObject(val)
+        }
+        
+        // add missing days
+        for i in 0...days + 1 {
+            let date = firstDate.dateByAddingDays(i)
+            let formatted = date.formattedDateWithFormat("LLL dd YYYY")
+            var array = gen[formatted]! as NSMutableArray
+            if array.count == 0 {
+                array.addObject(["timestamp": date.toISO8601(), "value": 0.0] as NSDictionary)
+            }
+        }
+
+        return arrays.map({ (values: NSArray) -> NSDictionary in
+            return ["timestamp": values[0]["timestamp"], "value": values[0]["value"]] as NSDictionary
+        })
+    }
+    
     func updateInstallation() {
         if let deviceId = self.deviceId {
             var installation = PFInstallation.currentInstallation()
             installation.setObject(deviceId, forKey: "kicksDeviceId")
             installation.saveInBackgroundWithBlock(nil)
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.hidden = false
     }
     
     override func viewWillDisappear(animated: Bool) {

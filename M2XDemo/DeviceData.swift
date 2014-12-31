@@ -76,7 +76,7 @@ class DeviceData: NSObject, M2XClientDelegate {
     ]
     
     let daysByStreams = [
-        StreamType.Weight: [1, 8, 15, 22, 29],
+        StreamType.Weight: [1, 7, 13, 19, 25],
         StreamType.Exercise: (1...30).map { $0 },
         StreamType.Glucose: (1...30).map { $0 },
     ]

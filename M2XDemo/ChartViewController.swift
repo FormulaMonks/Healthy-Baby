@@ -47,7 +47,7 @@ class ChartViewController : BaseViewController, UITableViewDelegate, UITableView
 
     var selectedValue = "-"
     
-    let maxSamples = 20
+    let maxSamples = 1000 // for interpolation purposes
     
     var color: UIColor {
         set {
@@ -69,6 +69,15 @@ class ChartViewController : BaseViewController, UITableViewDelegate, UITableView
         }
         get {
             return cacheLabel.alpha != 0
+        }
+    }
+    
+    var showPoints: Bool {
+        set {
+            graphView.alwaysDisplayDots = newValue
+        }
+        get {
+            return graphView.alwaysDisplayDots
         }
     }
     
@@ -230,6 +239,19 @@ class ChartViewController : BaseViewController, UITableViewDelegate, UITableView
     
     func popupSuffixForlineGraph(graph: BEMSimpleLineGraphView) -> NSString {
         return " \(axisYUnit!)"
+    }
+
+    func minValueForLineGraph(graph: BEMSimpleLineGraphView) -> CGFloat {
+        var min: CGFloat = CGFloat(INT16_MAX)
+        
+        for value in values! {
+            var val = value["value"] as CGFloat
+            if val < min {
+                min = val
+            }
+        }
+        
+        return min / 1.15 // arbitraty proportion to make a zoom out of the data
     }
     
     func lineGraph(graph: BEMSimpleLineGraphView, didTouchGraphWithClosestIndex index: NSInteger) {
