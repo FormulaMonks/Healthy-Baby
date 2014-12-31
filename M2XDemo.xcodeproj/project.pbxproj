@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20A56351A5466FE0035A44E /* NSDate+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = E20A56341A5466FE0035A44E /* NSDate+Time.m */; };
+		E20A56361A5466FE0035A44E /* NSDate+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = E20A56341A5466FE0035A44E /* NSDate+Time.m */; };
 		E20BF30C1A015ACD003DD414 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20BF30B1A015ACD003DD414 /* Accelerate.framework */; };
 		E20BF30E1A015AE3003DD414 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20BF30D1A015AE3003DD414 /* QuartzCore.framework */; };
 		E216E4BA1A126D4E00D40F5B /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216E4B91A126D4E00D40F5B /* WeightViewController.swift */; };
@@ -240,6 +242,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E20A56331A5466FE0035A44E /* NSDate+Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Time.h"; path = "M2XDemo/NSDate+Time.h"; sourceTree = SOURCE_ROOT; };
+		E20A56341A5466FE0035A44E /* NSDate+Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Time.m"; path = "M2XDemo/NSDate+Time.m"; sourceTree = SOURCE_ROOT; };
 		E20BF30B1A015ACD003DD414 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		E20BF30D1A015AE3003DD414 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E216E4B91A126D4E00D40F5B /* WeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
@@ -516,6 +520,8 @@
 		E2201CC71A02A620007B953D /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E20A56331A5466FE0035A44E /* NSDate+Time.h */,
+				E20A56341A5466FE0035A44E /* NSDate+Time.m */,
 				E2B9410E1A44A751007F27FA /* Helper.h */,
 				E2B9410F1A44A751007F27FA /* Helper.m */,
 				E25E12901A3733C300599F6D /* ProgressHUD.swift */,
@@ -1064,6 +1070,7 @@
 				E25E6A501A2CDEB300E1941F /* M2XKey.m in Sources */,
 				E2B941101A44A751007F27FA /* Helper.m in Sources */,
 				E25E6A531A2CDEB300E1941F /* M2XStream.m in Sources */,
+				E20A56351A5466FE0035A44E /* NSDate+Time.m in Sources */,
 				E264FD371A1388A1004F0570 /* M13ProgressViewSegmentedBar.m in Sources */,
 				E2DD64281A13ACB10071CEBB /* DTTimePeriodCollection.m in Sources */,
 				E2DD64261A13ACB10071CEBB /* DTTimePeriod.m in Sources */,
@@ -1162,6 +1169,7 @@
 				E2953E241A3A0EF7006C5942 /* M2XClient+HTTP.m in Sources */,
 				E2953E261A3A0EF7006C5942 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				E2953E291A3A0EF7006C5942 /* M13ProgressViewPie.m in Sources */,
+				E20A56361A5466FE0035A44E /* NSDate+Time.m in Sources */,
 				E2953E2A1A3A0EF7006C5942 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				E2953E2B1A3A0EF7006C5942 /* M2XDistribution.m in Sources */,
 				E2953E2D1A3A0EF7006C5942 /* M13ProgressViewBorderedBar.m in Sources */,

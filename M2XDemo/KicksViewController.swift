@@ -88,43 +88,42 @@ class KicksViewController: BaseViewController, AddKickViewControllerDelegate, Ch
         
         let first = values[values.count - 1] as [String: AnyObject]
         let firstTimestamp = first["timestamp"] as String
-        let firstDate = NSDate.fromISO8601(firstTimestamp)
+        let firstDate = NSDate.fromISO8601(firstTimestamp).dateWithOutTime()
+        let today = NSDate().dateWithOutTime()
         
         let days = NSDate().daysFrom(firstDate)
         
-        var gen = [String: NSMutableArray]()
-        var arrays = [NSMutableArray]()
-        for i in 0...days + 1 {
-            let date = firstDate.dateByAddingDays(i)
-            let formatted = date.formattedDateWithFormat("LLL dd YYYY")
-
-            var array = NSMutableArray()
-            gen[formatted] = array
-            arrays.insert(array, atIndex:0)
-        }
+        var byDates = NSMutableDictionary()
+        var newValues = NSMutableArray()
         
         for val in values {
             let timestamp = val["timestamp"] as String
             let date = NSDate.fromISO8601(timestamp)
-            let formatted = date.formattedDateWithFormat("LLL dd YYYY")
-
-            var array = gen[formatted]! as NSMutableArray
-            array.addObject(val)
+            let day = date.formattedDateWithFormat("LLL dd YYYY")
+            
+            var array = byDates[day] as NSMutableArray?
+            
+            if array == nil {
+                array = NSMutableArray()
+                byDates[day] = array
+            }
+            
+            array!.addObject(val)
         }
         
-        // add missing days
-        for i in 0...days + 1 {
+        for i in 0...days {
             let date = firstDate.dateByAddingDays(i)
-            let formatted = date.formattedDateWithFormat("LLL dd YYYY")
-            var array = gen[formatted]! as NSMutableArray
-            if array.count == 0 {
-                array.addObject(["timestamp": date.toISO8601(), "value": 0.0] as NSDictionary)
+            let day = date.formattedDateWithFormat("LLL dd YYYY")
+            
+            var array = byDates[day] as NSMutableArray?
+            if array == nil {
+                newValues.addObject(["timestamp": date.toISO8601(), "value": 0.0] as NSDictionary)
+            } else {
+                newValues.addObjectsFromArray(array!)
             }
         }
-
-        return arrays.map({ (values: NSArray) -> NSDictionary in
-            return ["timestamp": values[0]["timestamp"], "value": values[0]["value"]] as NSDictionary
-        })
+        
+        return newValues.reverseObjectEnumerator().allObjects
     }
     
     func updateInstallation() {
@@ -255,9 +254,9 @@ class KicksViewController: BaseViewController, AddKickViewControllerDelegate, Ch
     func formatDate(timestamp: String) -> String {
         let date = NSDate.fromISO8601(timestamp)
         
-        let formatted = date.formattedDateWithFormat("LLL dd YYYY HH:mm")
+        let day = date.formattedDateWithFormat("LLL dd YYYY HH:mm")
 
-        return formatted
+        return day
     }
     
     func formatValue(value: Double) -> String {
