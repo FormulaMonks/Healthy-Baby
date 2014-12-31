@@ -33,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
 //        UILabel.appearance().font = UIFont(name:"Lucida Grande", size:1.0)
+        let font = UIFont(name: "Proxima Nova", size: 22)
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font!]
         
         initMigration()
         
