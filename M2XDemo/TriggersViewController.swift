@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TriggersViewController : BaseViewController, TriggerDetailViewControllerDelegate, UITableViewDataSource, UITableViewDelegate {
+class TriggersViewController : HBBaseViewController, TriggerDetailViewControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     var deviceId: String?
     
     private var triggers: [AnyObject]?

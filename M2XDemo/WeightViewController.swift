@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeightViewController: BaseViewController, ChartViewControllerDelegate {
+class WeightViewController: HBBaseViewController, ChartViewControllerDelegate {
     @IBOutlet var detailNoDataLabel: UILabel!
 
     private let model = DeviceData()

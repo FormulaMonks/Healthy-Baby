@@ -28,5 +28,5 @@
 #import "M2X.h"
 #import "Helper.h"
 #import "NSDate+Time.h"
-
+#import "HBBaseViewController.h"
 #endif

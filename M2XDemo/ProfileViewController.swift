@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: BaseViewController {
+class ProfileViewController: HBBaseViewController {
     @IBOutlet var sexControl: UISegmentedControl!
     @IBOutlet var nameLabel: UITextField!
     @IBOutlet var dueLabel: UITextField!

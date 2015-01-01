@@ -10,7 +10,7 @@ import Foundation
 
 import Foundation
 
-class PreKickViewController : BaseViewController, AddKickViewControllerDelegate {
+class PreKickViewController : HBBaseViewController, AddKickViewControllerDelegate {
     @IBOutlet var startCountingButton: UIButton!
     @IBOutlet var startCountingBackgroundView: UIView!
     @IBOutlet var header1Label: UILabel!

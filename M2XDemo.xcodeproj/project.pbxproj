@@ -35,6 +35,8 @@
 		E245D49C1A0D292900176398 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = E245D4991A0D292900176398 /* BEMSimpleLineGraphView.m */; };
 		E245D4B21A0D341000176398 /* NSDate+M2X.m in Sources */ = {isa = PBXBuildFile; fileRef = E245D4AB1A0D341000176398 /* NSDate+M2X.m */; };
 		E24CAD7F1A1E6A7500762E19 /* GlucoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24CAD7E1A1E6A7500762E19 /* GlucoseViewController.swift */; };
+		E25AF8E51A557336005933F3 /* HBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8E41A557336005933F3 /* HBBaseViewController.m */; };
+		E25AF8E61A557336005933F3 /* HBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8E41A557336005933F3 /* HBBaseViewController.m */; };
 		E25E128F1A37339E00599F6D /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E128E1A37339E00599F6D /* Parameters.swift */; };
 		E25E12911A3733C300599F6D /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E12901A3733C300599F6D /* ProgressHUD.swift */; };
 		E25E12CB1A376DF300599F6D /* PreKickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E12CA1A376DF300599F6D /* PreKickViewController.swift */; };
@@ -194,7 +196,6 @@
 		E2DD64291A13ACB10071CEBB /* DTTimePeriodGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DD64221A13ACB10071CEBB /* DTTimePeriodGroup.m */; };
 		E2DD642A1A13ACB10071CEBB /* NSDate+DateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DD64241A13ACB10071CEBB /* NSDate+DateTools.m */; };
 		E2EBF5F61A16943100BFC120 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EBF5F51A16943100BFC120 /* SettingsViewController.swift */; };
-		E2F4D53E1A02ABE600427B6C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F4D53D1A02ABE600427B6C /* BaseViewController.swift */; };
 		E2F712061A0D5010004706CA /* slider-default-handle-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F711E81A0D5010004706CA /* slider-default-handle-highlighted.png */; };
 		E2F712071A0D5010004706CA /* slider-default-handle-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F711E91A0D5010004706CA /* slider-default-handle-highlighted@2x.png */; };
 		E2F712081A0D5010004706CA /* slider-default-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F711EA1A0D5010004706CA /* slider-default-handle.png */; };
@@ -285,6 +286,8 @@
 		E245D4AA1A0D341000176398 /* NSDate+M2X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+M2X.h"; sourceTree = "<group>"; };
 		E245D4AB1A0D341000176398 /* NSDate+M2X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+M2X.m"; sourceTree = "<group>"; };
 		E24CAD7E1A1E6A7500762E19 /* GlucoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseViewController.swift; sourceTree = "<group>"; };
+		E25AF8E31A557336005933F3 /* HBBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBaseViewController.h; sourceTree = "<group>"; };
+		E25AF8E41A557336005933F3 /* HBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBaseViewController.m; sourceTree = "<group>"; };
 		E25E128E1A37339E00599F6D /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		E25E12901A3733C300599F6D /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = M2XDemo/ProgressHUD.swift; sourceTree = SOURCE_ROOT; };
 		E25E12CA1A376DF300599F6D /* PreKickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreKickViewController.swift; sourceTree = "<group>"; };
@@ -394,7 +397,6 @@
 		E2DD64231A13ACB10071CEBB /* NSDate+DateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateTools.h"; sourceTree = "<group>"; };
 		E2DD64241A13ACB10071CEBB /* NSDate+DateTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateTools.m"; sourceTree = "<group>"; };
 		E2EBF5F51A16943100BFC120 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		E2F4D53D1A02ABE600427B6C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E2F711E81A0D5010004706CA /* slider-default-handle-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle-highlighted.png"; sourceTree = "<group>"; };
 		E2F711E91A0D5010004706CA /* slider-default-handle-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle-highlighted@2x.png"; sourceTree = "<group>"; };
 		E2F711EA1A0D5010004706CA /* slider-default-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle.png"; sourceTree = "<group>"; };
@@ -474,7 +476,6 @@
 		E215D10D1A154F0900EFA268 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
-				E2F4D53D1A02ABE600427B6C /* BaseViewController.swift */,
 				E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */,
 				E216E4B91A126D4E00D40F5B /* WeightViewController.swift */,
 				E216E4BD1A126D9F00D40F5B /* ExerciseViewController.swift */,
@@ -487,6 +488,8 @@
 				E24CAD7E1A1E6A7500762E19 /* GlucoseViewController.swift */,
 				E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */,
 				E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */,
+				E25AF8E31A557336005933F3 /* HBBaseViewController.h */,
+				E25AF8E41A557336005933F3 /* HBBaseViewController.m */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -1072,6 +1075,7 @@
 				E29F5AED1A124CF800FFBAAD /* MainViewController.swift in Sources */,
 				E24CAD7F1A1E6A7500762E19 /* GlucoseViewController.swift in Sources */,
 				E2B919191A1A319D00D67802 /* MRoundedButton.m in Sources */,
+				E25AF8E51A557336005933F3 /* HBBaseViewController.m in Sources */,
 				E264FCFD1A129B26004F0570 /* DeviceData.swift in Sources */,
 				E264FD391A1388A1004F0570 /* M13ProgressViewStripedBar.m in Sources */,
 				E245D49B1A0D292900176398 /* BEMLine.m in Sources */,
@@ -1107,7 +1111,6 @@
 				E2F712201A0D5010004706CA /* NMRangeSlider.m in Sources */,
 				E25E128F1A37339E00599F6D /* Parameters.swift in Sources */,
 				E2953E7A1A3A3395006C5942 /* NSString+TextDirectionality.m in Sources */,
-				E2F4D53E1A02ABE600427B6C /* BaseViewController.swift in Sources */,
 				E264FD291A1388A1004F0570 /* M13ProgressHUD.m in Sources */,
 				E25E12911A3733C300599F6D /* ProgressHUD.swift in Sources */,
 				E2EBF5F61A16943100BFC120 /* SettingsViewController.swift in Sources */,
@@ -1163,6 +1166,7 @@
 				E2953E771A3A3395006C5942 /* JVFloatLabeledTextField.m in Sources */,
 				E2953E051A3A0EF7006C5942 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				E2953E061A3A0EF7006C5942 /* TPKeyboardAvoidingTableView.m in Sources */,
+				E25AF8E61A557336005933F3 /* HBBaseViewController.m in Sources */,
 				E2953E071A3A0EF7006C5942 /* M13ProgressViewSegmentedRing.m in Sources */,
 				E2953E081A3A0EF7006C5942 /* M2XResource.m in Sources */,
 				E2953E0A1A3A0EF7006C5942 /* merge.swift in Sources */,
@@ -1332,7 +1336,7 @@
 					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = M2XDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Healthy Baby";
@@ -1360,7 +1364,7 @@
 					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = M2XDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Healthy Baby";

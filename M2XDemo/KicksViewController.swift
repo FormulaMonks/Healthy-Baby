@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-class KicksViewController: BaseViewController, AddKickViewControllerDelegate, ChartViewControllerDelegate {
+class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, ChartViewControllerDelegate {
     @IBOutlet var detailNoDataLabel: UILabel!
     @IBOutlet var addButtonItem: UIBarButtonItem!
     @IBOutlet var triggerButtonItem: UIBarButtonItem!

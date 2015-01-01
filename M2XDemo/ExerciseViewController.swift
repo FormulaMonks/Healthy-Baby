@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExerciseViewController: BaseViewController, ChartViewControllerDelegate {
+class ExerciseViewController: HBBaseViewController, ChartViewControllerDelegate {
     @IBOutlet var detailNoDataLabel: UILabel!
 
     private let model = DeviceData()

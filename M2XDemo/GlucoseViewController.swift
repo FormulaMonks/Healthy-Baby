@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GlucoseViewController: BaseViewController, ChartViewControllerDelegate {
+class GlucoseViewController: HBBaseViewController, ChartViewControllerDelegate {
     @IBOutlet var detailGoalLabel: UILabel!
     @IBOutlet var detailNoDataLabel: UILabel!
     

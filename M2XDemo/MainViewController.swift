@@ -9,7 +9,7 @@
 import Foundation
 import Crashlytics
 
-class MainViewController: BaseViewController {
+class MainViewController: HBBaseViewController {
     @IBOutlet var kickButton: UIButton!
     @IBOutlet var weightButton: UIButton!
     @IBOutlet var exerciseButton: UIButton!
@@ -64,7 +64,10 @@ class MainViewController: BaseViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        let font = UIFont(name: "Proxima Nova", size: 22)
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: font!]
+
         navigationController?.navigationBar.hidden = true
     }
     

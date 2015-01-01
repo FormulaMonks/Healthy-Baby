@@ -32,8 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotificationTypes(.Badge | .Sound | .Alert)
         }
         
-//        UILabel.appearance().font = UIFont(name:"Lucida Grande", size:1.0)
-        let font = UIFont(name: "Proxima Nova", size: 22)
+        UILabel.appearance().font = UIFont(name:"Proxima Nova", size:14.0)
+        let font = UIFont(name: "Proxima Nova", size: 17)
+        
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font!]
         
         initMigration()

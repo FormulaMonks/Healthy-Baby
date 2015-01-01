@@ -12,7 +12,7 @@ protocol TriggerDetailViewControllerDelegate : class {
     func needsTriggersRefresh()
 }
 
-class TriggerDetailViewController : BaseViewController, UIPickerViewDataSource {
+class TriggerDetailViewController : HBBaseViewController, UIPickerViewDataSource {
     @IBOutlet private var cancelButton: UIBarButtonItem!
     @IBOutlet private var saveButton: UIBarButtonItem!
     

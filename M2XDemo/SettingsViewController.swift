@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SettingsViewController: BaseViewController {
+class SettingsViewController: HBBaseViewController {
     
     @IBOutlet var textField: UITextField!;
     @IBOutlet var offlineSwitch: UISwitch!;

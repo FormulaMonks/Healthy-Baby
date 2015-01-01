@@ -24,7 +24,7 @@ class ChartDetailValue {
     optional func formatValue(value: Double) -> String
 }
 
-class ChartViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var graphView: BEMSimpleLineGraphView!
     @IBOutlet var sliderView: NMRangeSlider!
     @IBOutlet var deviceIdLabel: UILabel!

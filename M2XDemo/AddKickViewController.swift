@@ -12,7 +12,7 @@ protocol AddKickViewControllerDelegate : class {
     func needsKicksRefresh()
 }
 
-class AddKickViewController : BaseViewController {
+class AddKickViewController : HBBaseViewController {
     @IBOutlet var detailGoalTitleLabel: UILabel!
     @IBOutlet var detailGoalLabel: UILabel!
     @IBOutlet var detailDateTitleLabel: UILabel!
@@ -94,7 +94,7 @@ class AddKickViewController : BaseViewController {
         newAddKickButton.addTarget(self, action: "touchUp:", forControlEvents: UIControlEvents.TouchUpInside)
         newAddKickButton.addTarget(self, action: "touchUp:", forControlEvents: UIControlEvents.TouchUpOutside)
         newAddKickButton.textLabel.text = "ADD KICK"
-        newAddKickButton.textLabel.font = UIFont.boldSystemFontOfSize(26)
+        newAddKickButton.textLabel.font = UIFont(name:"Proxima Nova", size:26.0)
         newAddKickButton.contentColor = Colors.kickColor
         newAddKickButton.borderWidth = 0
         newAddKickButton.contentAnimateToColor = UIColor.grayColor().colorWithAlphaComponent(0.2)
