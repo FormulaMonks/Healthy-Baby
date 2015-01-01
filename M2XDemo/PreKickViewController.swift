@@ -30,6 +30,7 @@ class PreKickViewController : HBBaseViewController, AddKickViewControllerDelegat
         startCountingBackgroundView.layer.cornerRadius = startCountingBackgroundView.bounds.size.width/2
         startCountingButton.titleLabel!.textAlignment = .Center
         startCountingButton.setTitleColor(Colors.kickColor, forState:.Normal)
+        startCountingButton.titleLabel!.font = UIFont(name:"Proxima Nova", size:26.0)
         
         view.backgroundColor = Colors.backgroundColor
     }

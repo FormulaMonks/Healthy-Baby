@@ -96,6 +96,10 @@ class SettingsViewController: HBBaseViewController {
                 
                 self.deviceData.deleteAllData({ (response: M2XResponse!) -> Void in
                     ProgressHUD.hideCBBProgress()
+
+                    if response.error {
+                        self.handleErrorAlert(response.errorObject!)
+                    }
                 })
                 })
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
