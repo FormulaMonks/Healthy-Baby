@@ -12,6 +12,7 @@ class SettingsViewController: HBBaseViewController {
     
     @IBOutlet var textField: UITextField!;
     @IBOutlet var offlineSwitch: UISwitch!;
+    @IBOutlet var navBar: UINavigationBar!;
 
     let deviceData = DeviceData()
     
@@ -108,9 +109,20 @@ class SettingsViewController: HBBaseViewController {
         }
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        offlineSwitch.onTintColor = Colors.settingsColor
         
+        navBar.barTintColor = Colors.settingsColor
+        navBar.tintColor = UIColor.whiteColor()
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navBar.barStyle = UIBarStyle.Black
+
         var defaults = NSUserDefaults.standardUserDefaults()
         textField.text = defaults.valueForKey("key") as? String
     }

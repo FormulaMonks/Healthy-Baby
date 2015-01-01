@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -21,9 +20,13 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QxJ-ux-z7k">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Settings" id="7qd-az-g70">
                                         <barButtonItem key="rightBarButtonItem" title="Close" id="PVh-um-WC7">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="dEC-6h-k2T" kind="unwind" unwindAction="dismissFromSegue:" id="qVU-Hv-C0m"/>
                                             </connections>
@@ -107,6 +110,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="navBar" destination="QxJ-ux-z7k" id="UfN-1C-Wue"/>
                         <outlet property="offlineSwitch" destination="Zai-Ru-gzc" id="PDp-3F-9mV"/>
                         <outlet property="textField" destination="BRI-AP-bRR" id="UMo-C5-GZk"/>
                     </connections>
@@ -130,9 +134,13 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Lq-vF-oQy">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Profile" id="m6e-iT-QZn">
                                         <barButtonItem key="rightBarButtonItem" title="Close" id="mj7-pk-OYp">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="CuW-hD-UI3" kind="unwind" unwindAction="dismissFromSegue:" id="wyc-zq-atw"/>
                                             </connections>
@@ -270,6 +278,7 @@
                         <outlet property="momHeight" destination="I8L-zN-BKs" id="rkd-mb-gkB"/>
                         <outlet property="momWeight" destination="aoo-C8-En7" id="Xbd-ft-SMr"/>
                         <outlet property="nameLabel" destination="ssf-ZG-Gm3" id="6fe-pb-Rzq"/>
+                        <outlet property="navBar" destination="5Lq-vF-oQy" id="Eqf-Sc-2uq"/>
                         <outlet property="sexControl" destination="Inc-5h-dHH" id="9j5-N4-FGH"/>
                     </connections>
                 </viewController>

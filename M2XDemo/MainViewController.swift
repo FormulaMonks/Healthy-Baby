@@ -65,9 +65,6 @@ class MainViewController: HBBaseViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        let font = UIFont(name: "Proxima Nova", size: 22)
-        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: font!]
-
         navigationController?.navigationBar.hidden = true
     }
     

@@ -14,14 +14,26 @@ class ProfileViewController: HBBaseViewController {
     @IBOutlet var dueLabel: UITextField!
     @IBOutlet var momHeight: UITextField!
     @IBOutlet var momWeight: UITextField!
-    
+    @IBOutlet var navBar: UINavigationBar!;
+
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
         return .TopAttached
+    }
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navBar.barTintColor = Colors.profileColor
+        navBar.tintColor = UIColor.whiteColor()
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navBar.barStyle = UIBarStyle.Black
+        
+        sexControl.tintColor = Colors.profileColor
+
         var formatter = NSDateFormatter()
         formatter.dateStyle = .LongStyle
         dueLabel.text = "\(formatter.stringFromDate(NSDate().dateByAddingMonths(2)))"
