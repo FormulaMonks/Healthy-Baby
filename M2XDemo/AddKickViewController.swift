@@ -93,8 +93,9 @@ class AddKickViewController : HBBaseViewController {
         newAddKickButton.addTarget(self, action: "touchDown:", forControlEvents: UIControlEvents.TouchDown)
         newAddKickButton.addTarget(self, action: "touchUp:", forControlEvents: UIControlEvents.TouchUpInside)
         newAddKickButton.addTarget(self, action: "touchUp:", forControlEvents: UIControlEvents.TouchUpOutside)
-        newAddKickButton.textLabel.text = "ADD KICK"
-        newAddKickButton.textLabel.font = UIFont(name:"Proxima Nova", size:26.0)
+        newAddKickButton.textLabel.text = "ADD ONE KICK"
+        newAddKickButton.textLabel.font = UIFont(name:"ProximaNova-Bold", size:26.0)
+        newAddKickButton.textLabel.numberOfLines = 2
         newAddKickButton.contentColor = Colors.kickColor
         newAddKickButton.borderWidth = 0
         newAddKickButton.contentAnimateToColor = UIColor.grayColor().colorWithAlphaComponent(0.2)

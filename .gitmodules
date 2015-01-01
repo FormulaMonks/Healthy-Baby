@@ -3,7 +3,7 @@
 	url = git@github.com:citrusbyte/BEMSimpleLineGraph.git
 [submodule "NMRangeSlider"]
 	path = NMRangeSlider
-	url = git@github.com:muZZkat/NMRangeSlider.git
+	url = git@github.com:citrusbyte/NMRangeSlider.git
 [submodule "m2x-ios"]
 	path = m2x-ios
 	url = git@github.com:attm2x/m2x-ios.git
