@@ -37,6 +37,10 @@
 		E24CAD7F1A1E6A7500762E19 /* GlucoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24CAD7E1A1E6A7500762E19 /* GlucoseViewController.swift */; };
 		E25AF8E51A557336005933F3 /* HBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8E41A557336005933F3 /* HBBaseViewController.m */; };
 		E25AF8E61A557336005933F3 /* HBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8E41A557336005933F3 /* HBBaseViewController.m */; };
+		E25AF8E91A557C12005933F3 /* UIFont+SytemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8E81A557C12005933F3 /* UIFont+SytemFontOverride.m */; };
+		E25AF8EA1A557C12005933F3 /* UIFont+SytemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8E81A557C12005933F3 /* UIFont+SytemFontOverride.m */; };
+		E25AF8ED1A557DEE005933F3 /* UILabel+SystemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8EC1A557DEE005933F3 /* UILabel+SystemFontOverride.m */; };
+		E25AF8EE1A557DEE005933F3 /* UILabel+SystemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8EC1A557DEE005933F3 /* UILabel+SystemFontOverride.m */; };
 		E25E128F1A37339E00599F6D /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E128E1A37339E00599F6D /* Parameters.swift */; };
 		E25E12911A3733C300599F6D /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E12901A3733C300599F6D /* ProgressHUD.swift */; };
 		E25E12CB1A376DF300599F6D /* PreKickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E12CA1A376DF300599F6D /* PreKickViewController.swift */; };
@@ -288,6 +292,10 @@
 		E24CAD7E1A1E6A7500762E19 /* GlucoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseViewController.swift; sourceTree = "<group>"; };
 		E25AF8E31A557336005933F3 /* HBBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBaseViewController.h; sourceTree = "<group>"; };
 		E25AF8E41A557336005933F3 /* HBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBaseViewController.m; sourceTree = "<group>"; };
+		E25AF8E71A557C12005933F3 /* UIFont+SytemFontOverride.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+SytemFontOverride.h"; path = "M2XDemo/UIFont+SytemFontOverride.h"; sourceTree = SOURCE_ROOT; };
+		E25AF8E81A557C12005933F3 /* UIFont+SytemFontOverride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+SytemFontOverride.m"; path = "M2XDemo/UIFont+SytemFontOverride.m"; sourceTree = SOURCE_ROOT; };
+		E25AF8EB1A557DEE005933F3 /* UILabel+SystemFontOverride.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+SystemFontOverride.h"; sourceTree = SOURCE_ROOT; };
+		E25AF8EC1A557DEE005933F3 /* UILabel+SystemFontOverride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+SystemFontOverride.m"; sourceTree = SOURCE_ROOT; };
 		E25E128E1A37339E00599F6D /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		E25E12901A3733C300599F6D /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = M2XDemo/ProgressHUD.swift; sourceTree = SOURCE_ROOT; };
 		E25E12CA1A376DF300599F6D /* PreKickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreKickViewController.swift; sourceTree = "<group>"; };
@@ -532,6 +540,10 @@
 		E2201CC71A02A620007B953D /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E25AF8EB1A557DEE005933F3 /* UILabel+SystemFontOverride.h */,
+				E25AF8EC1A557DEE005933F3 /* UILabel+SystemFontOverride.m */,
+				E25AF8E71A557C12005933F3 /* UIFont+SytemFontOverride.h */,
+				E25AF8E81A557C12005933F3 /* UIFont+SytemFontOverride.m */,
 				E20A56331A5466FE0035A44E /* NSDate+Time.h */,
 				E20A56341A5466FE0035A44E /* NSDate+Time.m */,
 				E2B9410E1A44A751007F27FA /* Helper.h */,
@@ -1076,6 +1088,7 @@
 				E24CAD7F1A1E6A7500762E19 /* GlucoseViewController.swift in Sources */,
 				E2B919191A1A319D00D67802 /* MRoundedButton.m in Sources */,
 				E25AF8E51A557336005933F3 /* HBBaseViewController.m in Sources */,
+				E25AF8E91A557C12005933F3 /* UIFont+SytemFontOverride.m in Sources */,
 				E264FCFD1A129B26004F0570 /* DeviceData.swift in Sources */,
 				E264FD391A1388A1004F0570 /* M13ProgressViewStripedBar.m in Sources */,
 				E245D49B1A0D292900176398 /* BEMLine.m in Sources */,
@@ -1124,6 +1137,7 @@
 				E264FD351A1388A1004F0570 /* M13ProgressViewRadiative.m in Sources */,
 				E25E6A591A2CF9A100E1941F /* M2XTrigger.m in Sources */,
 				E264FD301A1388A1004F0570 /* M13ProgressViewImage.m in Sources */,
+				E25AF8ED1A557DEE005933F3 /* UILabel+SystemFontOverride.m in Sources */,
 				E25E6A4E1A2CDEB300E1941F /* M2XDevice.m in Sources */,
 				E2953E781A3A3395006C5942 /* JVFloatLabeledTextView.m in Sources */,
 				E245D4B21A0D341000176398 /* NSDate+M2X.m in Sources */,
@@ -1156,12 +1170,14 @@
 				E2953DFC1A3A0EF7006C5942 /* NSDate+DateTools.m in Sources */,
 				E2953DFD1A3A0EF7006C5942 /* M13ProgressViewRing.m in Sources */,
 				E2953DFE1A3A0EF7006C5942 /* M13ProgressViewMetro.m in Sources */,
+				E25AF8EE1A557DEE005933F3 /* UILabel+SystemFontOverride.m in Sources */,
 				E2953DFF1A3A0EF7006C5942 /* M2XKey.m in Sources */,
 				E2953E001A3A0EF7006C5942 /* M2XStream.m in Sources */,
 				E2953E011A3A0EF7006C5942 /* M13ProgressViewSegmentedBar.m in Sources */,
 				E2953E021A3A0EF7006C5942 /* DTTimePeriodCollection.m in Sources */,
 				E2B9410D1A445391007F27FA /* OLGhostAlertView.m in Sources */,
 				E2953E031A3A0EF7006C5942 /* DTTimePeriod.m in Sources */,
+				E25AF8EA1A557C12005933F3 /* UIFont+SytemFontOverride.m in Sources */,
 				E2953E041A3A0EF7006C5942 /* M13ProgressViewMetroDotPolygon.m in Sources */,
 				E2953E771A3A3395006C5942 /* JVFloatLabeledTextField.m in Sources */,
 				E2953E051A3A0EF7006C5942 /* TPKeyboardAvoidingScrollView.m in Sources */,
