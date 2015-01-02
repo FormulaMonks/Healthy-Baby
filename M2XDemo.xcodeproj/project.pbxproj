@@ -43,6 +43,8 @@
 		E25AF8EE1A557DEE005933F3 /* UILabel+SystemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8EC1A557DEE005933F3 /* UILabel+SystemFontOverride.m */; };
 		E25AF8F01A56EEC1005933F3 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8EF1A56EEC1005933F3 /* SettingsTableViewController.swift */; };
 		E25AF8F11A56EEC1005933F3 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8EF1A56EEC1005933F3 /* SettingsTableViewController.swift */; };
+		E25AF8F31A56F61B005933F3 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8F21A56F61B005933F3 /* ProfileTableViewController.swift */; };
+		E25AF8F41A56F61B005933F3 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8F21A56F61B005933F3 /* ProfileTableViewController.swift */; };
 		E25E128F1A37339E00599F6D /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E128E1A37339E00599F6D /* Parameters.swift */; };
 		E25E12911A3733C300599F6D /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E12901A3733C300599F6D /* ProgressHUD.swift */; };
 		E25E12CB1A376DF300599F6D /* PreKickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E12CA1A376DF300599F6D /* PreKickViewController.swift */; };
@@ -299,6 +301,7 @@
 		E25AF8EB1A557DEE005933F3 /* UILabel+SystemFontOverride.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+SystemFontOverride.h"; sourceTree = SOURCE_ROOT; };
 		E25AF8EC1A557DEE005933F3 /* UILabel+SystemFontOverride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+SystemFontOverride.m"; sourceTree = SOURCE_ROOT; };
 		E25AF8EF1A56EEC1005933F3 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		E25AF8F21A56F61B005933F3 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		E25E128E1A37339E00599F6D /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		E25E12901A3733C300599F6D /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = M2XDemo/ProgressHUD.swift; sourceTree = SOURCE_ROOT; };
 		E25E12CA1A376DF300599F6D /* PreKickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreKickViewController.swift; sourceTree = "<group>"; };
@@ -502,6 +505,7 @@
 				E25AF8E31A557336005933F3 /* HBBaseViewController.h */,
 				E25AF8E41A557336005933F3 /* HBBaseViewController.m */,
 				E25AF8EF1A56EEC1005933F3 /* SettingsTableViewController.swift */,
+				E25AF8F21A56F61B005933F3 /* ProfileTableViewController.swift */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -1155,6 +1159,7 @@
 				E21ED93C1A1BB4CA002E820A /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				E25E6A4F1A2CDEB300E1941F /* M2XDistribution.m in Sources */,
 				E2AE9BE91A24046D008E9F7A /* TriggerDetailViewController.swift in Sources */,
+				E25AF8F31A56F61B005933F3 /* ProfileTableViewController.swift in Sources */,
 				E264FD2E1A1388A1004F0570 /* M13ProgressViewBorderedBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1194,6 +1199,7 @@
 				E2953E0C1A3A0EF7006C5942 /* M2XClient.m in Sources */,
 				E2953E0D1A3A0EF7006C5942 /* M13ProgressView.m in Sources */,
 				E2953E0F1A3A0EF7006C5942 /* UIImage+ImageEffects.m in Sources */,
+				E25AF8F41A56F61B005933F3 /* ProfileTableViewController.swift in Sources */,
 				E2953E121A3A0EF7006C5942 /* NMRangeSlider.m in Sources */,
 				E2953E151A3A0EF7006C5942 /* M13ProgressHUD.m in Sources */,
 				E2953E181A3A0EF7006C5942 /* UINavigationController+M13ProgressViewBar.m in Sources */,

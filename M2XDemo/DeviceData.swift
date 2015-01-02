@@ -91,7 +91,8 @@ class DeviceData: NSObject, M2XClientDelegate {
         return client
     }
     
-    let apiDelay = 5.0 // since API is async we wait this time to assume data was created on the server
+    let apiDelay = 0.0 // since API is async we wait this time to assume data was created on the server
+    let urlPatternToAlwaysCache = "q=demo" // when fetching the device
     
     // will create devices if needed
     func fetchDevice(type: DeviceType, completionHandler: (device: M2XDevice?, values: [AnyObject]?, lastResponse: M2XResponse) -> ()) {
@@ -442,7 +443,13 @@ extension DeviceData {
     }
     
     func handleResponseWithData(data: NSData!, request: NSURLRequest!, response: NSHTTPURLResponse?, error: NSError!, completionHandler: M2XBaseCallback!) {
-        if request.HTTPMethod != "GET" || !cacheData {
+        var alwaysUseCacheInThisCase = false
+        if let q = request.URL.query {
+            let query: NSString = NSString(string: q)
+            alwaysUseCacheInThisCase = query.containsString(urlPatternToAlwaysCache)
+        }
+
+        if request.HTTPMethod != "GET" || (!cacheData && !alwaysUseCacheInThisCase) {
             let m2xResponse = M2XResponse(response: response, data: data, error: error)
             completionHandler(m2xResponse)
             return
@@ -487,7 +494,13 @@ extension DeviceData {
             
             let hasCache = NSFileManager.defaultManager().fileExistsAtPath(path)
             
-            return isOffline() && hasCache
+            var alwaysUseCacheInThisCase = false
+            if let q = request.URL.query {
+                let query: NSString = NSString(string: q)
+                alwaysUseCacheInThisCase = query.containsString(urlPatternToAlwaysCache)
+            }
+            
+            return hasCache && (isOffline() || alwaysUseCacheInThisCase)
         }
     }
     
