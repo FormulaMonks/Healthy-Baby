@@ -106,7 +106,7 @@ class TriggerDetailViewController : HBBaseViewController, UIPickerViewDataSource
                 ProgressHUD.hideCBBProgress()
                 
                 if response.error {
-                    self.handleErrorAlert(response.errorObject!)
+                    HBBaseViewController.handleErrorAlert(response.errorObject!)
                     return
                 }
                 
@@ -120,7 +120,7 @@ class TriggerDetailViewController : HBBaseViewController, UIPickerViewDataSource
                 ProgressHUD.hideCBBProgress()
                 
                 if response.error {
-                    self.handleErrorAlert(response.errorObject!)
+                    HBBaseViewController.handleErrorAlert(response.errorObject!)
                     return
                 }
                 

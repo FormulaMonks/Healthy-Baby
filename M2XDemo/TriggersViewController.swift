@@ -71,7 +71,7 @@ class TriggersViewController : HBBaseViewController, TriggerDetailViewController
             self.refreshControl?.endRefreshing()
             
             if response.error {
-                self.handleErrorAlert(response.errorObject!)
+                HBBaseViewController.handleErrorAlert(response.errorObject!)
             } else {
                 self.triggers = objects
                 

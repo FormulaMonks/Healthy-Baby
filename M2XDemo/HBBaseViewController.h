@@ -10,6 +10,6 @@
 
 @interface HBBaseViewController : UIViewController
 
-- (void)handleErrorAlert:(NSError *)error;
++ (void)handleErrorAlert:(NSError *)error;
 
 @end

@@ -147,7 +147,7 @@ class AddKickViewController : HBBaseViewController {
                 ProgressHUD.hideCBBProgress()
                 
                 if response.error {
-                    self.handleErrorAlert(response.errorObject!)
+                    HBBaseViewController.handleErrorAlert(response.errorObject!)
                 } else {
                     self.delegate?.needsKicksRefresh()
                 }

@@ -41,7 +41,7 @@ class ExerciseViewController: HBBaseViewController, ChartViewControllerDelegate 
             ProgressHUD.hideCBBProgress()
 
             if response.error {
-                self?.handleErrorAlert(response.errorObject!)
+                HBBaseViewController.handleErrorAlert(response.errorObject!)
             } else {
                 let cache = response.headers["X-Cache"] as NSString?
                 if cache? == "HIT" {

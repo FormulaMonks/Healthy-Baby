@@ -26,7 +26,7 @@
     bar.tintColor = [UIColor whiteColor];
 }
 
-- (void)handleErrorAlert:(NSError *)error {
++ (void)handleErrorAlert:(NSError *)error {
     NSString *message = error.localizedDescription;
     if (error.localizedFailureReason != nil) {
         message = [NSString stringWithFormat:@"%@: %@", message, error.localizedFailureReason];

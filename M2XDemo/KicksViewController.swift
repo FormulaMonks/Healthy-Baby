@@ -52,7 +52,7 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
             ProgressHUD.hideCBBProgress()
 
             if response.error {
-                self?.handleErrorAlert(response.errorObject!)
+                HBBaseViewController.handleErrorAlert(response.errorObject!)
             } else {
                 let cache = response.headers["X-Cache"] as NSString?
                 if cache? == "HIT" {
@@ -173,7 +173,7 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
             }
             
             if response.error {
-                self?.handleErrorAlert(response.errorObject!)
+                HBBaseViewController.handleErrorAlert(response.errorObject!)
             } else {
                 self?.chartViewController!.values = objects
                 
