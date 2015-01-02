@@ -444,10 +444,10 @@ extension DeviceData {
     
     func handleResponseWithData(data: NSData!, request: NSURLRequest!, response: NSHTTPURLResponse?, error: NSError!, completionHandler: M2XBaseCallback!) {
         var alwaysUseCacheInThisCase = false
-        if let q = request.URL.query {
-            let query: NSString = NSString(string: q)
-            alwaysUseCacheInThisCase = query.containsString(urlPatternToAlwaysCache)
-        }
+//        if let q = request.URL.query {
+//            let query: NSString = NSString(string: q)
+//            alwaysUseCacheInThisCase = query.containsString(urlPatternToAlwaysCache)
+//        }
 
         if request.HTTPMethod != "GET" || (!cacheData && !alwaysUseCacheInThisCase) {
             let m2xResponse = M2XResponse(response: response, data: data, error: error)
