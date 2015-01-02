@@ -92,7 +92,6 @@ class DeviceData: NSObject, M2XClientDelegate {
     }
     
     let apiDelay = 0.0 // since API is async we wait this time to assume data was created on the server
-    let urlPatternToAlwaysCache = "q=demo" // when fetching the device
     
     // will create devices if needed
     func fetchDevice(type: DeviceType, completionHandler: (device: M2XDevice?, values: [AnyObject]?, lastResponse: M2XResponse) -> ()) {
@@ -197,6 +196,9 @@ class DeviceData: NSObject, M2XClientDelegate {
     }
     
     func deleteCache() {
+        var devices = DeviceData.loadedDevicesByType
+        devices.removeAllObjects()
+        
         let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)
         let dir = paths[0] as String
         let manager = NSFileManager.defaultManager()
@@ -443,13 +445,7 @@ extension DeviceData {
     }
     
     func handleResponseWithData(data: NSData!, request: NSURLRequest!, response: NSHTTPURLResponse?, error: NSError!, completionHandler: M2XBaseCallback!) {
-        var alwaysUseCacheInThisCase = false
-//        if let q = request.URL.query {
-//            let query: NSString = NSString(string: q)
-//            alwaysUseCacheInThisCase = query.containsString(urlPatternToAlwaysCache)
-//        }
-
-        if request.HTTPMethod != "GET" || (!cacheData && !alwaysUseCacheInThisCase) {
+        if request.HTTPMethod != "GET" || !cacheData {
             let m2xResponse = M2XResponse(response: response, data: data, error: error)
             completionHandler(m2xResponse)
             return
@@ -494,13 +490,7 @@ extension DeviceData {
             
             let hasCache = NSFileManager.defaultManager().fileExistsAtPath(path)
             
-            var alwaysUseCacheInThisCase = false
-            if let q = request.URL.query {
-                let query: NSString = NSString(string: q)
-                alwaysUseCacheInThisCase = query.containsString(urlPatternToAlwaysCache)
-            }
-            
-            return hasCache && (isOffline() || alwaysUseCacheInThisCase)
+            return hasCache && isOffline()
         }
     }
     
@@ -515,16 +505,32 @@ extension DeviceData {
 }
 
 extension DeviceData {
+    struct Static {
+        static var instance: NSMutableDictionary?
+    }
+    
+    class var loadedDevicesByType: NSMutableDictionary {
+        if Static.instance == nil {
+            Static.instance = NSMutableDictionary()
+        }
+        
+        return Static.instance!
+    }
+    
     func devices(deviceType: DeviceType) -> BFTask {
         var task = BFTaskCompletionSource()
         
-        client.devicesWithParameters(["q": deviceType.rawValue], completionHandler: { (devices: [AnyObject]!, response: M2XResponse!) -> Void in
-            if response.error {
-                task.setError(response.errorObject)
-            } else {
-                task.setResult(devices)
-            }
-        })
+        if let device = DeviceData.loadedDevicesByType[deviceType.rawValue] as? M2XDevice {
+            task.setResult([device])
+        } else {
+            client.devicesWithParameters(["q": deviceType.rawValue], completionHandler: { (devices: [AnyObject]!, response: M2XResponse!) -> Void in
+                if response.error {
+                    task.setError(response.errorObject)
+                } else {
+                    task.setResult(devices)
+                }
+            })
+        }
         
         return task.task
     }
@@ -532,13 +538,19 @@ extension DeviceData {
     func device(deviceType: DeviceType, existingDevices: [M2XDevice]) -> BFTask {
         var task = BFTaskCompletionSource()
         
-        self.fillDevice(deviceType, existingDevices: existingDevices, completionHandler: { (filledDevice: M2XDevice?, error: NSError?) -> () in
-            if error != nil {
-                task.setError(error)
-            } else {
-                task.setResult(filledDevice)
-            }
-        })
+        if let device = DeviceData.loadedDevicesByType[deviceType.rawValue] as? M2XDevice {
+            task.setResult(device)
+        } else {
+            self.fillDevice(deviceType, existingDevices: existingDevices, completionHandler: { (filledDevice: M2XDevice?, error: NSError?) -> () in
+                if error != nil {
+                    task.setError(error)
+                } else {
+                    var devices = DeviceData.loadedDevicesByType
+                    devices.setValue(filledDevice, forKey: deviceType.rawValue)
+                    task.setResult(filledDevice)
+                }
+            })
+        }
         
         return task.task
     }

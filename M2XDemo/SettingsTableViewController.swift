@@ -101,6 +101,10 @@ class SettingsTableViewController: UITableViewController {
                 ProgressHUD.showCBBProgress(status: "Deleting Data")
 
                 self.deviceData.deleteCache()
+                
+                self.offlineSwitch.on = false
+                
+                self.saveOfflineSetting()
 
                 self.deviceData.deleteAllData({ (response: M2XResponse!) -> Void in
                     ProgressHUD.hideCBBProgress()
