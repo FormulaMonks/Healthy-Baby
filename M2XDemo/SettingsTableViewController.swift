@@ -100,6 +100,8 @@ class SettingsTableViewController: UITableViewController {
             alert.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
                 ProgressHUD.showCBBProgress(status: "Deleting Data")
 
+                self.deviceData.deleteCache()
+
                 self.deviceData.deleteAllData({ (response: M2XResponse!) -> Void in
                     ProgressHUD.hideCBBProgress()
 
