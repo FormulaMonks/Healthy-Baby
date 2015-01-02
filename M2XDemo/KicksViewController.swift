@@ -250,14 +250,6 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
             ChartDetailValue(label: "Date", value: date)
         ]
     }
-
-    func formatDate(timestamp: String) -> String {
-        let date = NSDate.fromISO8601(timestamp)
-        
-        let day = date.formattedDateWithFormat("LLL dd YYYY HH:mm")
-
-        return day
-    }
     
     func formatValue(value: Double) -> String {
         return "\(Int(value))"

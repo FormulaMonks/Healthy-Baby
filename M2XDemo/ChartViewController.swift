@@ -197,7 +197,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         
         let date = NSDate.fromISO8601(timestamp, timeZone: NSTimeZone.systemTimeZone(), locale: NSLocale.currentLocale())
         
-        return date.formattedDateWithFormat("LLL dd")
+        return date.formattedDateWithFormat("LLL d")
     }
 
     private func fullDateLabelForIndex(index: NSInteger) -> String {
@@ -209,7 +209,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         } else {
             let date = NSDate.fromISO8601(timestamp, timeZone: NSTimeZone.systemTimeZone(), locale: NSLocale.currentLocale())
             
-            let formatted = date.formattedDateWithFormat("LLL dd YYYY")
+            let formatted = date.formattedDateWithFormat("LLL d YYYY")
             
             return formatted
         }
