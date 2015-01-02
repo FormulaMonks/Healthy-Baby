@@ -43,7 +43,7 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
         detailNoDataLabel.textColor = Colors.grayColor
 
         chartViewController?.view.alpha = 0
-        chartViewController?.showPoints = true
+//        chartViewController?.showPoints = true
         detailNoDataLabel.alpha = 0
         detailNoDataLabel.textColor = Colors.grayColor
 
@@ -192,7 +192,7 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
         chartViewController!.deviceIdLabel.text = "ID: Healthy Baby App"
         let color = KicksViewController.themeColor
         chartViewController!.color = color
-        chartViewController!.graphView.enableBezierCurve = false
+        chartViewController!.graphView.enableBezierCurve = true
 
         chartViewController!.updateOnNewValues()
         
