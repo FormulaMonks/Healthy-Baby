@@ -197,7 +197,17 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         
         let date = NSDate.fromISO8601(timestamp, timeZone: NSTimeZone.systemTimeZone(), locale: NSLocale.currentLocale())
         
-        return date.formattedDateWithFormat("LLL d")
+        let now = NSDate()
+        
+        let weeks = now.weeksFrom(date)
+        
+        if weeks == 0 {
+            return "this week"
+        } else if weeks == 1 {
+            return "\(weeks) week ago"
+        } else {
+            return "\(weeks) weeks ago"
+        }
     }
 
     private func fullDateLabelForIndex(index: NSInteger) -> String {
@@ -251,7 +261,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             }
         }
         
-        return min / 1.15 // arbitraty proportion to make a zoom out of the data
+        return min / 1.2 // arbitraty proportion to make a zoom out of the data
     }
     
     func lineGraph(graph: BEMSimpleLineGraphView, didTouchGraphWithClosestIndex index: NSInteger) {
