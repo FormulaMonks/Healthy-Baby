@@ -55,7 +55,7 @@ class DeviceData: NSObject, M2XClientDelegate {
     }
     
     class var monthsMocked: Int {
-        return 7;
+        return 1;
     }
 
     var cacheData: Bool = false
