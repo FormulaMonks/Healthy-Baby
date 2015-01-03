@@ -204,7 +204,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         if weeks == 0 {
             return "this week"
         } else if weeks == 1 {
-            return "\(weeks) week"
+            return "\(weeks) week ago"
         } else {
             return "\(weeks) weeks"
         }
