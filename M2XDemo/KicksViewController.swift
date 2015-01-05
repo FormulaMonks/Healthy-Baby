@@ -196,9 +196,9 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
 
         chartViewController!.updateOnNewValues()
         
-        detailNoDataLabel.alpha = chartViewController!.maxValue > 0 ? 0 : 1
+        detailNoDataLabel.alpha = chartViewController!.maxIndex > 0 ? 0 : 1
         
-        if chartViewController!.maxValue > 0 {
+        if chartViewController!.maxIndex > 0 {
             chartViewController?.view.alpha = 1
         }
     }

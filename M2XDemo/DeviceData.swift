@@ -227,7 +227,7 @@ extension String  {
         
         let stream = M2XStream(client: client, device: device, attributes: ["name": streamType.rawValue])
         
-        stream.valuesWithParameters(params, completionHandler: { [weak self] (objects: [AnyObject]!, valuesResponse: M2XResponse!) -> Void in
+        stream.valuesWithParameters(params, completionHandler: { (objects: [AnyObject]!, valuesResponse: M2XResponse!) -> Void in
             if (valuesResponse.error) {
                 completionHandler(values: [AnyObject](), response: valuesResponse)
                 return
@@ -245,7 +245,7 @@ extension String  {
             }
             
             if let foundCreation = creationDays { // auto creation of values
-                self?.postMissingValues(type, streamType: streamType, existingValues: values, stream: stream, completionHandler: { (objects, response) -> () in
+                self.postMissingValues(type, streamType: streamType, existingValues: values, stream: stream, completionHandler: { (objects, response) -> () in
                     completionHandler(values: sortBlock(objects), response: valuesResponse)
                 })
             } else {

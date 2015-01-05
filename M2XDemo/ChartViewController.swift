@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ChartDetailValue {
+@objc class ChartDetailValue: NSObject {
     let label: String
     let value: String
     
@@ -39,8 +39,8 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     
     var axisXUnit: String?
     var axisYUnit: String?
-    var minValue: Int = 0
-    var maxValue: Int = 0
+    var minIndex: Int = 0
+    var maxIndex: Int = 0
 
     var values: [AnyObject]?
     var details = [ChartDetailValue]()
@@ -112,17 +112,17 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     // MARK: Slider
     
     func updateOnNewValues() {
-        minValue = 0
-        maxValue = values != nil ? values!.count - 1 : 0
+        minIndex = 0
+        maxIndex = values != nil ? values!.count - 1 : 0
         
-        sliderLowerLabel.alpha = maxValue > 0 ? 1 : 0
-        sliderHigherLabel.alpha = maxValue > 0 ? 1 : 0
-        sliderView.alpha = maxValue > 0 ? 1 : 0
+        sliderLowerLabel.alpha = maxIndex > 0 ? 1 : 0
+        sliderHigherLabel.alpha = maxIndex > 0 ? 1 : 0
+        sliderView.alpha = maxIndex > 0 ? 1 : 0
         
-        if maxValue > 0 {
+        if maxIndex > 0 {
             sliderView.minimumValue = 0
             sliderView.lowerValue = sliderView.minimumValue
-            sliderView.maximumValue = Float(maxValue)
+            sliderView.maximumValue = Float(maxIndex)
             sliderView.upperValue = sliderView.maximumValue
         }
         
@@ -134,8 +134,8 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func sliderDidChange(slider: NMRangeSlider) {
-        minValue = Int(slider.lowerValue)
-        maxValue = Int(slider.upperValue)
+        minIndex = Int(slider.lowerValue)
+        maxIndex = Int(slider.upperValue)
         
         updateSliderLabels()
 
@@ -153,17 +153,22 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    func minMaxValues() -> (Double, Double) {
+    func minValue() -> Double {
         let minIndex = realIndexForIndex(0)
-        let maxIndex = realIndexForIndex(numberOfPointsInLineGraph(graphView) - 1)
 
-        return (valueForIndex(minIndex)!, valueForIndex(maxIndex)!)
+        return valueForIndex(minIndex)!
+    }
+    
+    func maxValue() -> Double {
+        let maxIndex = realIndexForIndex(numberOfPointsInLineGraph(graphView) - 1)
+        
+        return valueForIndex(maxIndex)!
     }
     
     // MARK: Graph
     
     private func realNumberOfPointsInLineGraph() -> NSInteger {
-        return maxValue - minValue + 1
+        return maxIndex - minIndex + 1
     }
     
     func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> NSInteger {
@@ -178,8 +183,8 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     private func realIndexForIndex(index: NSInteger) -> NSInteger {
         let gap : Float = max(1.0, Float(realNumberOfPointsInLineGraph() - 1) / Float(maxSamples - 1))
         let jump = Int(round(Float(index) * gap))
-        return values!.count - 1 - minValue - jump
-//        return values!.count - 1 - minValue - index
+        return values!.count - 1 - minIndex - jump
+//        return values!.count - 1 - minIndex - index
     }
     
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: NSInteger) -> CGFloat {

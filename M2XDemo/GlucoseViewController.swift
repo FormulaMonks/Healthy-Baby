@@ -18,7 +18,6 @@ class GlucoseViewController: HBBaseViewController, ChartViewControllerDelegate {
         let key = defaults.valueForKey("key") as? String
         return M2XClient(apiKey: key!)
     }
-    private var stream: M2XStream?
     private var deviceId: String?
     
     class var themeColor: UIColor {
@@ -52,9 +51,6 @@ class GlucoseViewController: HBBaseViewController, ChartViewControllerDelegate {
 
                     self?.chartViewController!.cached = true
                 }
-
-                self?.stream = M2XStream(client: self?.client, device: device, attributes: ["name": StreamType.Glucose.rawValue])
-                self?.stream?.client?.delegate = self?.model // for cache
 
                 self?.deviceId = device!["id"] as? String
 
@@ -90,8 +86,8 @@ class GlucoseViewController: HBBaseViewController, ChartViewControllerDelegate {
 
         chartViewController!.updateOnNewValues()
         
-        chartViewController?.view.alpha = chartViewController!.maxValue > 0 ? 1 : 0
-        detailNoDataLabel.alpha = chartViewController!.maxValue > 0 ? 0 : 1
+        chartViewController?.view.alpha = chartViewController!.maxIndex > 0 ? 1 : 0
+        detailNoDataLabel.alpha = chartViewController!.maxIndex > 0 ? 0 : 1
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

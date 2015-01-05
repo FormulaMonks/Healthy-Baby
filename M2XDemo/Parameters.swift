@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Colors {
+@objc class Colors {
     class var kickColor: UIColor {
         return UIColor(red: 110/255.0, green: 194/255.0, blue: 189/255.0, alpha: 1.0)
     }

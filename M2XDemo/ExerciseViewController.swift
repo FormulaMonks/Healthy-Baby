@@ -17,7 +17,6 @@ class ExerciseViewController: HBBaseViewController, ChartViewControllerDelegate 
         let key = defaults.valueForKey("key") as? String
         return M2XClient(apiKey: key!)
     }
-    private var stream: M2XStream?
     private var deviceId: String?
     
     class var themeColor: UIColor {
@@ -51,9 +50,6 @@ class ExerciseViewController: HBBaseViewController, ChartViewControllerDelegate 
 
                     self?.chartViewController!.cached = true
                 }
-
-                self?.stream = M2XStream(client: self?.client, device: device, attributes: ["name": StreamType.Exercise.rawValue])
-                self?.stream?.client?.delegate = self?.model // for cache
 
                 self?.deviceId = device!["id"] as? String
 
@@ -89,7 +85,7 @@ class ExerciseViewController: HBBaseViewController, ChartViewControllerDelegate 
 
         chartViewController!.updateOnNewValues()
         
-        if chartViewController!.maxValue > 0 {
+        if chartViewController!.maxIndex > 0 {
             chartViewController?.view.alpha = 1
         } else {
             detailNoDataLabel.alpha = 1

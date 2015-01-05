@@ -15,7 +15,7 @@ class M2XHUD : M13ProgressHUD {
     }
 }
 
-class ProgressHUD {
+@objc class ProgressHUD {
     class func showCBBProgress(status: String? = nil) -> M13ProgressHUD {
         let window = (UIApplication.sharedApplication().delegate as AppDelegate).window
         var hud = M2XHUD(progressView: M13ProgressViewRing())
