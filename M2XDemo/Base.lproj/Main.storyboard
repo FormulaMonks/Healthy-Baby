@@ -531,14 +531,14 @@
                         <viewControllerLayoutGuide type="bottom" id="nXq-jL-BNl"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="m4R-ys-PnA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5J-T7-eYy" userLabel="Container">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="278"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoD-GH-nPG" customClass="BEMSimpleLineGraphView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="278"/>
                                         <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dataSource" destination="efQ-eF-KDo" id="aua-lS-ogg"/>
@@ -555,7 +555,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3M-mm-s98">
-                                        <rect key="frame" x="10" y="188" width="300" height="15"/>
+                                        <rect key="frame" x="10" y="243" width="300" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="Sof-B3-k5b"/>
                                         </constraints>
@@ -585,14 +585,14 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkJ-Ni-0jT" userLabel="Separator">
-                                <rect key="frame" x="0.0" y="223" width="320" height="10"/>
+                                <rect key="frame" x="0.0" y="278" width="320" height="10"/>
                                 <color key="backgroundColor" red="0.058823533359999999" green="0.55686277149999996" blue="0.98823535439999999" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="wgf-Xu-0bM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBp-qL-A3X" userLabel="Bottom Bar">
-                                <rect key="frame" x="0.0" y="233" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="288" width="320" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1J-fQ-QJj" customClass="NMRangeSlider">
                                         <rect key="frame" x="64" y="18" width="192" height="34"/>
@@ -638,7 +638,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nGJ-ny-2Fr">
-                                <rect key="frame" x="0.0" y="303" width="320" height="177"/>
+                                <rect key="frame" x="0.0" y="358" width="320" height="210"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.84802827380000001" green="0.84802827380000001" blue="0.84802827380000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -803,10 +803,10 @@
         <image name="GlucoseIconBig" width="41" height="60"/>
         <image name="ProfileIconBig" width="54" height="54"/>
         <image name="SettingsIconBig" width="40" height="40"/>
-        <image name="TriggerIcon" width="22" height="22"/>
+        <image name="TriggerIcon" width="44" height="43"/>
         <image name="WeightIconBig" width="52" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X3t-5H-b5X"/>
+        <segue reference="Fi5-4C-Gig"/>
     </inferredMetricsTieBreakers>
 </document>
