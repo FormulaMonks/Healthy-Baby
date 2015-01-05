@@ -91,7 +91,7 @@ extension String  {
         return client
     }
     
-    let apiDelay = 0.0 // since API is async we wait this time to assume data was created on the server
+    let apiDelay = 2.0 // since API is async we wait this time to assume data was created on the server
     
     // will create devices if needed
     func fetchDevice(type: String, completionHandler: (device: M2XDevice?, values: [AnyObject]?, lastResponse: M2XResponse) -> ()) {
@@ -284,9 +284,7 @@ extension String  {
 
         if missingValues.count > 0 {
             stream.postValues(missingValues, completionHandler: { (response: M2XResponse!) -> Void in
-                self.dispatchDelayed({ () -> Void in
-                    completionHandler(updatedValues, response: response)
-                })
+                completionHandler(updatedValues, response: response)
             })
         } else {
             completionHandler(updatedValues, response: M2XResponse())
