@@ -207,7 +207,7 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
         if let dc = segue.destinationViewController as? ChartViewController {
             chartViewController = dc
             chartViewController!.axisXUnit = "intervals"
-            chartViewController!.axisYUnit = "kick"
+            chartViewController!.axisYUnit = "kicks"
             chartViewController!.delegate = self
         } else if let dc = segue.destinationViewController as? PreKickViewController {
             dc.deviceId = deviceId

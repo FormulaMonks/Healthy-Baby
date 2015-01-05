@@ -45,8 +45,6 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     var values: [AnyObject]?
     var details = [ChartDetailValue]()
 
-    var selectedValue = "-"
-    
     let maxSamples = 1000 // for interpolation purposes
     
     var color: UIColor {
@@ -252,8 +250,14 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         return dateLabelForIndex(realIndex)
     }
     
-    func popupSuffixForlineGraph(graph: BEMSimpleLineGraphView) -> NSString {
-        return " \(axisYUnit!)"
+    func popUpValueForlineGraph(graph: BEMSimpleLineGraphView, atIndex: NSInteger) -> NSString {
+        let realIndex = realIndexForIndex(atIndex)
+        
+        let date = fullDateLabelForIndex(realIndex)
+        let value = fullValueForIndex(realIndex)
+        var unit = axisYUnit!
+        
+        return "\(value) \(unit) (\(date))"
     }
 
     func minValueForLineGraph(graph: BEMSimpleLineGraphView) -> CGFloat {
@@ -269,32 +273,10 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         return min / 1.2 // arbitraty proportion to make a zoom out of the data
     }
     
-    func lineGraph(graph: BEMSimpleLineGraphView, didTouchGraphWithClosestIndex index: NSInteger) {
-        let realIndex = realIndexForIndex(index)
-        
-        let date = fullDateLabelForIndex(realIndex)
-        let value = fullValueForIndex(realIndex)
-        var unit = axisYUnit!
-        
-        selectedValue = "\(value) \(unit) (\(date))"
-        updateSelectedValueCell()
-    }
-    
-    private func updateSelectedValueCell() {
-        if details.count > 0 {
-            let first = ChartDetailValue(label: "Touched Value", value: selectedValue)
-            details[0] = first
-            
-            tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .None)
-        }
-    }
-    
     private func updateDetails() {
         if let del = delegate {
             details = del.values()
-            let first = ChartDetailValue(label: "Touched Value", value: selectedValue)
-            let second = ChartDetailValue(label: "Samples", value: "\(values?.count ?? 0)")
-            details.insert(second, atIndex: 0)
+            let first = ChartDetailValue(label: "Samples", value: "\(values?.count ?? 0)")
             details.insert(first, atIndex: 0)
             tableView.reloadData()
         }

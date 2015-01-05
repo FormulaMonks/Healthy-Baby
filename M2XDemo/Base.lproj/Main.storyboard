@@ -14,6 +14,8 @@
             <string>ProximaNova-Bold</string>
             <string>ProximaNova-Bold</string>
             <string>ProximaNova-Bold</string>
+            <string>ProximaNova-Bold</string>
+            <string>ProximaNova-Bold</string>
         </mutableArray>
         <mutableArray key="ProximaNova-Regular.otf">
             <string>ProximaNova-Regular</string>
@@ -610,7 +612,7 @@
                                             <constraint firstAttribute="width" constant="62" id="2p8-v3-cyY"/>
                                             <constraint firstAttribute="height" constant="41" id="AAE-TZ-cOE"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -620,7 +622,7 @@
                                             <constraint firstAttribute="height" constant="41" id="COn-V7-C8Y"/>
                                             <constraint firstAttribute="width" constant="62" id="UsC-AO-RPC"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -803,7 +805,7 @@
         <image name="GlucoseIconBig" width="41" height="60"/>
         <image name="ProfileIconBig" width="54" height="54"/>
         <image name="SettingsIconBig" width="40" height="40"/>
-        <image name="TriggerIcon" width="44" height="43"/>
+        <image name="TriggerIcon" width="22" height="22"/>
         <image name="WeightIconBig" width="52" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
