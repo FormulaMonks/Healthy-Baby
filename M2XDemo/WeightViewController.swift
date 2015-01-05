@@ -38,7 +38,7 @@ class WeightViewController: HBBaseViewController, ChartViewControllerDelegate {
         detailNoDataLabel.textColor = Colors.grayColor
 
         ProgressHUD.showCBBProgress(status: "Loading Device")
-        model.fetchDevice(DeviceType.Weight) { [weak self] (device:M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
+        model.fetchDevice(HBDeviceTypeWeight) { [weak self] (device:M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
             ProgressHUD.hideCBBProgress()
             
             if response.error {

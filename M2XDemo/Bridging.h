@@ -29,4 +29,6 @@
 #import "Helper.h"
 #import "NSDate+Time.h"
 #import "HBBaseViewController.h"
+#import "HBDeviceData.h"
+
 #endif

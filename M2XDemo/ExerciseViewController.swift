@@ -37,7 +37,7 @@ class ExerciseViewController: HBBaseViewController, ChartViewControllerDelegate 
         detailNoDataLabel.textColor = Colors.grayColor
 
         ProgressHUD.showCBBProgress(status: "Loading Device")
-        model.fetchDevice(DeviceType.Exercise) { [weak self] (device:M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
+        model.fetchDevice(HBDeviceTypeExercise) { [weak self] (device:M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
             ProgressHUD.hideCBBProgress()
 
             if response.error {

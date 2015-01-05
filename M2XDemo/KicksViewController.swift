@@ -48,7 +48,7 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
         detailNoDataLabel.textColor = Colors.grayColor
 
         ProgressHUD.showCBBProgress(status: "Loading Device")
-        model.fetchDevice(DeviceType.Kick) { [weak self] (device:M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
+        model.fetchDevice(HBDeviceTypeKick) { [weak self] (device:M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
             ProgressHUD.hideCBBProgress()
 
             if response.error {

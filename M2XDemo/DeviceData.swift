@@ -44,7 +44,7 @@ extension String  {
     }
 }
 
-class DeviceData: NSObject, M2XClientDelegate {
+@objc class DeviceData: NSObject, M2XClientDelegate {
     init(fromCache: Bool) {
         super.init()
         self.fromCache = fromCache
@@ -94,16 +94,18 @@ class DeviceData: NSObject, M2XClientDelegate {
     let apiDelay = 0.0 // since API is async we wait this time to assume data was created on the server
     
     // will create devices if needed
-    func fetchDevice(type: DeviceType, completionHandler: (device: M2XDevice?, values: [AnyObject]?, lastResponse: M2XResponse) -> ()) {
+    func fetchDevice(type: String, completionHandler: (device: M2XDevice?, values: [AnyObject]?, lastResponse: M2XResponse) -> ()) {
+        let enumType = DeviceType(rawValue: type)!
+        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        self.devices(type).continueWithSuccessBlock { (task: BFTask!) -> AnyObject! in
+        self.devices(enumType).continueWithSuccessBlock { (task: BFTask!) -> AnyObject! in
             let devices = task.result as [M2XDevice]
             
-            return self.device(type, existingDevices: devices).continueWithSuccessBlock({ (task: BFTask!) -> AnyObject! in
+            return self.device(enumType, existingDevices: devices).continueWithSuccessBlock({ (task: BFTask!) -> AnyObject! in
                 let device = task.result as M2XDevice
                 
-                self.fillSamples(type, device: device, completionHandler: { (values: [AnyObject]?, response: M2XResponse) -> () in
+                self.fillSamples(enumType, device: device, completionHandler: { (values: [AnyObject]?, response: M2XResponse) -> () in
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     completionHandler(device: device, values: values, lastResponse: response)
                 })
@@ -134,7 +136,7 @@ class DeviceData: NSObject, M2XClientDelegate {
         let inc: Float = 0.125
         progressHandler(progress: 0)
         for deviceType in DeviceType.allValues {
-            fetchDevice(deviceType, completionHandler: { (device, values, lastResponse) -> () in
+            fetchDevice(deviceType.rawValue, completionHandler: { (device, values, lastResponse) -> () in
                 count++
                 progress +=  inc
                 progressHandler(progress: min(1.0, progress))

@@ -38,7 +38,7 @@ class GlucoseViewController: HBBaseViewController, ChartViewControllerDelegate {
         detailNoDataLabel.textColor = Colors.grayColor
 
         ProgressHUD.showCBBProgress(status: "Loading Device")
-        model.fetchDevice(DeviceType.Glucose) { [weak self] (device: M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
+        model.fetchDevice(HBDeviceTypeGlucose) { [weak self] (device: M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
             ProgressHUD.hideCBBProgress()
 
             if response.error {
