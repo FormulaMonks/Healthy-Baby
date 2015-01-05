@@ -24,6 +24,12 @@
     bar.backgroundColor = [UIColor whiteColor];
     bar.translucent = NO;
     bar.tintColor = [UIColor whiteColor];
+    
+    UIImage *backBtn = [UIImage imageNamed:@"BackImage"];
+    backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.navigationItem.backBarButtonItem.title=@"";
+    self.navigationController.navigationBar.backIndicatorImage = backBtn;
+    self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
 }
 
 + (void)handleErrorAlert:(NSError *)error {
