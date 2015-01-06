@@ -148,6 +148,7 @@ extension String  {
                     } else {
                         // we finally do a re-call of the devices with CACHE mode on, since the first time some creation could have happened
                         self.cacheData = true
+                        DeviceData.loadedDevicesByType.removeAllObjects()
                         self.cacheAllData(completionHandler, progressHandler: progressHandler, progress:&progress)
                     }
                 }

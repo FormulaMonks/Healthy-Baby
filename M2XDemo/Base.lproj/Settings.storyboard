@@ -94,7 +94,7 @@
                         <sections>
                             <tableViewSection headerTitle="M2X Master API Key" id="LSC-JM-L2P">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sXU-WG-0Ra">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="sXU-WG-0Ra">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sXU-WG-0Ra" id="uE2-OW-DBn">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -116,7 +116,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Mode" id="OpX-8x-ojU">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2px-fB-TJC">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="2px-fB-TJC">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2px-fB-TJC" id="qWl-xt-CGA">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -146,7 +146,7 @@
                             </tableViewSection>
                             <tableViewSection id="dZ4-Cs-qs3">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sOx-mt-o5z">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="sOx-mt-o5z">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sOx-mt-o5z" id="FjB-Ba-RGI">
                                             <autoresizingMask key="autoresizingMask"/>
