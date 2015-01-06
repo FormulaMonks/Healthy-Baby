@@ -14,7 +14,6 @@
 		E20BF30C1A015ACD003DD414 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20BF30B1A015ACD003DD414 /* Accelerate.framework */; };
 		E20BF30E1A015AE3003DD414 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20BF30D1A015AE3003DD414 /* QuartzCore.framework */; };
 		E216E4BE1A126D9F00D40F5B /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216E4BD1A126D9F00D40F5B /* ExerciseViewController.swift */; };
-		E216E4C01A126E7D00D40F5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216E4BF1A126E7D00D40F5B /* ProfileViewController.swift */; };
 		E21ED93C1A1BB4CA002E820A /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21ED9351A1BB4CA002E820A /* TPKeyboardAvoidingCollectionView.m */; };
 		E21ED93D1A1BB4CA002E820A /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21ED9371A1BB4CA002E820A /* TPKeyboardAvoidingScrollView.m */; };
 		E21ED93E1A1BB4CA002E820A /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21ED9391A1BB4CA002E820A /* TPKeyboardAvoidingTableView.m */; };
@@ -73,6 +72,8 @@
 		E2953E761A3A3395006C5942 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E711A3A3395006C5942 /* JVFloatLabeledTextField.m */; };
 		E2953E781A3A3395006C5942 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E731A3A3395006C5942 /* JVFloatLabeledTextView.m */; };
 		E2953E7A1A3A3395006C5942 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E751A3A3395006C5942 /* NSString+TextDirectionality.m */; };
+		E29C19031A5BED210088854E /* HBProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19021A5BED210088854E /* HBProfileViewController.m */; };
+		E29C19061A5BED300088854E /* HBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19051A5BED300088854E /* HBSettingsViewController.m */; };
 		E29F5AED1A124CF800FFBAAD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */; };
 		E2AE699B1A14EB48002A3D81 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */; };
 		E2AE9BE91A24046D008E9F7A /* TriggerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */; };
@@ -100,7 +101,6 @@
 		E2DD64281A13ACB10071CEBB /* DTTimePeriodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DD64201A13ACB10071CEBB /* DTTimePeriodCollection.m */; };
 		E2DD64291A13ACB10071CEBB /* DTTimePeriodGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DD64221A13ACB10071CEBB /* DTTimePeriodGroup.m */; };
 		E2DD642A1A13ACB10071CEBB /* NSDate+DateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E2DD64241A13ACB10071CEBB /* NSDate+DateTools.m */; };
-		E2EBF5F61A16943100BFC120 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EBF5F51A16943100BFC120 /* SettingsViewController.swift */; };
 		E2F712061A0D5010004706CA /* slider-default-handle-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F711E81A0D5010004706CA /* slider-default-handle-highlighted.png */; };
 		E2F712071A0D5010004706CA /* slider-default-handle-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F711E91A0D5010004706CA /* slider-default-handle-highlighted@2x.png */; };
 		E2F712081A0D5010004706CA /* slider-default-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F711EA1A0D5010004706CA /* slider-default-handle.png */; };
@@ -152,7 +152,6 @@
 		E20BF30B1A015ACD003DD414 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		E20BF30D1A015AE3003DD414 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E216E4BD1A126D9F00D40F5B /* ExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
-		E216E4BF1A126E7D00D40F5B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E21ED9341A1BB4CA002E820A /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		E21ED9351A1BB4CA002E820A /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		E21ED9361A1BB4CA002E820A /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -260,6 +259,10 @@
 		E2953E731A3A3395006C5942 /* JVFloatLabeledTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextView.m; sourceTree = "<group>"; };
 		E2953E741A3A3395006C5942 /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextDirectionality.h"; sourceTree = "<group>"; };
 		E2953E751A3A3395006C5942 /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextDirectionality.m"; sourceTree = "<group>"; };
+		E29C19011A5BED210088854E /* HBProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBProfileViewController.h; sourceTree = "<group>"; };
+		E29C19021A5BED210088854E /* HBProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBProfileViewController.m; sourceTree = "<group>"; };
+		E29C19041A5BED300088854E /* HBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBSettingsViewController.h; sourceTree = "<group>"; };
+		E29C19051A5BED300088854E /* HBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBSettingsViewController.m; sourceTree = "<group>"; };
 		E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerDetailViewController.swift; sourceTree = "<group>"; };
@@ -298,7 +301,6 @@
 		E2DD64221A13ACB10071CEBB /* DTTimePeriodGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTimePeriodGroup.m; sourceTree = "<group>"; };
 		E2DD64231A13ACB10071CEBB /* NSDate+DateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateTools.h"; sourceTree = "<group>"; };
 		E2DD64241A13ACB10071CEBB /* NSDate+DateTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateTools.m"; sourceTree = "<group>"; };
-		E2EBF5F51A16943100BFC120 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E2F711E81A0D5010004706CA /* slider-default-handle-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle-highlighted.png"; sourceTree = "<group>"; };
 		E2F711E91A0D5010004706CA /* slider-default-handle-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle-highlighted@2x.png"; sourceTree = "<group>"; };
 		E2F711EA1A0D5010004706CA /* slider-default-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default-handle.png"; sourceTree = "<group>"; };
@@ -359,9 +361,7 @@
 			children = (
 				E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */,
 				E216E4BD1A126D9F00D40F5B /* ExerciseViewController.swift */,
-				E216E4BF1A126E7D00D40F5B /* ProfileViewController.swift */,
 				E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */,
-				E2EBF5F51A16943100BFC120 /* SettingsViewController.swift */,
 				E25E12CA1A376DF300599F6D /* PreKickViewController.swift */,
 				E2B919141A1A2B2900D67802 /* AddKickViewController.swift */,
 				E2B919121A1A21AD00D67802 /* KicksViewController.swift */,
@@ -374,6 +374,10 @@
 				E25AF8F21A56F61B005933F3 /* ProfileTableViewController.swift */,
 				E25D440C1A5AA8F200363AA1 /* HBWeightViewController.h */,
 				E25D440D1A5AA8F200363AA1 /* HBWeightViewController.m */,
+				E29C19011A5BED210088854E /* HBProfileViewController.h */,
+				E29C19021A5BED210088854E /* HBProfileViewController.m */,
+				E29C19041A5BED300088854E /* HBSettingsViewController.h */,
+				E29C19051A5BED300088854E /* HBSettingsViewController.m */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -914,9 +918,11 @@
 				E2DD64261A13ACB10071CEBB /* DTTimePeriod.m in Sources */,
 				E264FD331A1388A1004F0570 /* M13ProgressViewMetroDotPolygon.m in Sources */,
 				E21ED93D1A1BB4CA002E820A /* TPKeyboardAvoidingScrollView.m in Sources */,
+				E29C19061A5BED300088854E /* HBSettingsViewController.m in Sources */,
 				E21ED93E1A1BB4CA002E820A /* TPKeyboardAvoidingTableView.m in Sources */,
 				E264FD381A1388A1004F0570 /* M13ProgressViewSegmentedRing.m in Sources */,
 				E25D44121A5AAAFE00363AA1 /* HBDeviceData.m in Sources */,
+				E29C19031A5BED210088854E /* HBProfileViewController.m in Sources */,
 				E25E6A511A2CDEB300E1941F /* M2XResource.m in Sources */,
 				E2B919131A1A21AD00D67802 /* KicksViewController.swift in Sources */,
 				E27BC8261A23EECA006F2A6C /* TriggersViewController.swift in Sources */,
@@ -931,7 +937,6 @@
 				E2953E7A1A3A3395006C5942 /* NSString+TextDirectionality.m in Sources */,
 				E264FD291A1388A1004F0570 /* M13ProgressHUD.m in Sources */,
 				E25E12911A3733C300599F6D /* ProgressHUD.swift in Sources */,
-				E2EBF5F61A16943100BFC120 /* SettingsViewController.swift in Sources */,
 				E264FD2B1A1388A1004F0570 /* UINavigationController+M13ProgressViewBar.m in Sources */,
 				E2DD64271A13ACB10071CEBB /* DTTimePeriodChain.m in Sources */,
 				E264FD281A1388A1004F0570 /* M13ProgressConsole.m in Sources */,
@@ -945,7 +950,6 @@
 				E2953E781A3A3395006C5942 /* JVFloatLabeledTextView.m in Sources */,
 				E245D4B21A0D341000176398 /* NSDate+M2X.m in Sources */,
 				E25E6A4D1A2CDEB300E1941F /* M2XClient+HTTP.m in Sources */,
-				E216E4C01A126E7D00D40F5B /* ProfileViewController.swift in Sources */,
 				E21ED93F1A1BB4CA002E820A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				E216E4BE1A126D9F00D40F5B /* ExerciseViewController.swift in Sources */,
 				E25E12CB1A376DF300599F6D /* PreKickViewController.swift in Sources */,

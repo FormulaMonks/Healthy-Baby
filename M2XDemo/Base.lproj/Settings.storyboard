@@ -24,7 +24,7 @@
         <!--Settings-->
         <scene sceneID="8fT-we-o2c">
             <objects>
-                <viewController storyboardIdentifier="Settings" title="Settings" id="c9H-Ni-P99" customClass="SettingsViewController" customModule="Healthy_Baby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Settings" title="Settings" id="c9H-Ni-P99" customClass="HBSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UUh-rW-AwT"/>
                         <viewControllerLayoutGuide type="bottom" id="fGR-pN-59M"/>
@@ -190,7 +190,7 @@
         <!--Profile View Controller-->
         <scene sceneID="TxX-sl-l54">
             <objects>
-                <viewController storyboardIdentifier="Profile" id="MsY-Yt-JgW" customClass="ProfileViewController" customModule="Healthy_Baby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" id="MsY-Yt-JgW" customClass="HBProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NQj-p5-7zW"/>
                         <viewControllerLayoutGuide type="bottom" id="e6W-cr-WUv"/>
