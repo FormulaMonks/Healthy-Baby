@@ -66,13 +66,13 @@
 		E264FD381A1388A1004F0570 /* M13ProgressViewSegmentedRing.m in Sources */ = {isa = PBXBuildFile; fileRef = E264FD251A1388A1004F0570 /* M13ProgressViewSegmentedRing.m */; };
 		E264FD391A1388A1004F0570 /* M13ProgressViewStripedBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E264FD271A1388A1004F0570 /* M13ProgressViewStripedBar.m */; };
 		E27BC8261A23EECA006F2A6C /* TriggersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */; };
-		E2953DEA1A3A035A006C5942 /* ChartDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2953DE91A3A035A006C5942 /* ChartDetailCell.swift */; };
 		E2953E761A3A3395006C5942 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E711A3A3395006C5942 /* JVFloatLabeledTextField.m */; };
 		E2953E781A3A3395006C5942 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E731A3A3395006C5942 /* JVFloatLabeledTextView.m */; };
 		E2953E7A1A3A3395006C5942 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E751A3A3395006C5942 /* NSString+TextDirectionality.m */; };
 		E29C19031A5BED210088854E /* HBProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19021A5BED210088854E /* HBProfileViewController.m */; };
 		E29C19061A5BED300088854E /* HBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19051A5BED300088854E /* HBSettingsViewController.m */; };
 		E29C19091A5BEF430088854E /* HBExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19081A5BEF430088854E /* HBExerciseViewController.m */; };
+		E29C190C1A5BF7470088854E /* HBChartDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C190B1A5BF7470088854E /* HBChartDetailCell.m */; };
 		E29F5AED1A124CF800FFBAAD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */; };
 		E2AE699B1A14EB48002A3D81 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */; };
 		E2AE9BE91A24046D008E9F7A /* TriggerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */; };
@@ -248,7 +248,6 @@
 		E264FD261A1388A1004F0570 /* M13ProgressViewStripedBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewStripedBar.h; sourceTree = "<group>"; };
 		E264FD271A1388A1004F0570 /* M13ProgressViewStripedBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewStripedBar.m; sourceTree = "<group>"; };
 		E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggersViewController.swift; sourceTree = "<group>"; };
-		E2953DE91A3A035A006C5942 /* ChartDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDetailCell.swift; sourceTree = "<group>"; };
 		E2953E611A3A0EF8006C5942 /* M2XDemoMerge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "M2XDemoMerge-Info.plist"; path = "/Users/lucho/Projects/att-m2x-ios-demo/M2XDemoMerge-Info.plist"; sourceTree = "<absolute>"; };
 		E2953E701A3A3395006C5942 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
 		E2953E711A3A3395006C5942 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextField.m; sourceTree = "<group>"; };
@@ -262,6 +261,8 @@
 		E29C19051A5BED300088854E /* HBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBSettingsViewController.m; sourceTree = "<group>"; };
 		E29C19071A5BEF430088854E /* HBExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBExerciseViewController.h; sourceTree = "<group>"; };
 		E29C19081A5BEF430088854E /* HBExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBExerciseViewController.m; sourceTree = "<group>"; };
+		E29C190A1A5BF7470088854E /* HBChartDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBChartDetailCell.h; sourceTree = "<group>"; };
+		E29C190B1A5BF7470088854E /* HBChartDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBChartDetailCell.m; sourceTree = "<group>"; };
 		E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerDetailViewController.swift; sourceTree = "<group>"; };
@@ -646,7 +647,8 @@
 		E2953DE81A3A0343006C5942 /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				E2953DE91A3A035A006C5942 /* ChartDetailCell.swift */,
+				E29C190A1A5BF7470088854E /* HBChartDetailCell.h */,
+				E29C190B1A5BF7470088854E /* HBChartDetailCell.m */,
 			);
 			name = cells;
 			sourceTree = "<group>";
@@ -931,6 +933,7 @@
 				E264FD2A1A1388A1004F0570 /* UIImage+ImageEffects.m in Sources */,
 				E25D440A1A5AA76900363AA1 /* UILabel+SystemFontOverride.m in Sources */,
 				E22E813B1A0011FC00B8E451 /* AppDelegate.swift in Sources */,
+				E29C190C1A5BF7470088854E /* HBChartDetailCell.m in Sources */,
 				E2F712201A0D5010004706CA /* NMRangeSlider.m in Sources */,
 				E2953E7A1A3A3395006C5942 /* NSString+TextDirectionality.m in Sources */,
 				E264FD291A1388A1004F0570 /* M13ProgressHUD.m in Sources */,
@@ -941,7 +944,6 @@
 				E245D49A1A0D292900176398 /* BEMCircle.m in Sources */,
 				E2DD64291A13ACB10071CEBB /* DTTimePeriodGroup.m in Sources */,
 				E29C19091A5BEF430088854E /* HBExerciseViewController.m in Sources */,
-				E2953DEA1A3A035A006C5942 /* ChartDetailCell.swift in Sources */,
 				E264FD351A1388A1004F0570 /* M13ProgressViewRadiative.m in Sources */,
 				E25E6A591A2CF9A100E1941F /* M2XTrigger.m in Sources */,
 				E264FD301A1388A1004F0570 /* M13ProgressViewImage.m in Sources */,

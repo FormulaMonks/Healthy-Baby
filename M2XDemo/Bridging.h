@@ -30,5 +30,6 @@
 #import "NSDate+Time.h"
 #import "HBBaseViewController.h"
 #import "HBDeviceData.h"
+#import "HBChartDetailCell.h"
 
 #endif

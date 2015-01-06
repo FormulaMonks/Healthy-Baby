@@ -299,7 +299,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as ChartDetailCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as HBChartDetailCell
         cell.label.textColor = Colors.lightGrayColor
         cell.value.textColor = color
         
