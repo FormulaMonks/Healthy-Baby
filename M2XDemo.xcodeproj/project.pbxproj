@@ -35,7 +35,6 @@
 		E25D440A1A5AA76900363AA1 /* UILabel+SystemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = E25D44091A5AA76900363AA1 /* UILabel+SystemFontOverride.m */; };
 		E25D440E1A5AA8F200363AA1 /* HBWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E25D440D1A5AA8F200363AA1 /* HBWeightViewController.m */; };
 		E25D44121A5AAAFE00363AA1 /* HBDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = E25D44111A5AAAFE00363AA1 /* HBDeviceData.m */; };
-		E25E128F1A37339E00599F6D /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E128E1A37339E00599F6D /* Parameters.swift */; };
 		E25E12911A3733C300599F6D /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E12901A3733C300599F6D /* ProgressHUD.swift */; };
 		E25E12CB1A376DF300599F6D /* PreKickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25E12CA1A376DF300599F6D /* PreKickViewController.swift */; };
 		E25E6A4C1A2CDEB300E1941F /* M2XClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E25E6A3D1A2CDEB300E1941F /* M2XClient.m */; };
@@ -190,7 +189,6 @@
 		E25D440D1A5AA8F200363AA1 /* HBWeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBWeightViewController.m; sourceTree = "<group>"; };
 		E25D44101A5AAA9500363AA1 /* HBDeviceData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBDeviceData.h; sourceTree = "<group>"; };
 		E25D44111A5AAAFE00363AA1 /* HBDeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBDeviceData.m; sourceTree = "<group>"; };
-		E25E128E1A37339E00599F6D /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		E25E12901A3733C300599F6D /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressHUD.swift; path = M2XDemo/ProgressHUD.swift; sourceTree = SOURCE_ROOT; };
 		E25E12CA1A376DF300599F6D /* PreKickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreKickViewController.swift; sourceTree = "<group>"; };
 		E25E6A3B1A2CDEB300E1941F /* M2X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2X.h; sourceTree = "<group>"; };
@@ -388,7 +386,6 @@
 			isa = PBXGroup;
 			children = (
 				E264FCFC1A129B26004F0570 /* DeviceData.swift */,
-				E25E128E1A37339E00599F6D /* Parameters.swift */,
 				E25D44101A5AAA9500363AA1 /* HBDeviceData.h */,
 				E25D44111A5AAAFE00363AA1 /* HBDeviceData.m */,
 			);
@@ -935,7 +932,6 @@
 				E25D440A1A5AA76900363AA1 /* UILabel+SystemFontOverride.m in Sources */,
 				E22E813B1A0011FC00B8E451 /* AppDelegate.swift in Sources */,
 				E2F712201A0D5010004706CA /* NMRangeSlider.m in Sources */,
-				E25E128F1A37339E00599F6D /* Parameters.swift in Sources */,
 				E2953E7A1A3A3395006C5942 /* NSString+TextDirectionality.m in Sources */,
 				E264FD291A1388A1004F0570 /* M13ProgressHUD.m in Sources */,
 				E25E12911A3733C300599F6D /* ProgressHUD.swift in Sources */,
