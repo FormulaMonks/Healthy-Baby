@@ -90,6 +90,10 @@ class TriggersViewController : HBBaseViewController, TriggerDetailViewController
     
     // MARK: UITableViewDataSource
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 64.0
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
         return triggers?.count ?? 0
     }

@@ -33,9 +33,7 @@ class M2XHUD : M13ProgressHUD {
         }
         window?.addSubview(hud)
         hud.show(true)
-        
-        
-        
+
         return hud
     }
     
