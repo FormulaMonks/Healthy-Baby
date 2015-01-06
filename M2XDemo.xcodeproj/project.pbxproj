@@ -73,6 +73,7 @@
 		E29C19061A5BED300088854E /* HBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19051A5BED300088854E /* HBSettingsViewController.m */; };
 		E29C19091A5BEF430088854E /* HBExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19081A5BEF430088854E /* HBExerciseViewController.m */; };
 		E29C190C1A5BF7470088854E /* HBChartDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C190B1A5BF7470088854E /* HBChartDetailCell.m */; };
+		E29C19111A5C59320088854E /* TriggerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29C19101A5C59320088854E /* TriggerDetailTableViewController.swift */; };
 		E29F5AED1A124CF800FFBAAD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */; };
 		E2AE699B1A14EB48002A3D81 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */; };
 		E2AE9BE91A24046D008E9F7A /* TriggerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */; };
@@ -263,6 +264,7 @@
 		E29C19081A5BEF430088854E /* HBExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBExerciseViewController.m; sourceTree = "<group>"; };
 		E29C190A1A5BF7470088854E /* HBChartDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBChartDetailCell.h; sourceTree = "<group>"; };
 		E29C190B1A5BF7470088854E /* HBChartDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBChartDetailCell.m; sourceTree = "<group>"; };
+		E29C19101A5C59320088854E /* TriggerDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerDetailTableViewController.swift; sourceTree = "<group>"; };
 		E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerDetailViewController.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				E29C19051A5BED300088854E /* HBSettingsViewController.m */,
 				E29C19071A5BEF430088854E /* HBExerciseViewController.h */,
 				E29C19081A5BEF430088854E /* HBExerciseViewController.m */,
+				E29C19101A5C59320088854E /* TriggerDetailTableViewController.swift */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 				E264FD281A1388A1004F0570 /* M13ProgressConsole.m in Sources */,
 				E245D49A1A0D292900176398 /* BEMCircle.m in Sources */,
 				E2DD64291A13ACB10071CEBB /* DTTimePeriodGroup.m in Sources */,
+				E29C19111A5C59320088854E /* TriggerDetailTableViewController.swift in Sources */,
 				E29C19091A5BEF430088854E /* HBExerciseViewController.m in Sources */,
 				E264FD351A1388A1004F0570 /* M13ProgressViewRadiative.m in Sources */,
 				E25E6A591A2CF9A100E1941F /* M2XTrigger.m in Sources */,

@@ -31,7 +31,7 @@ class TriggersViewController : HBBaseViewController, TriggerDetailViewController
 
         refreshControl = UIRefreshControl()
         tableView.addSubview(refreshControl!)
-        refreshControl!.addTarget(self, action: "loadData", forControlEvents: .ValueChanged)
+        refreshControl!.addTarget(self, action: "refreshData", forControlEvents: .ValueChanged)
 
         var defaults = NSUserDefaults.standardUserDefaults()
         let key = defaults.valueForKey("key") as? String
@@ -54,20 +54,29 @@ class TriggersViewController : HBBaseViewController, TriggerDetailViewController
         }
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        ProgressHUD.cancelCBBProgress()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if (refreshTriggers) {
+        if refreshTriggers {
             loadData()
             refreshTriggers = false
         }
     }
     
     func loadData() {
-        ProgressHUD.showCBBProgress(status: "Loading Data")
-        
+        self.refreshControl?.beginRefreshing()
+
+        refreshData()
+    }
+    
+    func refreshData() {
         device?.triggersWithCompletionHandler { (objects: [AnyObject]!, response: M2XResponse!) -> Void in
-            ProgressHUD.hideCBBProgress()
             self.refreshControl?.endRefreshing()
             
             if response.error {
