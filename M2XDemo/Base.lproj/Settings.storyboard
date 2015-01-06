@@ -94,7 +94,7 @@
                         <sections>
                             <tableViewSection headerTitle="M2X Master API Key" id="LSC-JM-L2P">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="sXU-WG-0Ra">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="sXU-WG-0Ra">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sXU-WG-0Ra" id="uE2-OW-DBn">
                                             <autoresizingMask key="autoresizingMask"/>
