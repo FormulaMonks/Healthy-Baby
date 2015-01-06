@@ -154,13 +154,13 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     func minValue() -> Double {
         let minIndex = realIndexForIndex(0)
 
-        return valueForIndex(minIndex)!
+        return valueForIndex(minIndex)
     }
     
     func maxValue() -> Double {
         let maxIndex = realIndexForIndex(numberOfPointsInLineGraph(graphView) - 1)
         
-        return valueForIndex(maxIndex)!
+        return valueForIndex(maxIndex)
     }
     
     // MARK: Graph
@@ -232,13 +232,13 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         let val = valueForIndex(index)
         
         if delegate?.formatValue != nil {
-            return delegate!.formatValue!(val!)
+            return delegate!.formatValue!(val)
         } else {
-            return "\(val!)"
+            return "\(val)"
         }
     }
 
-    func valueForIndex(index: NSInteger) -> Double? {
+    func valueForIndex(index: NSInteger) -> Double {
         let value = values?[index] as [String: AnyObject]
         var doubleValue = value["value"] as Double
         return Double(Int(doubleValue * 100))/100.0

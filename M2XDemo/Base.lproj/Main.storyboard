@@ -399,7 +399,7 @@
         <!--Moms Exercise (min)-->
         <scene sceneID="ogv-zN-gPJ">
             <objects>
-                <viewController title="Moms Exercise (min)" id="faU-0N-bMK" customClass="ExerciseViewController" customModule="Healthy_Baby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Moms Exercise (min)" id="faU-0N-bMK" customClass="HBExerciseViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z4y-u8-xk1"/>
                         <viewControllerLayoutGuide type="bottom" id="Usw-cN-uVV"/>
@@ -809,6 +809,6 @@
         <image name="WeightIconBig" width="52" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fi5-4C-Gig"/>
+        <segue reference="WvE-yG-qTa"/>
     </inferredMetricsTieBreakers>
 </document>

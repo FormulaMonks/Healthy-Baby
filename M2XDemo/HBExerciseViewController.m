@@ -1,15 +1,15 @@
 //
-//  HBWeightViewController.m
+//  HBExerciseViewController.m
 //  M2XDemo
 //
-//  Created by Luis Floreani on 1/5/15.
+//  Created by Luis Floreani on 1/6/15.
 //  Copyright (c) 2015 citrusbyte.com. All rights reserved.
 //
 
-#import "HBWeightViewController.h"
+#import "HBExerciseViewController.h"
 #import "Healthy_Baby-Swift.h"
 
-@interface HBWeightViewController() <ChartViewControllerDelegate>
+@interface HBExerciseViewController () <ChartViewControllerDelegate>
 
 @property IBOutlet UILabel *detailNoDataLabel;
 
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation HBWeightViewController
+@implementation HBExerciseViewController
 
 - (instancetype)init
 {
@@ -36,7 +36,7 @@
     [super viewDidLoad];
     
     UINavigationBar *nav = self.navigationController.navigationBar;
-    nav.barTintColor = [Colors weightColor];
+    nav.barTintColor = [Colors exerciseColor];
     
     _chartViewController.view.alpha = 0;
     _detailNoDataLabel.alpha = 0;
@@ -85,8 +85,8 @@
 }
 
 - (void)updateOnNewValues {
-    _chartViewController.deviceIdLabel.text = @"ID: Fitbit Scale";
-    _chartViewController.color = [Colors weightColor];
+    _chartViewController.deviceIdLabel.text = @"ID: Apple Watch";
+    _chartViewController.color = [Colors exerciseColor];
     
     [_chartViewController updateOnNewValues];
     
@@ -98,25 +98,23 @@
     if ([segue.destinationViewController isKindOfClass:[ChartViewController class]]) {
         _chartViewController = (ChartViewController *)segue.destinationViewController;
         _chartViewController.delegate = self;
-        _chartViewController.axisXUnit = @"weeks";
-        _chartViewController.axisYUnit = @"lb";
+        _chartViewController.axisXUnit = @"days";
+        _chartViewController.axisYUnit = @"min";
     }
 }
 
 - (NSArray *)values {
-    NSString *gain = @"-";
+    float value = [_chartViewController valueForIndex:0];
+    NSString *today = [NSString stringWithFormat:@"%.2f %@", value, _chartViewController.axisYUnit];
     
-    if (_chartViewController.maxIndex > 0) {
-        float min = [_chartViewController minValue];
-        float max = [_chartViewController maxValue];
-        float diff = max - min;
-        gain = [NSString stringWithFormat:@"%.2f lb", diff];
-    }
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateStyle = NSDateFormatterLongStyle;
+    NSString *date = [formatter stringFromDate:[NSDate date]];
     
     return @[
-             [[ChartDetailValue alloc] initWithLabel:@"Starting BMI 2" value:@"30"],
-             [[ChartDetailValue alloc] initWithLabel:@"Goal" value:@"13-17 lbs"],
-             [[ChartDetailValue alloc] initWithLabel:@"Baby Weight Gain" value:gain],
+             [[ChartDetailValue alloc] initWithLabel:@"Goal" value:@"Mins Daily, Low Impact"],
+             [[ChartDetailValue alloc] initWithLabel:@"Today" value:today],
+             [[ChartDetailValue alloc] initWithLabel:@"Date" value:date],
              ];
 }
 

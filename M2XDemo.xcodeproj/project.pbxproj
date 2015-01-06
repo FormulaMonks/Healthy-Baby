@@ -13,7 +13,6 @@
 		E20A563E1A5475850035A44E /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = E20A563D1A5475850035A44E /* ProximaNova-Light.otf */; };
 		E20BF30C1A015ACD003DD414 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20BF30B1A015ACD003DD414 /* Accelerate.framework */; };
 		E20BF30E1A015AE3003DD414 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20BF30D1A015AE3003DD414 /* QuartzCore.framework */; };
-		E216E4BE1A126D9F00D40F5B /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216E4BD1A126D9F00D40F5B /* ExerciseViewController.swift */; };
 		E21ED93C1A1BB4CA002E820A /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21ED9351A1BB4CA002E820A /* TPKeyboardAvoidingCollectionView.m */; };
 		E21ED93D1A1BB4CA002E820A /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21ED9371A1BB4CA002E820A /* TPKeyboardAvoidingScrollView.m */; };
 		E21ED93E1A1BB4CA002E820A /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E21ED9391A1BB4CA002E820A /* TPKeyboardAvoidingTableView.m */; };
@@ -74,6 +73,7 @@
 		E2953E7A1A3A3395006C5942 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E751A3A3395006C5942 /* NSString+TextDirectionality.m */; };
 		E29C19031A5BED210088854E /* HBProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19021A5BED210088854E /* HBProfileViewController.m */; };
 		E29C19061A5BED300088854E /* HBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19051A5BED300088854E /* HBSettingsViewController.m */; };
+		E29C19091A5BEF430088854E /* HBExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19081A5BEF430088854E /* HBExerciseViewController.m */; };
 		E29F5AED1A124CF800FFBAAD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */; };
 		E2AE699B1A14EB48002A3D81 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */; };
 		E2AE9BE91A24046D008E9F7A /* TriggerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */; };
@@ -151,7 +151,6 @@
 		E20A563D1A5475850035A44E /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
 		E20BF30B1A015ACD003DD414 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		E20BF30D1A015AE3003DD414 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		E216E4BD1A126D9F00D40F5B /* ExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		E21ED9341A1BB4CA002E820A /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		E21ED9351A1BB4CA002E820A /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		E21ED9361A1BB4CA002E820A /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -263,6 +262,8 @@
 		E29C19021A5BED210088854E /* HBProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBProfileViewController.m; sourceTree = "<group>"; };
 		E29C19041A5BED300088854E /* HBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBSettingsViewController.h; sourceTree = "<group>"; };
 		E29C19051A5BED300088854E /* HBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBSettingsViewController.m; sourceTree = "<group>"; };
+		E29C19071A5BEF430088854E /* HBExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBExerciseViewController.h; sourceTree = "<group>"; };
+		E29C19081A5BEF430088854E /* HBExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBExerciseViewController.m; sourceTree = "<group>"; };
 		E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerDetailViewController.swift; sourceTree = "<group>"; };
@@ -360,7 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */,
-				E216E4BD1A126D9F00D40F5B /* ExerciseViewController.swift */,
 				E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */,
 				E25E12CA1A376DF300599F6D /* PreKickViewController.swift */,
 				E2B919141A1A2B2900D67802 /* AddKickViewController.swift */,
@@ -378,6 +378,8 @@
 				E29C19021A5BED210088854E /* HBProfileViewController.m */,
 				E29C19041A5BED300088854E /* HBSettingsViewController.h */,
 				E29C19051A5BED300088854E /* HBSettingsViewController.m */,
+				E29C19071A5BEF430088854E /* HBExerciseViewController.h */,
+				E29C19081A5BEF430088854E /* HBExerciseViewController.m */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -942,6 +944,7 @@
 				E264FD281A1388A1004F0570 /* M13ProgressConsole.m in Sources */,
 				E245D49A1A0D292900176398 /* BEMCircle.m in Sources */,
 				E2DD64291A13ACB10071CEBB /* DTTimePeriodGroup.m in Sources */,
+				E29C19091A5BEF430088854E /* HBExerciseViewController.m in Sources */,
 				E2953DEA1A3A035A006C5942 /* ChartDetailCell.swift in Sources */,
 				E264FD351A1388A1004F0570 /* M13ProgressViewRadiative.m in Sources */,
 				E25E6A591A2CF9A100E1941F /* M2XTrigger.m in Sources */,
@@ -951,7 +954,6 @@
 				E245D4B21A0D341000176398 /* NSDate+M2X.m in Sources */,
 				E25E6A4D1A2CDEB300E1941F /* M2XClient+HTTP.m in Sources */,
 				E21ED93F1A1BB4CA002E820A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
-				E216E4BE1A126D9F00D40F5B /* ExerciseViewController.swift in Sources */,
 				E25E12CB1A376DF300599F6D /* PreKickViewController.swift in Sources */,
 				E264FD341A1388A1004F0570 /* M13ProgressViewPie.m in Sources */,
 				E21ED93C1A1BB4CA002E820A /* TPKeyboardAvoidingCollectionView.m in Sources */,
