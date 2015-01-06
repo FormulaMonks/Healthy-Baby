@@ -105,6 +105,9 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         graphView.enableReferenceYAxisLines = true
         graphView.colorXaxisLabel = UIColor.whiteColor()
         graphView.colorYaxisLabel = UIColor.whiteColor()
+        
+        let font:UIFont? = UIFont(name: "ProximaNova-Bold", size: 13.0)
+        graphView.labelFont = font
     }
     
     // MARK: Slider
@@ -144,8 +147,21 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         if realNumberOfPointsInLineGraph() > 0 {
             let minIndex = realIndexForIndex(0)
             let maxIndex = realIndexForIndex(numberOfPointsInLineGraph(graphView) - 1)
-            sliderLowerLabel.text = "\(fullDateLabelForIndex(minIndex))"
-            sliderHigherLabel.text = "\(fullDateLabelForIndex(maxIndex))"
+            
+            let font:UIFont? = UIFont(name: "Proxima Nova", size: 13.0)
+            let fontBold:UIFont? = UIFont(name: "ProximaNova-Bold", size: 14.0)
+
+            var str = (fullDateLabelForIndex(minIndex))
+            var attrString = NSMutableAttributedString(string: str)
+            attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
+            attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
+            sliderLowerLabel.attributedText = attrString
+            
+            str = (fullDateLabelForIndex(maxIndex))
+            attrString = NSMutableAttributedString(string: str)
+            attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
+            attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
+            sliderHigherLabel.attributedText = attrString
             
             updateDetails()
         }
