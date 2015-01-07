@@ -11,7 +11,7 @@
 @implementation NSDate (M2X)
 
 - (NSDate *)dateWithOutTime {
-    NSDateComponents* comps = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:self];
+    NSDateComponents* comps = [[NSCalendar currentCalendar] components:NSCalendarUnitDay|NSCalendarUnitMonth|NSCalendarUnitYear fromDate:self];
     return [[NSCalendar currentCalendar] dateFromComponents:comps];
 }
 
