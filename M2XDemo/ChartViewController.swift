@@ -127,6 +127,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             self.sliderLowerLabel.alpha = 0
             self.sliderHigherLabel.alpha = 0
             self.tableView.alpha = 0
+            self.deviceIdLabel.alpha = 0
         }) { (done: Bool) -> Void in
             self.updateSliderLabels()
             
@@ -139,6 +140,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
                 self.sliderLowerLabel.alpha = 1
                 self.sliderHigherLabel.alpha = 1
                 self.tableView.alpha = 1
+                self.deviceIdLabel.alpha = 1
             }
         }
     }
