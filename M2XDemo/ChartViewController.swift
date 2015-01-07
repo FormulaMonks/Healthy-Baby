@@ -122,23 +122,23 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             sliderView.upperValue = sliderView.maximumValue
         }
         
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
             self.graphView.alpha = 0.5
             self.sliderLowerLabel.alpha = 0
             self.sliderHigherLabel.alpha = 0
             self.tableView.alpha = 0
         }) { (done: Bool) -> Void in
-            UIView.animateWithDuration(1.5) {
+            self.updateSliderLabels()
+            
+            self.graphView.reloadGraph()
+            
+            self.updateDetails()
+
+            UIView.animateWithDuration(1.0) {
                 self.graphView.alpha = 1
                 self.sliderLowerLabel.alpha = 1
                 self.sliderHigherLabel.alpha = 1
                 self.tableView.alpha = 1
-
-                self.updateSliderLabels()
-                
-                self.graphView.reloadGraph()
-                
-                self.updateDetails()
             }
         }
     }
