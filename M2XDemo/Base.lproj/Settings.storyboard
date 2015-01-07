@@ -368,7 +368,7 @@
                                                     <rect key="frame" x="232" y="15" width="74" height="19"/>
                                                     <color key="textColor" red="0.42915013229999999" green="0.42915013229999999" blue="0.42915013229999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -394,7 +394,7 @@
                                                     <rect key="frame" x="227" y="14" width="79" height="19"/>
                                                     <color key="textColor" red="0.42915013229999999" green="0.42915013229999999" blue="0.42915013229999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>

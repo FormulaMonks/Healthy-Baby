@@ -17,7 +17,7 @@ class TriggerDetailTableViewController: UITableViewController, UIPickerViewDataS
     @IBOutlet private var valueLabel: UITextField!
     @IBOutlet private var conditionPicker: UIPickerView!
     @IBOutlet private var conditionLabel: UILabel!
-    @IBOutlet private var callbackLabel: UITextField!
+    @IBOutlet private var callbackLabel: UILabel!
     @IBOutlet private var deleteButton: UIButton!
     
     var trigger: M2XTrigger?
@@ -52,7 +52,6 @@ class TriggerDetailTableViewController: UITableViewController, UIPickerViewDataS
             conditionPicker.selectRow(conditions.count/2, inComponent: 0, animated: true)
             conditionLabel.text = conditions[conditions.count/2]
             callbackLabel.text = callbackMockValue
-            callbackLabel.enabled = false
         }
     }
     
@@ -83,7 +82,6 @@ class TriggerDetailTableViewController: UITableViewController, UIPickerViewDataS
         
         nameLabel.resignFirstResponder()
         valueLabel.resignFirstResponder()
-        callbackLabel.resignFirstResponder()
         
         var defaults = NSUserDefaults.standardUserDefaults()
         let key = defaults.valueForKey("key") as? String
