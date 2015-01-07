@@ -44,7 +44,7 @@
     
     [ProgressHUD showCBBProgressWithStatus:@"Loading Device"];
     DeviceData *model = [[DeviceData alloc] init];
-    [model fetchDevice:HBDeviceTypeWeight completionHandler:^(M2XDevice *device, NSArray *values, M2XResponse *response) {
+    [model fetchDevice:HBDeviceTypeExercise completionHandler:^(M2XDevice *device, NSArray *values, M2XResponse *response) {
         [ProgressHUD hideCBBProgress];
         
         if (response.error) {
