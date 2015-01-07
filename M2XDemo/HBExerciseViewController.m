@@ -38,7 +38,7 @@
     UINavigationBar *nav = self.navigationController.navigationBar;
     nav.barTintColor = [Colors exerciseColor];
     
-    _chartViewController.view.alpha = 0;
+    _chartViewController.color = [Colors exerciseColor];
     _detailNoDataLabel.alpha = 0;
     _detailNoDataLabel.textColor = [Colors grayColor];
     
@@ -86,7 +86,6 @@
 
 - (void)updateOnNewValues {
     _chartViewController.deviceIdLabel.text = @"ID: Apple Watch";
-    _chartViewController.color = [Colors exerciseColor];
     
     [_chartViewController updateOnNewValues];
     

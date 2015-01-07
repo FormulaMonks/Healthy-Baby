@@ -559,9 +559,15 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="F5T-aO-AF5" firstAttribute="leading" secondItem="WTs-xh-EEo" secondAttribute="leadingMargin" constant="6" id="bZj-Lu-aFN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="F5T-aO-AF5" secondAttribute="trailing" constant="-2" id="xJn-j2-Qf0"/>
                                                 <constraint firstAttribute="centerY" secondItem="F5T-aO-AF5" secondAttribute="centerY" constant="-1" id="xNa-w9-GDT"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="xJn-j2-Qf0"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>

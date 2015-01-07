@@ -32,7 +32,7 @@ class GlucoseViewController: HBBaseViewController, ChartViewControllerDelegate {
         var nav = self.navigationController?.navigationBar
         nav?.barTintColor = GlucoseViewController.themeColor
 
-        chartViewController?.view.alpha = 0
+        chartViewController!.color = GlucoseViewController.themeColor
         detailNoDataLabel.alpha = 0
         detailNoDataLabel.textColor = Colors.grayColor
 
@@ -81,8 +81,6 @@ class GlucoseViewController: HBBaseViewController, ChartViewControllerDelegate {
     
     func updateOnNewValues() {
         chartViewController!.deviceIdLabel.text = "ID: Glucose Sensor"
-        let color = GlucoseViewController.themeColor
-        chartViewController!.color = color
 
         chartViewController!.updateOnNewValues()
         

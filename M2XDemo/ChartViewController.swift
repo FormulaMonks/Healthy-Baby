@@ -45,8 +45,6 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     var values: [AnyObject]?
     var details = [ChartDetailValue]()
 
-    let maxSamples = 1000 // for interpolation purposes
-    
     var color: UIColor {
         set {
             graphView.colorTop = newValue
@@ -55,6 +53,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             separatorView.backgroundColor = newValue
             
             barView.backgroundColor = newValue.colorWithAlphaComponent(0.5)
+            view.backgroundColor = newValue
         }
         get {
             return graphView.colorTop
@@ -85,13 +84,10 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         sliderView.stepValueContinuously = true
         sliderView.continuous = false
         sliderView.stepValue = 1
-        sliderView.alpha = 0
         sliderView.backgroundColor = UIColor.clearColor()
-        sliderLowerLabel.text = "-"
-        sliderHigherLabel.text = "-"
+        sliderLowerLabel.text = "Start"
+        sliderHigherLabel.text = "End"
         
-        sliderLowerLabel.alpha = 0
-        sliderHigherLabel.alpha = 0
         cacheLabel.alpha = 0
 
         barView.backgroundColor = UIColor.clearColor()
@@ -106,7 +102,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         graphView.colorXaxisLabel = UIColor.whiteColor()
         graphView.colorYaxisLabel = UIColor.whiteColor()
         
-        let font:UIFont? = UIFont(name: "ProximaNova-Bold", size: 13.0)
+        let font:UIFont? = UIFont(name: "Proxima Nova", size: 13.0)
         graphView.labelFont = font
     }
     
@@ -116,15 +112,13 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         minIndex = 0
         maxIndex = values != nil ? values!.count - 1 : 0
         
-        sliderLowerLabel.alpha = maxIndex > 0 ? 1 : 0
-        sliderHigherLabel.alpha = maxIndex > 0 ? 1 : 0
-        sliderView.alpha = maxIndex > 0 ? 1 : 0
-        
         if maxIndex > 0 {
             sliderView.minimumValue = 0
             sliderView.lowerValue = sliderView.minimumValue
             sliderView.maximumValue = Float(maxIndex)
             sliderView.upperValue = sliderView.maximumValue
+            
+            view.backgroundColor = UIColor.clearColor()
         }
         
         updateSliderLabels()
@@ -144,7 +138,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     }
     
     private func updateSliderLabels() {
-        if realNumberOfPointsInLineGraph() > 0 {
+        if numberOfPointsInLineGraph(graphView) > 0 {
             let minIndex = realIndexForIndex(0)
             let maxIndex = realIndexForIndex(numberOfPointsInLineGraph(graphView) - 1)
             
@@ -181,13 +175,8 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     
     // MARK: Graph
     
-    private func realNumberOfPointsInLineGraph() -> NSInteger {
-        return maxIndex - minIndex + 1
-    }
-    
     func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> NSInteger {
-        return min(maxSamples, realNumberOfPointsInLineGraph())
-//        return realNumberOfPointsInLineGraph()
+        return maxIndex - minIndex + 1
     }
     
     func numberOfGapsBetweenLabelsOnLineGraph(graph: BEMSimpleLineGraphView) -> NSInteger {
@@ -195,10 +184,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     }
     
     private func realIndexForIndex(index: NSInteger) -> NSInteger {
-        let gap : Float = max(1.0, Float(realNumberOfPointsInLineGraph() - 1) / Float(maxSamples - 1))
-        let jump = Int(round(Float(index) * gap))
-        return values!.count - 1 - minIndex - jump
-//        return values!.count - 1 - minIndex - index
+        return values!.count - 1 - minIndex - index
     }
     
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: NSInteger) -> CGFloat {

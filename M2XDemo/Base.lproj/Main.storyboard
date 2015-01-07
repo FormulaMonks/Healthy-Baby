@@ -689,7 +689,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nXq-jL-BNl" firstAttribute="top" secondItem="nGJ-ny-2Fr" secondAttribute="bottom" id="0b0-CQ-nct"/>
                             <constraint firstItem="nGJ-ny-2Fr" firstAttribute="top" secondItem="MBp-qL-A3X" secondAttribute="bottom" id="23t-IY-g9E"/>
