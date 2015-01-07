@@ -18,6 +18,12 @@ class M2XHUD : M13ProgressHUD {
 @objc class ProgressHUD {
     class func showCBBProgress(status: String? = nil) -> M13ProgressHUD {
         let window = (UIApplication.sharedApplication().delegate as AppDelegate).window
+
+        return ProgressHUD.showCBBProgress(status: status, center: window!.center)
+    }
+    
+    class func showCBBProgress(status: String? = nil, center: CGPoint) -> M13ProgressHUD {
+        let window = (UIApplication.sharedApplication().delegate as AppDelegate).window
         var hud = M2XHUD(progressView: M13ProgressViewRing())
         hud.primaryColor = UIColor.grayColor()
         hud.secondaryColor = UIColor.grayColor()
@@ -33,13 +39,15 @@ class M2XHUD : M13ProgressHUD {
         }
         window?.addSubview(hud)
         hud.show(true)
+        
+        hud.center = center
 
         return hud
     }
     
     class func hideCBBProgress() {
         let window = (UIApplication.sharedApplication().delegate as AppDelegate).window
-        dispatchDelayed {
+        dispatchDelayed(0.1) {
             if let hud = window?.viewWithTag(CBBProgresViewTag) as? M13ProgressHUD {
                 hud.performAction(M13ProgressViewActionSuccess, animated: true)
                 hud.indeterminate = false
@@ -57,8 +65,9 @@ class M2XHUD : M13ProgressHUD {
         }
     }
     
-    private class func dispatchDelayed(block: () -> Void) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+    private class func dispatchDelayed(delay: Float, block: () -> Void) {
+        let myDelay = Double(delay) * Double(NSEC_PER_SEC)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(myDelay)), dispatch_get_main_queue()) { () -> Void in
             block()
         }
     }

@@ -336,7 +336,7 @@ extension String  {
     }
     
     private func dispatchDelayed(block: () -> Void) {
-        let delay = isOffline() ? 0 : apiDelay
+        let delay = DeviceData.isOffline() ? 0 : apiDelay
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
             block()
         }
@@ -484,18 +484,18 @@ extension DeviceData {
     func canHandleRequest(request: NSURLRequest!) -> Bool {
         let isGet = request.HTTPMethod == "GET"
         
-        if isOffline() && !isGet {
+        if DeviceData.isOffline() && !isGet {
             return true
         } else {
             let path = cachePathFor(request)
             
             let hasCache = NSFileManager.defaultManager().fileExistsAtPath(path)
             
-            return hasCache && isOffline()
+            return hasCache && DeviceData.isOffline()
         }
     }
     
-    func isOffline() -> Bool {
+    class func isOffline() -> Bool {
         var defaults = NSUserDefaults.standardUserDefaults()
         let manager = NSFileManager.defaultManager()
         let offlineSetting = defaults.valueForKey("offline") as? Bool

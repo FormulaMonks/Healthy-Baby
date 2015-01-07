@@ -12,4 +12,6 @@
 
 + (void)handleErrorAlert:(NSError *)error;
 
+- (void)callWhenViewIsReady:(dispatch_block_t)block;
+
 @end

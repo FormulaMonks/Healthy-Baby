@@ -42,27 +42,35 @@
     _detailNoDataLabel.alpha = 0;
     _detailNoDataLabel.textColor = [Colors grayColor];
     
-    [ProgressHUD showCBBProgressWithStatus:@"Loading Device"];
-    DeviceData *model = [[DeviceData alloc] init];
-    [model fetchDevice:HBDeviceTypeExercise completionHandler:^(M2XDevice *device, NSArray *values, M2XResponse *response) {
-        [ProgressHUD hideCBBProgress];
+    [self callWhenViewIsReady:^{
         
-        if (response.error) {
-            [HBBaseViewController handleErrorAlert:response.errorObject];
-        } else {
-            NSString *cache = response.headers[@"X-Cache"];
-            if ([cache isEqualToString:@"HIT"]) {
-                OLGhostAlertView *alert = [[OLGhostAlertView alloc] initWithTitle:@"Data from Cache" message:nil timeout:1.0 dismissible:YES];
-                alert.style = OLGhostAlertViewStyleDark;
-                [alert show];
-                
-                _chartViewController.cached = YES;
-            }
-            
-            _deviceId = device[@"id"];
-            _chartViewController.values = values;
-            [self updateOnNewValuesAnimated];
+        if (![DeviceData isOffline]) {
+            UIWindow *window = [[UIApplication sharedApplication].delegate window];
+            CGPoint center = [_chartViewController.view convertPoint:_chartViewController.containerView.center toView:window];
+            [ProgressHUD showCBBProgressWithStatus:@"Loading Device" center:center];
         }
+        
+        DeviceData *model = [[DeviceData alloc] init];
+        [model fetchDevice:HBDeviceTypeExercise completionHandler:^(M2XDevice *device, NSArray *values, M2XResponse *response) {
+            [ProgressHUD hideCBBProgress];
+            
+            if (response.error) {
+                [HBBaseViewController handleErrorAlert:response.errorObject];
+            } else {
+                NSString *cache = response.headers[@"X-Cache"];
+                if ([cache isEqualToString:@"HIT"]) {
+                    OLGhostAlertView *alert = [[OLGhostAlertView alloc] initWithTitle:@"Data from Cache" message:nil timeout:1.0 dismissible:YES];
+                    alert.style = OLGhostAlertViewStyleDark;
+                    [alert show];
+                    
+                    _chartViewController.cached = YES;
+                }
+                
+                _deviceId = device[@"id"];
+                _chartViewController.values = values;
+                [self updateOnNewValuesAnimated];
+            }
+        }];
     }];
 }
 
@@ -103,8 +111,11 @@
 }
 
 - (NSArray *)values {
-    float value = [_chartViewController valueForIndex:0];
-    NSString *today = [NSString stringWithFormat:@"%.2f %@", value, _chartViewController.axisYUnit];
+    NSString *today = @"-";
+    if (_chartViewController.maxIndex > 0) {
+        float value = [_chartViewController valueForIndex:0];
+        today = [NSString stringWithFormat:@"%.2f %@", value, _chartViewController.axisYUnit];
+    }
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateStyle = NSDateFormatterLongStyle;

@@ -46,36 +46,44 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
         detailNoDataLabel.alpha = 0
         detailNoDataLabel.textColor = Colors.grayColor
 
-        ProgressHUD.showCBBProgress(status: "Loading Device")
-        model.fetchDevice(HBDeviceTypeKick) { [weak self] (device:M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
-            ProgressHUD.hideCBBProgress()
+        callWhenViewIsReady {
+            
+            if !DeviceData.isOffline() {
+                let window = UIApplication.sharedApplication().delegate?.window!
+                let center = self.chartViewController!.view.convertPoint(self.chartViewController!.containerView.center, toView:window)
+                ProgressHUD.showCBBProgress(status: "Loading Device", center: center)
+            }
 
-            if response.error {
-                HBBaseViewController.handleErrorAlert(response.errorObject!)
-            } else {
-                let cache = response.headers["X-Cache"] as NSString?
-                if cache? == "HIT" {
-                    let ghost = OLGhostAlertView(title: "Data from Cache", message: nil, timeout: 1.0, dismissible: true);
-                    ghost.style = .Dark
-                    ghost.show()
+            self.model.fetchDevice(HBDeviceTypeKick) { [weak self] (device:M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
+                ProgressHUD.hideCBBProgress()
+
+                if response.error {
+                    HBBaseViewController.handleErrorAlert(response.errorObject!)
+                } else {
+                    let cache = response.headers["X-Cache"] as NSString?
+                    if cache? == "HIT" {
+                        let ghost = OLGhostAlertView(title: "Data from Cache", message: nil, timeout: 1.0, dismissible: true);
+                        ghost.style = .Dark
+                        ghost.show()
+                        
+                        self?.chartViewController!.cached = true
+                    }
+
+                    self?.stream = M2XStream(client: self?.client, device: device, attributes: ["name": StreamType.Kick.rawValue])
+                    self?.stream?.client?.delegate = self?.model // for cache
+
+                    self?.deviceId = device!["id"] as? String
+                    self?.addButtonItem.enabled = true
+                    self?.triggerButtonItem.enabled = true
                     
-                    self?.chartViewController!.cached = true
+                    if let vals = values {
+                        self?.chartViewController!.values = self?.generateValuesForAllDays(vals)
+                    }
+                    
+                    self?.updateOnNewValues()
+
+                    self?.updateInstallation()
                 }
-
-                self?.stream = M2XStream(client: self?.client, device: device, attributes: ["name": StreamType.Kick.rawValue])
-                self?.stream?.client?.delegate = self?.model // for cache
-
-                self?.deviceId = device!["id"] as? String
-                self?.addButtonItem.enabled = true
-                self?.triggerButtonItem.enabled = true
-                
-                if let vals = values {
-                    self?.chartViewController!.values = self?.generateValuesForAllDays(vals)
-                }
-                
-                self?.updateOnNewValues()
-
-                self?.updateInstallation()
             }
         }
     }
@@ -155,7 +163,9 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
     }
     
     func loadData() {
-        ProgressHUD.showCBBProgress(status: "Loading Data")
+        let window = UIApplication.sharedApplication().delegate?.window!
+        let center = self.chartViewController!.view.convertPoint(self.chartViewController!.containerView.center, toView:window)
+        ProgressHUD.showCBBProgress(status: "Loading Data", center: center)
 
         let params = ["limit": 1000]
 

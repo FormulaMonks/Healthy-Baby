@@ -9,13 +9,17 @@
 #import "HBBaseViewController.h"
 
 @interface HBBaseViewController ()
-
+@property NSMutableArray *blocks;
 @end
 
 @implementation HBBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (!_blocks) {
+        _blocks = [[NSMutableArray alloc] init];
+    }
     
     UINavigationBar *bar = self.navigationController.navigationBar;
     bar.barStyle = UIBarStyleBlack;
@@ -30,6 +34,19 @@
     self.navigationItem.backBarButtonItem.title=@"";
     self.navigationController.navigationBar.backIndicatorImage = backBtn;
     self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    for (dispatch_block_t block in _blocks) {
+        block();
+    }
+    
+    [_blocks removeAllObjects];
+}
+
+- (void)callWhenViewIsReady:(dispatch_block_t)block {
+    [_blocks addObject:block];
 }
 
 + (void)handleErrorAlert:(NSError *)error {

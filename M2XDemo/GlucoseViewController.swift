@@ -36,27 +36,35 @@ class GlucoseViewController: HBBaseViewController, ChartViewControllerDelegate {
         detailNoDataLabel.alpha = 0
         detailNoDataLabel.textColor = Colors.grayColor
 
-        ProgressHUD.showCBBProgress(status: "Loading Device")
-        model.fetchDevice(HBDeviceTypeGlucose) { [weak self] (device: M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
-            ProgressHUD.hideCBBProgress()
-
-            if response.error {
-                HBBaseViewController.handleErrorAlert(response.errorObject!)
-            } else {
-                let cache = response.headers["X-Cache"] as NSString?
-                if cache? == "HIT" {
-                    let ghost = OLGhostAlertView(title: "Data from Cache", message: nil, timeout: 1.0, dismissible: true);
-                    ghost.style = .Dark
-                    ghost.show()
-
-                    self?.chartViewController!.cached = true
-                }
-
-                self?.deviceId = device!["id"] as? String
-
-                self?.chartViewController!.values = values
+        callWhenViewIsReady {
+            
+            if !DeviceData.isOffline() {
+                let window = UIApplication.sharedApplication().delegate?.window!
+                let center = self.chartViewController!.view.convertPoint(self.chartViewController!.containerView.center, toView:window)
+                ProgressHUD.showCBBProgress(status: "Loading Device", center: center)
+            }
+            
+            self.model.fetchDevice(HBDeviceTypeGlucose) { [weak self] (device: M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
+                ProgressHUD.hideCBBProgress()
                 
-                self?.updateOnNewValuesAnimated()
+                if response.error {
+                    HBBaseViewController.handleErrorAlert(response.errorObject!)
+                } else {
+                    let cache = response.headers["X-Cache"] as NSString?
+                    if cache? == "HIT" {
+                        let ghost = OLGhostAlertView(title: "Data from Cache", message: nil, timeout: 1.0, dismissible: true);
+                        ghost.style = .Dark
+                        ghost.show()
+                        
+                        self?.chartViewController!.cached = true
+                    }
+                    
+                    self?.deviceId = device!["id"] as? String
+                    
+                    self?.chartViewController!.values = values
+                    
+                    self?.updateOnNewValuesAnimated()
+                }
             }
         }
     }

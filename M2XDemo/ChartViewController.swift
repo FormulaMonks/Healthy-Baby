@@ -31,6 +31,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     @IBOutlet var sliderLowerLabel: UILabel!
     @IBOutlet var sliderHigherLabel: UILabel!
     @IBOutlet var cacheLabel: UILabel!
+    @IBOutlet var containerView: UIView!
     @IBOutlet var separatorView: UIView!
     @IBOutlet var barView: UIView!
     @IBOutlet var tableView: UITableView!
@@ -51,9 +52,9 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             graphView.colorBottom = newValue
             sliderView.tintColor = newValue
             separatorView.backgroundColor = newValue
+            containerView.backgroundColor = newValue
             
             barView.backgroundColor = newValue.colorWithAlphaComponent(0.5)
-            view.backgroundColor = newValue
         }
         get {
             return graphView.colorTop
@@ -85,8 +86,8 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         sliderView.continuous = false
         sliderView.stepValue = 1
         sliderView.backgroundColor = UIColor.clearColor()
-        sliderLowerLabel.text = "Start"
-        sliderHigherLabel.text = "End"
+        sliderLowerLabel.text = "--"
+        sliderHigherLabel.text = "--"
         
         cacheLabel.alpha = 0
 
@@ -102,8 +103,10 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         graphView.colorXaxisLabel = UIColor.whiteColor()
         graphView.colorYaxisLabel = UIColor.whiteColor()
         
-        let font:UIFont? = UIFont(name: "Proxima Nova", size: 13.0)
+        let font:UIFont? = UIFont(name: "ProximaNova-Bold", size: 13.0)
         graphView.labelFont = font
+        
+        updateDetails()
     }
     
     // MARK: Slider
@@ -117,15 +120,27 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             sliderView.lowerValue = sliderView.minimumValue
             sliderView.maximumValue = Float(maxIndex)
             sliderView.upperValue = sliderView.maximumValue
-            
-            view.backgroundColor = UIColor.clearColor()
         }
         
-        updateSliderLabels()
-        
-        graphView.reloadGraph()
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.graphView.alpha = 0.5
+            self.sliderLowerLabel.alpha = 0
+            self.sliderHigherLabel.alpha = 0
+            self.tableView.alpha = 0
+        }) { (done: Bool) -> Void in
+            UIView.animateWithDuration(1.5) {
+                self.graphView.alpha = 1
+                self.sliderLowerLabel.alpha = 1
+                self.sliderHigherLabel.alpha = 1
+                self.tableView.alpha = 1
 
-        updateDetails()
+                self.updateSliderLabels()
+                
+                self.graphView.reloadGraph()
+                
+                self.updateDetails()
+            }
+        }
     }
     
     @IBAction func sliderDidChange(slider: NMRangeSlider) {
@@ -278,7 +293,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     private func updateDetails() {
         if let del = delegate {
             details = del.values()
-            let first = ChartDetailValue(label: "Samples", value: "\(values?.count ?? 0)")
+            let first = ChartDetailValue(label: "Samples", value: values?.count > 0 ? "\(values!.count)" : "-")
             details.insert(first, atIndex: 0)
             tableView.reloadData()
         }

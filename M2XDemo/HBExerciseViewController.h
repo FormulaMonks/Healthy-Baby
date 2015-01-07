@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 citrusbyte.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HBBaseViewController.h"
 
-@interface HBExerciseViewController : UIViewController
+@interface HBExerciseViewController : HBBaseViewController
 
 @end
