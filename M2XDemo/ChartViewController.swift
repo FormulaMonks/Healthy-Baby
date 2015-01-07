@@ -90,6 +90,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         sliderHigherLabel.text = "--"
         
         cacheLabel.alpha = 0
+        deviceIdLabel.alpha = 0
 
         barView.backgroundColor = UIColor.clearColor()
         separatorView.backgroundColor = UIColor.clearColor()
