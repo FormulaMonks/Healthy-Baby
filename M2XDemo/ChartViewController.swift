@@ -133,7 +133,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             self.sliderHigherLabel.alpha = 0
             self.deviceIdLabel.alpha = 0
         }) { (done: Bool) -> Void in
-            self.updateSliderLabels()
+            self.updateSliderLabels(false)
             
             self.graphView.reloadGraph()
             
@@ -147,15 +147,19 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func sliderDidChange(slider: NMRangeSlider) {
+        if values == nil {
+            return // in case the slider change while data is being loaded
+        }
+        
         minIndex = Int(slider.lowerValue)
         maxIndex = Int(slider.upperValue)
         
-        updateSliderLabels()
+        updateSliderLabels(true)
 
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: graphView, selector: Selector("reloadGraph"), userInfo: nil, repeats: false)
     }
     
-    private func updateSliderLabels() {
+    private func updateSliderLabels(updateDetail: Bool) {
         if numberOfPointsInLineGraph(graphView) > 0 {
             let minIndex = realIndexForIndex(0)
             let maxIndex = realIndexForIndex(numberOfPointsInLineGraph(graphView) - 1)
@@ -174,6 +178,10 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
             attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
             sliderHigherLabel.attributedText = attrString
+            
+            if updateDetail {
+                updateDetails()
+            }
         }
     }
     
@@ -295,7 +303,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         if let del = delegate {
             details = del.values()
             
-            let first = ChartDetailValue(label: "Samples", value: values?.count > 0 ? "\(values!.count)" : "-")
+            let first = ChartDetailValue(label: "Samples", value: values?.count > 0 ? "\(numberOfPointsInLineGraph(graphView))" : "-")
             details.insert(first, atIndex: 0)
             tableView.reloadData()
         }
