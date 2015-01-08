@@ -17,7 +17,13 @@
         NSDate *date1 = [NSDate fromISO8601:obj1[@"timestamp"]];
         NSDate *date2 = [NSDate fromISO8601:obj2[@"timestamp"]];
         
-        return [date1 isEarlierThan:date2];
+        if ([date1 isEarlierThan:date2]) {
+            return NSOrderedAscending;
+        } else if ([date2 isEarlierThan:date1]) {
+            return NSOrderedDescending;
+        } else {
+            return NSOrderedSame;
+        }
     }];
 }
 
