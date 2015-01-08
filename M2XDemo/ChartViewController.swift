@@ -43,7 +43,12 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     var minIndex: Int = 0
     var maxIndex: Int = 0
 
-    var values: [AnyObject]?
+    var values: [AnyObject]? {
+        didSet {
+            sliderView.enabled = values?.count > 0
+        }
+    }
+
     var details = [ChartDetailValue]()
     
     var valuesByRow = [Int: String]()
@@ -204,7 +209,8 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     }
     
     func numberOfGapsBetweenLabelsOnLineGraph(graph: BEMSimpleLineGraphView) -> NSInteger {
-        return numberOfPointsInLineGraph(graphView) / 5
+        let gaps = numberOfPointsInLineGraph(graphView) / 5
+        return gaps
     }
     
     private func realIndexForIndex(index: NSInteger) -> NSInteger {
@@ -224,18 +230,41 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         let value = values?[index] as [String: AnyObject]
         let timestamp = value["timestamp"] as String
         
-        let date = NSDate.fromISO8601(timestamp, timeZone: NSTimeZone.systemTimeZone(), locale: NSLocale.currentLocale())
+        let date = NSDate.fromISO8601(timestamp)
         
         let now = NSDate()
         
-        let weeks = now.weeksFrom(date)
-        
-        if weeks == 0 {
-            return "this week"
-        } else if weeks == 1 {
-            return "\(weeks) week ago"
+        var unit = ""
+        var dateValue = 0
+        var nowValue = ""
+        if now.minutesFrom(date) < 1 {
+            nowValue = "now"
+            dateValue = Int(now.secondsFrom(date))
+            unit = "second"
+        } else if now.hoursFrom(date) < 1 {
+            nowValue = "now"
+            dateValue = Int(now.minutesFrom(date))
+            unit = "minute"
+        } else if now.daysFrom(date) < 1 {
+            nowValue = "now"
+            dateValue = Int(now.hoursFrom(date))
+            unit = "hour"
+        } else if now.weeksFrom(date) < 1 {
+            nowValue = "today"
+            dateValue = now.daysFrom(date)
+            unit = "day"
         } else {
-            return "\(weeks) weeks"
+            nowValue = "this week"
+            dateValue = now.weeksFrom(date)
+            unit = "week"
+        }
+        
+        if dateValue == 0 {
+            return nowValue
+        } else if dateValue == 1 {
+            return "\(dateValue) \(unit) ago"
+        } else {
+            return "\(dateValue) \(unit)s"
         }
     }
 

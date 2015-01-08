@@ -11,8 +11,6 @@
 
 @interface HBExerciseViewController () <ChartViewControllerDelegate>
 
-@property IBOutlet UILabel *detailNoDataLabel;
-
 @property ChartViewController *chartViewController;
 
 @property M2XClient *client;
@@ -39,8 +37,6 @@
     nav.barTintColor = [Colors exerciseColor];
     
     _chartViewController.color = [Colors exerciseColor];
-    _detailNoDataLabel.alpha = 0;
-    _detailNoDataLabel.textColor = [Colors grayColor];
     
     [self callWhenViewIsReady:^{
         
@@ -98,7 +94,6 @@
     [_chartViewController updateOnNewValues];
     
     _chartViewController.view.alpha = _chartViewController.maxIndex > 0 ? 1 : 0;
-    _detailNoDataLabel.alpha = _chartViewController.maxIndex > 0 ? 0 : 1;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

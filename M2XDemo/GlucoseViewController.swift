@@ -10,7 +10,6 @@ import UIKit
 
 class GlucoseViewController: HBBaseViewController, ChartViewControllerDelegate {
     @IBOutlet var detailGoalLabel: UILabel!
-    @IBOutlet var detailNoDataLabel: UILabel!
     
     private let model = DeviceData()
     private var client: M2XClient {
@@ -33,8 +32,6 @@ class GlucoseViewController: HBBaseViewController, ChartViewControllerDelegate {
         nav?.barTintColor = GlucoseViewController.themeColor
 
         chartViewController!.color = GlucoseViewController.themeColor
-        detailNoDataLabel.alpha = 0
-        detailNoDataLabel.textColor = Colors.grayColor
 
         callWhenViewIsReady {
             
@@ -93,7 +90,6 @@ class GlucoseViewController: HBBaseViewController, ChartViewControllerDelegate {
         chartViewController!.updateOnNewValues()
         
         chartViewController?.view.alpha = chartViewController!.maxIndex > 0 ? 1 : 0
-        detailNoDataLabel.alpha = chartViewController!.maxIndex > 0 ? 0 : 1
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

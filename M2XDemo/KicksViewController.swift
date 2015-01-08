@@ -10,7 +10,6 @@ import Foundation
 import Parse
 
 class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, ChartViewControllerDelegate {
-    @IBOutlet var detailNoDataLabel: UILabel!
     @IBOutlet var addButtonItem: UIBarButtonItem!
     @IBOutlet var triggerButtonItem: UIBarButtonItem!
     
@@ -40,11 +39,7 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
         addButtonItem.enabled = false
         triggerButtonItem.enabled = false
 
-        detailNoDataLabel.textColor = Colors.grayColor
-
         chartViewController!.color = KicksViewController.themeColor
-        detailNoDataLabel.alpha = 0
-        detailNoDataLabel.textColor = Colors.grayColor
 
         callWhenViewIsReady {
             
@@ -52,7 +47,7 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
                 let window = UIApplication.sharedApplication().delegate?.window!
                 let center = self.chartViewController!.view.convertPoint(self.chartViewController!.containerView.center, toView:window)
                 ProgressHUD.showCBBProgress(status: "Loading Device", center: center)
-            }
+        }
 
             self.model.fetchDevice(HBDeviceTypeKick) { [weak self] (device:M2XDevice?, values: [AnyObject]?, response: M2XResponse!) -> Void in
                 ProgressHUD.hideCBBProgress()
@@ -125,8 +120,17 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
             var array = byDates[day] as NSMutableArray?
             if array == nil {
                 newValues.addObject(["timestamp": date.toISO8601(), "value": 0.0] as NSDictionary)
-            } else {
+            } else if byDates.count == 1 { // all samples from same day
                 newValues.addObjectsFromArray(array!)
+            } else {
+                var total:Float = 0.0
+                for value in array! {
+                    total += value["value"] as Float
+                }
+
+                let avg = total / Float(array!.count)
+                
+                newValues.addObject(["timestamp": date.toISO8601(), "value": avg] as NSDictionary)
             }
         }
         
@@ -202,8 +206,6 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
         chartViewController!.graphView.enableBezierCurve = true
 
         chartViewController!.updateOnNewValues()
-        
-        detailNoDataLabel.alpha = chartViewController!.maxIndex > 0 ? 0 : 1
         
         if chartViewController!.maxIndex > 0 {
             chartViewController?.view.alpha = 1

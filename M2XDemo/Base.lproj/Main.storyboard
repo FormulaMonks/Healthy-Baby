@@ -355,22 +355,10 @@
                                     <segue destination="efQ-eF-KDo" kind="embed" id="X3t-5H-b5X"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data, please wait a moment and come back since creation can take a while." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOM-vx-9bd">
-                                <rect key="frame" x="18" y="52" width="284" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="qPe-Kh-H0Y"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="eOM-vx-9bd" secondAttribute="trailing" constant="2" id="8Ph-Z6-80g"/>
                             <constraint firstAttribute="height" secondItem="4x0-xQ-AT9" secondAttribute="height" id="AT7-Pe-X5c"/>
-                            <constraint firstItem="eOM-vx-9bd" firstAttribute="leading" secondItem="FRD-Xa-qUd" secondAttribute="leadingMargin" constant="2" id="FaN-XE-kgS"/>
-                            <constraint firstItem="eOM-vx-9bd" firstAttribute="top" secondItem="1l4-hF-AsQ" secondAttribute="bottom" constant="32" id="N0f-0r-XHn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4x0-xQ-AT9" secondAttribute="trailing" constant="-16" id="QBD-AM-ns4"/>
                             <constraint firstItem="4x0-xQ-AT9" firstAttribute="leading" secondItem="FRD-Xa-qUd" secondAttribute="leadingMargin" constant="-16" id="bPD-gs-v9b"/>
                             <constraint firstAttribute="centerX" secondItem="4x0-xQ-AT9" secondAttribute="centerX" id="bje-EK-Nad"/>
@@ -386,7 +374,6 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="detailNoDataLabel" destination="eOM-vx-9bd" id="eab-Zy-ZDK"/>
                         <outlet property="deviceIdLabel" destination="o3M-mm-s98" id="Idm-fH-LWe"/>
                         <outlet property="sliderHigherLabel" destination="8vU-w6-g4i" id="Rns-8Q-OdU"/>
                         <outlet property="sliderLowerLabel" destination="vpI-gf-7yw" id="ksx-5Z-X4E"/>
@@ -414,26 +401,14 @@
                                     <segue destination="efQ-eF-KDo" kind="embed" id="WvE-yG-qTa"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data, please wait a moment and come back since creation can take a while." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaP-gk-Gtt">
-                                <rect key="frame" x="18" y="52" width="284" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="ynx-Ky-wZZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="EaP-gk-Gtt" firstAttribute="leading" secondItem="2MQ-T6-FYC" secondAttribute="leadingMargin" constant="2" id="1T8-fl-cn5"/>
                             <constraint firstAttribute="centerX" secondItem="6Y1-Jz-6H8" secondAttribute="centerX" id="MQe-bI-urL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EaP-gk-Gtt" secondAttribute="trailing" constant="2" id="UvO-dJ-wcA"/>
                             <constraint firstAttribute="width" secondItem="6Y1-Jz-6H8" secondAttribute="width" id="d3U-JF-FPF"/>
                             <constraint firstAttribute="height" secondItem="6Y1-Jz-6H8" secondAttribute="height" id="gkd-2j-143"/>
                             <constraint firstItem="6Y1-Jz-6H8" firstAttribute="top" secondItem="z4y-u8-xk1" secondAttribute="bottom" id="snX-qA-VQ3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6Y1-Jz-6H8" secondAttribute="trailing" constant="-16" id="um6-i4-USq"/>
-                            <constraint firstItem="EaP-gk-Gtt" firstAttribute="top" secondItem="z4y-u8-xk1" secondAttribute="bottom" constant="32" id="uxL-m5-EdN"/>
                             <constraint firstItem="6Y1-Jz-6H8" firstAttribute="leading" secondItem="2MQ-T6-FYC" secondAttribute="leadingMargin" constant="-16" id="vt9-Mg-i0F"/>
                         </constraints>
                         <variation key="default">
@@ -444,9 +419,6 @@
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="detailNoDataLabel" destination="EaP-gk-Gtt" id="xgX-0k-SyB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76D-JA-gNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -470,25 +442,13 @@
                                     <segue destination="efQ-eF-KDo" kind="embed" id="Fi5-4C-Gig"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not enough data, please add new values tapping '+'" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hef-sz-Aki">
-                                <rect key="frame" x="18" y="64" width="284" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="lDP-GG-FcH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hef-sz-Aki" secondAttribute="trailing" constant="2" id="14I-93-ePW"/>
-                            <constraint firstItem="Hef-sz-Aki" firstAttribute="top" secondItem="l0b-yE-vRx" secondAttribute="bottom" id="58S-X2-f32"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xHs-s6-0lJ" secondAttribute="trailing" constant="-16" id="JPp-Ll-7rf"/>
                             <constraint firstItem="xHs-s6-0lJ" firstAttribute="top" secondItem="l0b-yE-vRx" secondAttribute="bottom" id="LwM-tV-ERO"/>
                             <constraint firstAttribute="height" secondItem="xHs-s6-0lJ" secondAttribute="height" id="Ma5-Ic-X2Y"/>
                             <constraint firstAttribute="centerX" secondItem="xHs-s6-0lJ" secondAttribute="centerX" id="SFj-Ro-Z3c"/>
-                            <constraint firstItem="Hef-sz-Aki" firstAttribute="leading" secondItem="V1e-ta-UlY" secondAttribute="leadingMargin" constant="2" id="h8y-jy-29q"/>
                             <constraint firstItem="xHs-s6-0lJ" firstAttribute="leading" secondItem="V1e-ta-UlY" secondAttribute="leadingMargin" constant="-16" id="ner-Lg-HFf"/>
                             <constraint firstAttribute="width" secondItem="xHs-s6-0lJ" secondAttribute="width" id="tFT-MM-USE"/>
                         </constraints>
@@ -516,7 +476,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="addButtonItem" destination="glc-pW-0EG" id="1qh-Pl-aob"/>
-                        <outlet property="detailNoDataLabel" destination="Hef-sz-Aki" id="o6K-TE-dFL"/>
                         <outlet property="triggerButtonItem" destination="sRB-bn-8D0" id="9Gw-hQ-oFE"/>
                     </connections>
                 </viewController>
@@ -761,27 +720,15 @@
                                     <segue destination="efQ-eF-KDo" kind="embed" id="6G6-HU-wP4"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data, please wait a moment and come back since creation can take a while." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XF-Cn-yo2">
-                                <rect key="frame" x="18" y="52" width="284" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="c9k-US-OOg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="akE-xb-AXR" secondAttribute="trailing" constant="-16" id="Tvk-Tj-TnI"/>
-                            <constraint firstItem="6XF-Cn-yo2" firstAttribute="leading" secondItem="Vcy-YI-rqh" secondAttribute="leadingMargin" constant="2" id="VAe-pI-iAj"/>
                             <constraint firstAttribute="centerX" secondItem="akE-xb-AXR" secondAttribute="centerX" id="d6u-uq-wn9"/>
                             <constraint firstAttribute="height" secondItem="akE-xb-AXR" secondAttribute="height" id="eeb-FO-HFa"/>
                             <constraint firstItem="akE-xb-AXR" firstAttribute="top" secondItem="XGr-bd-hed" secondAttribute="bottom" id="fWR-Eh-uPM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6XF-Cn-yo2" secondAttribute="trailing" constant="2" id="n79-a0-Blb"/>
                             <constraint firstItem="akE-xb-AXR" firstAttribute="leading" secondItem="Vcy-YI-rqh" secondAttribute="leadingMargin" constant="-16" id="p5c-Va-dti"/>
                             <constraint firstItem="akE-xb-AXR" firstAttribute="width" secondItem="Vcy-YI-rqh" secondAttribute="width" id="rXb-ax-F2G"/>
-                            <constraint firstItem="6XF-Cn-yo2" firstAttribute="top" secondItem="XGr-bd-hed" secondAttribute="bottom" constant="32" id="rq8-yN-TkK"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -791,9 +738,6 @@
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="detailNoDataLabel" destination="6XF-Cn-yo2" id="gtg-SN-j0F"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCj-Eb-8En" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -810,6 +754,6 @@
         <image name="WeightIconBig" width="52" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6G6-HU-wP4"/>
+        <segue reference="Fi5-4C-Gig"/>
     </inferredMetricsTieBreakers>
 </document>
