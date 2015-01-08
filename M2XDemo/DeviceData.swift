@@ -217,6 +217,14 @@ extension String  {
         }
     }
     
+    func sortValues(values: [AnyObject]?) -> [AnyObject]? {
+        if values != nil {
+            return Helper.sortValues(values);
+        } else {
+            return values
+        }
+    }
+    
     private func fillSamples(type: DeviceType, device: M2XDevice, completionHandler: (values: [AnyObject]?, response: M2XResponse) -> ()) {
         let name = device["name"] as String
         var deviceEnum = DeviceType(rawValue: name)!
@@ -237,20 +245,12 @@ extension String  {
             let dict = (valuesResponse.json as [String: AnyObject])
             let values = dict["values"] as [AnyObject]
             
-            let sortBlock = { (values: [AnyObject]?) -> ([AnyObject]?) in
-                if values != nil {
-                    return Helper.sortValues(values);
-                } else {
-                    return values
-                }
-            }
-            
             if let foundCreation = creationDays { // auto creation of values
                 self.postMissingValues(type, streamType: streamType, existingValues: values, stream: stream, completionHandler: { (objects, response) -> () in
-                    completionHandler(values: sortBlock(objects), response: valuesResponse)
+                    completionHandler(values: self.sortValues(objects), response: valuesResponse)
                 })
             } else {
-                completionHandler(values: sortBlock(objects), response: valuesResponse)
+                completionHandler(values: self.sortValues(values), response: valuesResponse)
             }
         })
     }

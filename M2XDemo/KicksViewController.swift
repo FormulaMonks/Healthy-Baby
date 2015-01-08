@@ -188,7 +188,7 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
             if response.error {
                 HBBaseViewController.handleErrorAlert(response.errorObject!)
             } else {
-                self?.chartViewController!.values = objects
+                self?.chartViewController!.values = self?.model.sortValues(objects)
                 
                 self?.updateOnNewValuesAnimated()
             }
