@@ -45,6 +45,9 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
 
     var values: [AnyObject]?
     var details = [ChartDetailValue]()
+    
+    var labelValuesByRow = [Int: UILabel]()
+    var rowByLabelValues = [UILabel: Int]()
 
     var color: UIColor {
         set {
@@ -123,24 +126,22 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             sliderView.upperValue = sliderView.maximumValue
         }
         
+        self.updateDetails()
+
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             self.graphView.alpha = 0.5
             self.sliderLowerLabel.alpha = 0
             self.sliderHigherLabel.alpha = 0
-            self.tableView.alpha = 0
             self.deviceIdLabel.alpha = 0
         }) { (done: Bool) -> Void in
-            self.updateSliderLabels()
+            self.updateSliderLabels(false)
             
             self.graphView.reloadGraph()
             
-            self.updateDetails()
-
             UIView.animateWithDuration(1.0) {
                 self.graphView.alpha = 1
                 self.sliderLowerLabel.alpha = 1
                 self.sliderHigherLabel.alpha = 1
-                self.tableView.alpha = 1
                 self.deviceIdLabel.alpha = 1
             }
         }
@@ -150,12 +151,12 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         minIndex = Int(slider.lowerValue)
         maxIndex = Int(slider.upperValue)
         
-        updateSliderLabels()
+        updateSliderLabels(true)
 
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: graphView, selector: Selector("reloadGraph"), userInfo: nil, repeats: false)
     }
     
-    private func updateSliderLabels() {
+    private func updateSliderLabels(updateDetail: Bool) {
         if numberOfPointsInLineGraph(graphView) > 0 {
             let minIndex = realIndexForIndex(0)
             let maxIndex = realIndexForIndex(numberOfPointsInLineGraph(graphView) - 1)
@@ -175,7 +176,9 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
             sliderHigherLabel.attributedText = attrString
             
-            updateDetails()
+            if updateDetail {
+                updateDetails()
+            }
         }
     }
     
@@ -296,6 +299,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     private func updateDetails() {
         if let del = delegate {
             details = del.values()
+            
             let first = ChartDetailValue(label: "Samples", value: values?.count > 0 ? "\(values!.count)" : "-")
             details.insert(first, atIndex: 0)
             tableView.reloadData()
@@ -323,11 +327,40 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         cell.label.textColor = Colors.lightGrayColor
         cell.value.textColor = color
         
-        let value = details[indexPath.row] as ChartDetailValue
+        let value = details[indexPath.row % details.count] as ChartDetailValue
         
         cell.label.text = value.label
-        cell.value.text = value.value
         
+        setNewValueAnimatedIfChanged(cell, indexPath: indexPath, newValue: value.value)
+
         return cell
+    }
+    
+    
+    func setNewValueAnimatedIfChanged(cell: HBChartDetailCell, indexPath: NSIndexPath, newValue: NSString) {
+        var animated = false
+        if let valueLabel = labelValuesByRow[indexPath.row] {
+            if valueLabel.text != newValue {
+                animated = true
+                UIView.animateWithDuration(1.0, animations: {
+                    valueLabel.alpha = 0
+                }) { (Bool) -> Void in
+                    cell.value.text = newValue
+                    UIView.animateWithDuration(1.0, animations: {
+                        valueLabel.alpha = 1
+                    })
+                }
+            }
+        }
+        
+        if !animated {
+            cell.value.text = newValue
+        }
+        
+        if let previousRow = rowByLabelValues[cell.value] {
+            labelValuesByRow[previousRow] = nil
+        }
+        labelValuesByRow[indexPath.row] = cell.value
+        rowByLabelValues[cell.value] = indexPath.row
     }
 }
