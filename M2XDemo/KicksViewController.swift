@@ -113,6 +113,10 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
             array!.addObject(val)
         }
         
+        if byDates.count == 1 { // all samples from same day
+            return byDates.allValues[0] as [AnyObject]
+        }
+        
         for i in 0...days {
             let date = firstDate.dateByAddingDays(i)
             let day = date.formattedDateWithFormat("LLL dd YYYY")
@@ -120,8 +124,6 @@ class KicksViewController: HBBaseViewController, AddKickViewControllerDelegate, 
             var array = byDates[day] as NSMutableArray?
             if array == nil {
                 newValues.addObject(["timestamp": date.toISO8601(), "value": 0.0] as NSDictionary)
-            } else if byDates.count == 1 { // all samples from same day
-                newValues.addObjectsFromArray(array!)
             } else {
                 var total:Float = 0.0
                 for value in array! {
