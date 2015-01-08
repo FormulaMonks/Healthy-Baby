@@ -42,6 +42,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     var axisYUnit: String?
     var minIndex: Int = 0
     var maxIndex: Int = 0
+    var lastDateLabel: String = ""
 
     var values: [AnyObject]? {
         didSet {
@@ -209,8 +210,14 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     }
     
     func numberOfGapsBetweenLabelsOnLineGraph(graph: BEMSimpleLineGraphView) -> NSInteger {
-        let gaps = numberOfPointsInLineGraph(graphView) / 5
-        return gaps
+        let points = numberOfPointsInLineGraph(graphView)
+        if points <= 3 {
+            return 0
+        } else if points % 2 == 0 {
+            return  points / 3
+        } else {
+            return points / 4
+        }
     }
     
     private func realIndexForIndex(index: NSInteger) -> NSInteger {
@@ -240,11 +247,11 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         if now.minutesFrom(date) < 1 {
             nowValue = "now"
             dateValue = Int(now.secondsFrom(date))
-            unit = "second"
+            unit = "sec"
         } else if now.hoursFrom(date) < 1 {
             nowValue = "now"
             dateValue = Int(now.minutesFrom(date))
-            unit = "minute"
+            unit = "min"
         } else if now.daysFrom(date) < 1 {
             nowValue = "now"
             dateValue = Int(now.hoursFrom(date))
@@ -259,12 +266,20 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             unit = "week"
         }
         
+        var retValue = ""
         if dateValue == 0 {
-            return nowValue
+            retValue = nowValue
         } else if dateValue == 1 {
-            return "\(dateValue) \(unit) ago"
+            retValue = "\(dateValue) \(unit)"
         } else {
-            return "\(dateValue) \(unit)s"
+            retValue = "\(dateValue) \(unit)s"
+        }
+        
+        if retValue == lastDateLabel {
+            return ""
+        } else {
+            lastDateLabel = retValue
+            return retValue
         }
     }
 

@@ -18,9 +18,9 @@
         NSDate *date2 = [NSDate fromISO8601:obj2[@"timestamp"]];
         
         if ([date1 isEarlierThan:date2]) {
-            return NSOrderedAscending;
-        } else if ([date2 isEarlierThan:date1]) {
             return NSOrderedDescending;
+        } else if ([date2 isEarlierThan:date1]) {
+            return NSOrderedAscending;
         } else {
             return NSOrderedSame;
         }
