@@ -46,8 +46,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     var values: [AnyObject]?
     var details = [ChartDetailValue]()
     
-    var labelValuesByRow = [Int: UILabel]()
-    var rowByLabelValues = [UILabel: Int]()
+    var valuesByRow = [Int: String]()
 
     var color: UIColor {
         set {
@@ -174,7 +173,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             attrString = NSMutableAttributedString(string: str)
             attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
             attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
-            sliderHigherLabel.attributedText = attrString            
+            sliderHigherLabel.attributedText = attrString
         }
     }
     
@@ -335,15 +334,15 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     
     func setNewValueAnimatedIfChanged(cell: HBChartDetailCell, indexPath: NSIndexPath, newValue: NSString) {
         var animated = false
-        if let valueLabel = labelValuesByRow[indexPath.row] {
-            if valueLabel.text != newValue {
+        if let value = valuesByRow[indexPath.row] {
+            if value != newValue {
                 animated = true
                 UIView.animateWithDuration(1.0, animations: {
-                    valueLabel.alpha = 0
+                    cell.value.alpha = 0
                 }) { (Bool) -> Void in
                     cell.value.text = newValue
                     UIView.animateWithDuration(1.0, animations: {
-                        valueLabel.alpha = 1
+                        cell.value.alpha = 1
                     })
                 }
             }
@@ -353,10 +352,6 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             cell.value.text = newValue
         }
         
-        if let previousRow = rowByLabelValues[cell.value] {
-            labelValuesByRow[previousRow] = nil
-        }
-        labelValuesByRow[indexPath.row] = cell.value
-        rowByLabelValues[cell.value] = indexPath.row
+        valuesByRow[indexPath.row] = newValue
     }
 }
