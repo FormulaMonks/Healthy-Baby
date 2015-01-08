@@ -134,7 +134,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             self.sliderHigherLabel.alpha = 0
             self.deviceIdLabel.alpha = 0
         }) { (done: Bool) -> Void in
-            self.updateSliderLabels(false)
+            self.updateSliderLabels()
             
             self.graphView.reloadGraph()
             
@@ -151,12 +151,12 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         minIndex = Int(slider.lowerValue)
         maxIndex = Int(slider.upperValue)
         
-        updateSliderLabels(true)
+        updateSliderLabels()
 
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: graphView, selector: Selector("reloadGraph"), userInfo: nil, repeats: false)
     }
     
-    private func updateSliderLabels(updateDetail: Bool) {
+    private func updateSliderLabels() {
         if numberOfPointsInLineGraph(graphView) > 0 {
             let minIndex = realIndexForIndex(0)
             let maxIndex = realIndexForIndex(numberOfPointsInLineGraph(graphView) - 1)
@@ -174,11 +174,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             attrString = NSMutableAttributedString(string: str)
             attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
             attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
-            sliderHigherLabel.attributedText = attrString
-            
-            if updateDetail {
-                updateDetails()
-            }
+            sliderHigherLabel.attributedText = attrString            
         }
     }
     
