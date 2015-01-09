@@ -238,25 +238,32 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         let timestamp = value["timestamp"] as String
         
         let date = NSDate.fromISO8601(timestamp)
-        
         let now = NSDate()
+
+        let minValue = values?[minIndex] as [String: AnyObject]
+        let minTimestamp = minValue["timestamp"] as String
+        let minDate = NSDate.fromISO8601(minTimestamp)
+
+        let maxValue = values?[maxIndex] as [String: AnyObject]
+        let maxTimestamp = maxValue["timestamp"] as String
+        let maxDate = NSDate.fromISO8601(maxTimestamp)
         
         var unit = ""
         var dateValue = 0
         var nowValue = ""
-        if now.minutesFrom(date) < 1 {
+        if minDate.minutesFrom(maxDate) <= 1 {
             nowValue = "now"
             dateValue = Int(now.secondsFrom(date))
             unit = "sec"
-        } else if now.hoursFrom(date) < 1 {
+        } else if minDate.hoursFrom(maxDate) <= 1 {
             nowValue = "now"
             dateValue = Int(now.minutesFrom(date))
             unit = "min"
-        } else if now.daysFrom(date) < 1 {
+        } else if minDate.daysFrom(maxDate) <= 1 {
             nowValue = "now"
             dateValue = Int(now.hoursFrom(date))
             unit = "hour"
-        } else if now.weeksFrom(date) < 1 {
+        } else if minDate.weeksFrom(maxDate) <= 1 {
             nowValue = "today"
             dateValue = now.daysFrom(date)
             unit = "day"
