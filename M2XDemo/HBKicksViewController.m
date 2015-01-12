@@ -129,7 +129,7 @@
         if ([response error]) {
             [HBBaseViewController handleErrorAlert:response.errorObject];
         } else {
-            _chartViewController.values = [_model sortValues:objects];
+            _chartViewController.values = [self generateValuesForAllDays:[_model sortValues:objects]];
             [self updateOnNewValuesAnimated];
         }
     }];
