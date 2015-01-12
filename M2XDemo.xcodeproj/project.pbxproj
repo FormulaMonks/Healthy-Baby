@@ -252,7 +252,6 @@
 		E293173B1A6401A200E90A3D /* HBGlucoseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGlucoseViewController.m; sourceTree = "<group>"; };
 		E293173D1A64031400E90A3D /* HBKicksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBKicksViewController.h; sourceTree = "<group>"; };
 		E293173E1A64031400E90A3D /* HBKicksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBKicksViewController.m; sourceTree = "<group>"; };
-		E2953E611A3A0EF8006C5942 /* M2XDemoMerge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "M2XDemoMerge-Info.plist"; path = "/Users/lucho/Projects/att-m2x-ios-demo/M2XDemoMerge-Info.plist"; sourceTree = "<absolute>"; };
 		E2953E701A3A3395006C5942 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
 		E2953E711A3A3395006C5942 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextField.m; sourceTree = "<group>"; };
 		E2953E721A3A3395006C5942 /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextView.h; sourceTree = "<group>"; };
@@ -455,7 +454,6 @@
 				E22E814D1A0011FC00B8E451 /* M2XDemoTests */,
 				E22E81361A0011FC00B8E451 /* Products */,
 				E22E82101A00173D00B8E451 /* Frameworks */,
-				E2953E611A3A0EF8006C5942 /* M2XDemoMerge-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
