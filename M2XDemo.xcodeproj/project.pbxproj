@@ -84,7 +84,7 @@
 		E2B919191A1A319D00D67802 /* MRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B919181A1A319D00D67802 /* MRoundedButton.m */; };
 		E2B9410A1A445391007F27FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E2B941071A445391007F27FA /* .gitignore */; };
 		E2B9410C1A445391007F27FA /* OLGhostAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B941091A445391007F27FA /* OLGhostAlertView.m */; };
-		E2B941101A44A751007F27FA /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B9410F1A44A751007F27FA /* Helper.m */; };
+		E2B941101A44A751007F27FA /* HBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B9410F1A44A751007F27FA /* HBHelper.m */; };
 		E2C45BA91A29026800DDFA29 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C45BA81A29026800DDFA29 /* Crashlytics.framework */; };
 		E2D744C01A11381500527EC6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D744BF1A11381500527EC6 /* Bolts.framework */; };
 		E2D744C21A11381D00527EC6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D744C11A11381D00527EC6 /* Parse.framework */; };
@@ -278,8 +278,8 @@
 		E2B941071A445391007F27FA /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E2B941081A445391007F27FA /* OLGhostAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLGhostAlertView.h; sourceTree = "<group>"; };
 		E2B941091A445391007F27FA /* OLGhostAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLGhostAlertView.m; sourceTree = "<group>"; };
-		E2B9410E1A44A751007F27FA /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helper.h; path = M2XDemo/Helper.h; sourceTree = SOURCE_ROOT; };
-		E2B9410F1A44A751007F27FA /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helper.m; path = M2XDemo/Helper.m; sourceTree = SOURCE_ROOT; };
+		E2B9410E1A44A751007F27FA /* HBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HBHelper.h; path = M2XDemo/HBHelper.h; sourceTree = SOURCE_ROOT; };
+		E2B9410F1A44A751007F27FA /* HBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HBHelper.m; path = M2XDemo/HBHelper.m; sourceTree = SOURCE_ROOT; };
 		E2C45BA81A29026800DDFA29 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		E2D744BF1A11381500527EC6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E2D744C11A11381D00527EC6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -434,8 +434,8 @@
 				E25AF8E81A557C12005933F3 /* UIFont+SytemFontOverride.m */,
 				E20A56331A5466FE0035A44E /* NSDate+Time.h */,
 				E20A56341A5466FE0035A44E /* NSDate+Time.m */,
-				E2B9410E1A44A751007F27FA /* Helper.h */,
-				E2B9410F1A44A751007F27FA /* Helper.m */,
+				E2B9410E1A44A751007F27FA /* HBHelper.h */,
+				E2B9410F1A44A751007F27FA /* HBHelper.m */,
 				E25E12901A3733C300599F6D /* ProgressHUD.swift */,
 				E2B941061A445391007F27FA /* OLGhostAlertView */,
 				E21ED9331A1BB4CA002E820A /* TPKeyboardAvoiding */,
@@ -915,7 +915,7 @@
 				E25D440E1A5AA8F200363AA1 /* HBWeightViewController.m in Sources */,
 				E264FD321A1388A1004F0570 /* M13ProgressViewMetro.m in Sources */,
 				E25E6A501A2CDEB300E1941F /* M2XKey.m in Sources */,
-				E2B941101A44A751007F27FA /* Helper.m in Sources */,
+				E2B941101A44A751007F27FA /* HBHelper.m in Sources */,
 				E25E6A531A2CDEB300E1941F /* M2XStream.m in Sources */,
 				E293173F1A64031400E90A3D /* HBKicksViewController.m in Sources */,
 				E20A56351A5466FE0035A44E /* NSDate+Time.m in Sources */,

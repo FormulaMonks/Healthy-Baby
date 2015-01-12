@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 citrusbyte.com. All rights reserved.
 //
 
-#import "Helper.h"
+#import "HBHelper.h"
 #import "NSDate+M2X.h"
 #import "NSDate+DateTools.h"
 
-@implementation Helper
+@implementation HBHelper
 
 + (NSArray *)sortValues:(NSArray *)values {
     return [values sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Helper : NSObject
+@interface HBHelper : NSObject
 
 // since sorting in swift is horrendous slow...
 + (NSArray *)sortValues:(NSArray *)values;

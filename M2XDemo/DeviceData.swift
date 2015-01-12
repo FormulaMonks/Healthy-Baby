@@ -219,7 +219,7 @@ extension String  {
     
     func sortValues(values: [AnyObject]?) -> [AnyObject]? {
         if values != nil {
-            return Helper.sortValues(values);
+            return HBHelper.sortValues(values);
         } else {
             return values
         }

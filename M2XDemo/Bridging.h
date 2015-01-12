@@ -26,7 +26,7 @@
 #import "JVFloatLabeledTextField.h"
 #import "OLGhostAlertView.h"
 #import "M2X.h"
-#import "Helper.h"
+#import "HBHelper.h"
 #import "NSDate+Time.h"
 #import "HBBaseViewController.h"
 #import "HBDeviceData.h"
