@@ -5,9 +5,14 @@ var keys = require('./keys/keys.json');
 
 var content = [
     {
-        files: ['M2XDemo/AppDelegate.swift', 'M2XDemo.xcodeproj/project.pbxproj'],
+        files: ['M2XDemo/AppDelegate.swift'],
         key: keys.CRASHLYTICS_KEY,
         keyToken: keys.CRASHLYTICS_KEY_TOKEN
+    },
+    {
+        files: ['M2XDemo.xcodeproj/project.pbxproj'],
+        key: keys.CRASHLYTICS_SYM_KEY,
+        keyToken: keys.CRASHLYTICS_SYM_KEY_TOKEN
     },
     {
         files: ['DemoCloudCode/config/global.json'],

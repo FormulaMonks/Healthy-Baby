@@ -882,7 +882,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "releaseConfig=\"Release\"\nif [ \"$releaseConfig\" = \"${CONFIGURATION}\" ]; then\necho \"Running Crashlytics\"\n./Crashlytics.framework/run CRASHLYTICS_KEY_TOKEN\nfi";
+			shellScript = "releaseConfig=\"Release\"\nif [ \"$releaseConfig\" = \"${CONFIGURATION}\" ]; then\necho \"Running Crashlytics\"\n./Crashlytics.framework/run CRASHLYTICS_SYM_KEY_TOKEN\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1092,8 +1092,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Luis Floreani (68WPMNPXG2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Luis Floreani (68WPMNPXG2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1108,7 +1108,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Healthy Baby";
-				PROVISIONING_PROFILE = "73383bde-2199-4cb2-a225-fb820d45052b";
+				PROVISIONING_PROFILE = "ced059f6-65a4-4657-b1a6-1a3cc7600111";
 				SWIFT_OBJC_BRIDGING_HEADER = M2XDemo/Bridging.h;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1119,8 +1119,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: CitrusByte LLC (Y77NHK399L)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CitrusByte LLC (Y77NHK399L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1136,7 +1136,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Healthy Baby";
-				PROVISIONING_PROFILE = "c3903b00-913d-4aed-bc15-e576f6b7f7b4";
+				PROVISIONING_PROFILE = "76c282cc-3e4a-4ae3-8cc9-825982229edf";
 				SWIFT_OBJC_BRIDGING_HEADER = M2XDemo/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
