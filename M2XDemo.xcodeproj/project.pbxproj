@@ -66,6 +66,7 @@
 		E264FD391A1388A1004F0570 /* M13ProgressViewStripedBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E264FD271A1388A1004F0570 /* M13ProgressViewStripedBar.m */; };
 		E27BC8261A23EECA006F2A6C /* TriggersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */; };
 		E293173C1A6401A200E90A3D /* HBGlucoseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E293173B1A6401A200E90A3D /* HBGlucoseViewController.m */; };
+		E293173F1A64031400E90A3D /* HBKicksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E293173E1A64031400E90A3D /* HBKicksViewController.m */; };
 		E2953E761A3A3395006C5942 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E711A3A3395006C5942 /* JVFloatLabeledTextField.m */; };
 		E2953E781A3A3395006C5942 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E731A3A3395006C5942 /* JVFloatLabeledTextView.m */; };
 		E2953E7A1A3A3395006C5942 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E751A3A3395006C5942 /* NSString+TextDirectionality.m */; };
@@ -79,7 +80,6 @@
 		E2AE9BE91A24046D008E9F7A /* TriggerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */; };
 		E2B78F841A3B5F7B006840D5 /* Kick.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B78F821A3B5F7B006840D5 /* Kick.storyboard */; };
 		E2B78F881A3B6191006840D5 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B78F861A3B6191006840D5 /* Settings.storyboard */; };
-		E2B919131A1A21AD00D67802 /* KicksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B919121A1A21AD00D67802 /* KicksViewController.swift */; };
 		E2B919151A1A2B2900D67802 /* AddKickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B919141A1A2B2900D67802 /* AddKickViewController.swift */; };
 		E2B919191A1A319D00D67802 /* MRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B919181A1A319D00D67802 /* MRoundedButton.m */; };
 		E2B9410A1A445391007F27FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E2B941071A445391007F27FA /* .gitignore */; };
@@ -250,6 +250,8 @@
 		E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggersViewController.swift; sourceTree = "<group>"; };
 		E293173A1A6401A200E90A3D /* HBGlucoseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGlucoseViewController.h; sourceTree = "<group>"; };
 		E293173B1A6401A200E90A3D /* HBGlucoseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGlucoseViewController.m; sourceTree = "<group>"; };
+		E293173D1A64031400E90A3D /* HBKicksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBKicksViewController.h; sourceTree = "<group>"; };
+		E293173E1A64031400E90A3D /* HBKicksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBKicksViewController.m; sourceTree = "<group>"; };
 		E2953E611A3A0EF8006C5942 /* M2XDemoMerge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "M2XDemoMerge-Info.plist"; path = "/Users/lucho/Projects/att-m2x-ios-demo/M2XDemoMerge-Info.plist"; sourceTree = "<absolute>"; };
 		E2953E701A3A3395006C5942 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
 		E2953E711A3A3395006C5942 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextField.m; sourceTree = "<group>"; };
@@ -271,7 +273,6 @@
 		E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerDetailViewController.swift; sourceTree = "<group>"; };
 		E2B78F831A3B5F7B006840D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Kick.storyboard; sourceTree = "<group>"; };
 		E2B78F871A3B6191006840D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
-		E2B919121A1A21AD00D67802 /* KicksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KicksViewController.swift; sourceTree = "<group>"; };
 		E2B919141A1A2B2900D67802 /* AddKickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddKickViewController.swift; sourceTree = "<group>"; };
 		E2B919171A1A319D00D67802 /* MRoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRoundedButton.h; sourceTree = "<group>"; };
 		E2B919181A1A319D00D67802 /* MRoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRoundedButton.m; sourceTree = "<group>"; };
@@ -366,13 +367,13 @@
 				E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */,
 				E25E12CA1A376DF300599F6D /* PreKickViewController.swift */,
 				E2B919141A1A2B2900D67802 /* AddKickViewController.swift */,
-				E2B919121A1A21AD00D67802 /* KicksViewController.swift */,
 				E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */,
 				E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */,
-				E25AF8E31A557336005933F3 /* HBBaseViewController.h */,
-				E25AF8E41A557336005933F3 /* HBBaseViewController.m */,
+				E29C19101A5C59320088854E /* TriggerDetailTableViewController.swift */,
 				E25AF8EF1A56EEC1005933F3 /* SettingsTableViewController.swift */,
 				E25AF8F21A56F61B005933F3 /* ProfileTableViewController.swift */,
+				E25AF8E31A557336005933F3 /* HBBaseViewController.h */,
+				E25AF8E41A557336005933F3 /* HBBaseViewController.m */,
 				E25D440C1A5AA8F200363AA1 /* HBWeightViewController.h */,
 				E25D440D1A5AA8F200363AA1 /* HBWeightViewController.m */,
 				E29C19011A5BED210088854E /* HBProfileViewController.h */,
@@ -381,9 +382,10 @@
 				E29C19051A5BED300088854E /* HBSettingsViewController.m */,
 				E29C19071A5BEF430088854E /* HBExerciseViewController.h */,
 				E29C19081A5BEF430088854E /* HBExerciseViewController.m */,
-				E29C19101A5C59320088854E /* TriggerDetailTableViewController.swift */,
 				E293173A1A6401A200E90A3D /* HBGlucoseViewController.h */,
 				E293173B1A6401A200E90A3D /* HBGlucoseViewController.m */,
+				E293173D1A64031400E90A3D /* HBKicksViewController.h */,
+				E293173E1A64031400E90A3D /* HBKicksViewController.m */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -917,6 +919,7 @@
 				E25E6A501A2CDEB300E1941F /* M2XKey.m in Sources */,
 				E2B941101A44A751007F27FA /* Helper.m in Sources */,
 				E25E6A531A2CDEB300E1941F /* M2XStream.m in Sources */,
+				E293173F1A64031400E90A3D /* HBKicksViewController.m in Sources */,
 				E20A56351A5466FE0035A44E /* NSDate+Time.m in Sources */,
 				E264FD371A1388A1004F0570 /* M13ProgressViewSegmentedBar.m in Sources */,
 				E2DD64281A13ACB10071CEBB /* DTTimePeriodCollection.m in Sources */,
@@ -930,7 +933,6 @@
 				E25D44121A5AAAFE00363AA1 /* HBDeviceData.m in Sources */,
 				E29C19031A5BED210088854E /* HBProfileViewController.m in Sources */,
 				E25E6A511A2CDEB300E1941F /* M2XResource.m in Sources */,
-				E2B919131A1A21AD00D67802 /* KicksViewController.swift in Sources */,
 				E27BC8261A23EECA006F2A6C /* TriggersViewController.swift in Sources */,
 				E25E6A4C1A2CDEB300E1941F /* M2XClient.m in Sources */,
 				E264FD2C1A1388A1004F0570 /* M13ProgressView.m in Sources */,

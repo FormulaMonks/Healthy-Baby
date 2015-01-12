@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AddKickViewControllerDelegate : class {
+@objc protocol AddKickViewControllerDelegate : class {
     func needsKicksRefresh()
 }
 

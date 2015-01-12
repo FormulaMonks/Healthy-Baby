@@ -13,22 +13,11 @@
 
 @property ChartViewController *chartViewController;
 
-@property M2XClient *client;
 @property NSString *deviceId;
 
 @end
 
 @implementation HBExerciseViewController
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        _client = [[M2XClient alloc] initWithApiKey:[defaults objectForKey:@"key"]];
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -14,6 +14,6 @@ NSString * const HBDeviceTypeKick = @"demo_kicks";
 NSString * const HBDeviceTypeGlucose = @"demo_glucose";
 
 NSString * const HBStreamTypeWeight = @"weight";
-NSString * const HBStreamTypeExercise = @"weight";
-NSString * const HBStreamTypeKick = @"weight";
-NSString * const HBStreamTypeGlucose = @"weight";
+NSString * const HBStreamTypeExercise = @"exercise";
+NSString * const HBStreamTypeKick = @"kicks";
+NSString * const HBStreamTypeGlucose = @"glucose";

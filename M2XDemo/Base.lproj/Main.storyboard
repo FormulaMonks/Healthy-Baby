@@ -427,7 +427,7 @@
         <!--Kicks-->
         <scene sceneID="IfV-bt-nd2">
             <objects>
-                <viewController title="Kicks" id="1ZZ-0p-yum" customClass="KicksViewController" customModule="Healthy_Baby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Kicks" id="1ZZ-0p-yum" customClass="HBKicksViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l0b-yE-vRx"/>
                         <viewControllerLayoutGuide type="bottom" id="vfP-KP-LVE"/>
@@ -754,6 +754,6 @@
         <image name="WeightIconBig" width="52" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6G6-HU-wP4"/>
+        <segue reference="Fi5-4C-Gig"/>
     </inferredMetricsTieBreakers>
 </document>
