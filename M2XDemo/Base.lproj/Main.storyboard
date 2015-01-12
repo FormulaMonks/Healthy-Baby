@@ -705,7 +705,7 @@
         <!--Glucose Level (mmol/L)-->
         <scene sceneID="Lf0-L5-P6l">
             <objects>
-                <viewController title="Glucose Level (mmol/L)" id="eto-hB-7uz" customClass="GlucoseViewController" customModule="Healthy_Baby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Glucose Level (mmol/L)" id="eto-hB-7uz" customClass="HBGlucoseViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XGr-bd-hed"/>
                         <viewControllerLayoutGuide type="bottom" id="6kM-Tx-96g"/>
@@ -754,6 +754,6 @@
         <image name="WeightIconBig" width="52" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fi5-4C-Gig"/>
+        <segue reference="6G6-HU-wP4"/>
     </inferredMetricsTieBreakers>
 </document>

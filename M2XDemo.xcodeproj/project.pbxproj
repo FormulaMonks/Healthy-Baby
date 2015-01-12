@@ -27,7 +27,6 @@
 		E245D49B1A0D292900176398 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E245D4971A0D292900176398 /* BEMLine.m */; };
 		E245D49C1A0D292900176398 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = E245D4991A0D292900176398 /* BEMSimpleLineGraphView.m */; };
 		E245D4B21A0D341000176398 /* NSDate+M2X.m in Sources */ = {isa = PBXBuildFile; fileRef = E245D4AB1A0D341000176398 /* NSDate+M2X.m */; };
-		E24CAD7F1A1E6A7500762E19 /* GlucoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24CAD7E1A1E6A7500762E19 /* GlucoseViewController.swift */; };
 		E25AF8E51A557336005933F3 /* HBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8E41A557336005933F3 /* HBBaseViewController.m */; };
 		E25AF8E91A557C12005933F3 /* UIFont+SytemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8E81A557C12005933F3 /* UIFont+SytemFontOverride.m */; };
 		E25AF8F01A56EEC1005933F3 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25AF8EF1A56EEC1005933F3 /* SettingsTableViewController.swift */; };
@@ -66,6 +65,7 @@
 		E264FD381A1388A1004F0570 /* M13ProgressViewSegmentedRing.m in Sources */ = {isa = PBXBuildFile; fileRef = E264FD251A1388A1004F0570 /* M13ProgressViewSegmentedRing.m */; };
 		E264FD391A1388A1004F0570 /* M13ProgressViewStripedBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E264FD271A1388A1004F0570 /* M13ProgressViewStripedBar.m */; };
 		E27BC8261A23EECA006F2A6C /* TriggersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */; };
+		E293173C1A6401A200E90A3D /* HBGlucoseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E293173B1A6401A200E90A3D /* HBGlucoseViewController.m */; };
 		E2953E761A3A3395006C5942 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E711A3A3395006C5942 /* JVFloatLabeledTextField.m */; };
 		E2953E781A3A3395006C5942 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E731A3A3395006C5942 /* JVFloatLabeledTextView.m */; };
 		E2953E7A1A3A3395006C5942 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E751A3A3395006C5942 /* NSString+TextDirectionality.m */; };
@@ -177,7 +177,6 @@
 		E245D4991A0D292900176398 /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BEMSimpleLineGraphView.m; path = BEMSimpleLineGraph/Classes/BEMSimpleLineGraphView.m; sourceTree = SOURCE_ROOT; };
 		E245D4AA1A0D341000176398 /* NSDate+M2X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+M2X.h"; sourceTree = "<group>"; };
 		E245D4AB1A0D341000176398 /* NSDate+M2X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+M2X.m"; sourceTree = "<group>"; };
-		E24CAD7E1A1E6A7500762E19 /* GlucoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseViewController.swift; sourceTree = "<group>"; };
 		E25AF8E31A557336005933F3 /* HBBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBaseViewController.h; sourceTree = "<group>"; };
 		E25AF8E41A557336005933F3 /* HBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBaseViewController.m; sourceTree = "<group>"; };
 		E25AF8E71A557C12005933F3 /* UIFont+SytemFontOverride.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+SytemFontOverride.h"; path = "M2XDemo/UIFont+SytemFontOverride.h"; sourceTree = SOURCE_ROOT; };
@@ -249,6 +248,8 @@
 		E264FD261A1388A1004F0570 /* M13ProgressViewStripedBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewStripedBar.h; sourceTree = "<group>"; };
 		E264FD271A1388A1004F0570 /* M13ProgressViewStripedBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewStripedBar.m; sourceTree = "<group>"; };
 		E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggersViewController.swift; sourceTree = "<group>"; };
+		E293173A1A6401A200E90A3D /* HBGlucoseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGlucoseViewController.h; sourceTree = "<group>"; };
+		E293173B1A6401A200E90A3D /* HBGlucoseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGlucoseViewController.m; sourceTree = "<group>"; };
 		E2953E611A3A0EF8006C5942 /* M2XDemoMerge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "M2XDemoMerge-Info.plist"; path = "/Users/lucho/Projects/att-m2x-ios-demo/M2XDemoMerge-Info.plist"; sourceTree = "<absolute>"; };
 		E2953E701A3A3395006C5942 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
 		E2953E711A3A3395006C5942 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextField.m; sourceTree = "<group>"; };
@@ -366,7 +367,6 @@
 				E25E12CA1A376DF300599F6D /* PreKickViewController.swift */,
 				E2B919141A1A2B2900D67802 /* AddKickViewController.swift */,
 				E2B919121A1A21AD00D67802 /* KicksViewController.swift */,
-				E24CAD7E1A1E6A7500762E19 /* GlucoseViewController.swift */,
 				E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */,
 				E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */,
 				E25AF8E31A557336005933F3 /* HBBaseViewController.h */,
@@ -382,6 +382,8 @@
 				E29C19071A5BEF430088854E /* HBExerciseViewController.h */,
 				E29C19081A5BEF430088854E /* HBExerciseViewController.m */,
 				E29C19101A5C59320088854E /* TriggerDetailTableViewController.swift */,
+				E293173A1A6401A200E90A3D /* HBGlucoseViewController.h */,
+				E293173B1A6401A200E90A3D /* HBGlucoseViewController.m */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -894,7 +896,6 @@
 				E2953E761A3A3395006C5942 /* JVFloatLabeledTextField.m in Sources */,
 				E25E6A521A2CDEB300E1941F /* M2XResponse.m in Sources */,
 				E29F5AED1A124CF800FFBAAD /* MainViewController.swift in Sources */,
-				E24CAD7F1A1E6A7500762E19 /* GlucoseViewController.swift in Sources */,
 				E2B919191A1A319D00D67802 /* MRoundedButton.m in Sources */,
 				E25AF8E51A557336005933F3 /* HBBaseViewController.m in Sources */,
 				E25AF8F01A56EEC1005933F3 /* SettingsTableViewController.swift in Sources */,
@@ -923,6 +924,7 @@
 				E264FD331A1388A1004F0570 /* M13ProgressViewMetroDotPolygon.m in Sources */,
 				E21ED93D1A1BB4CA002E820A /* TPKeyboardAvoidingScrollView.m in Sources */,
 				E29C19061A5BED300088854E /* HBSettingsViewController.m in Sources */,
+				E293173C1A6401A200E90A3D /* HBGlucoseViewController.m in Sources */,
 				E21ED93E1A1BB4CA002E820A /* TPKeyboardAvoidingTableView.m in Sources */,
 				E264FD381A1388A1004F0570 /* M13ProgressViewSegmentedRing.m in Sources */,
 				E25D44121A5AAAFE00363AA1 /* HBDeviceData.m in Sources */,
