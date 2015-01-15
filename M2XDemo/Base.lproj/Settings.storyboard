@@ -367,25 +367,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6b-IK-OTz">
-                                                    <rect key="frame" x="14" y="14" width="80" height="16"/>
+                                                    <rect key="frame" x="14" y="14" width="91" height="16"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.42915013229999999" green="0.42915013229999999" blue="0.42915013229999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Height (ft)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2lr-Ff-1VZ">
-                                                    <rect key="frame" x="109" y="16" width="197" height="16"/>
+                                                    <rect key="frame" x="118" y="16" width="188" height="16"/>
                                                     <color key="textColor" red="0.42915013229999999" green="0.42915013229999999" blue="0.42915013229999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="2lr-Ff-1VZ" firstAttribute="leading" secondItem="nHD-yb-6nz" secondAttribute="leadingMargin" constant="101" id="9KK-bQ-iK4"/>
+                                                <constraint firstItem="2lr-Ff-1VZ" firstAttribute="leading" secondItem="nHD-yb-6nz" secondAttribute="leadingMargin" constant="110" id="9KK-bQ-iK4"/>
                                                 <constraint firstAttribute="centerY" secondItem="2lr-Ff-1VZ" secondAttribute="centerY" constant="-2.5" id="Ejg-KJ-Dtb"/>
                                                 <constraint firstItem="e6b-IK-OTz" firstAttribute="leading" secondItem="nHD-yb-6nz" secondAttribute="leadingMargin" constant="6" id="b2H-Nu-FcD"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="2lr-Ff-1VZ" secondAttribute="trailing" constant="6" id="hbF-Sc-cTp"/>
                                                 <constraint firstAttribute="centerY" secondItem="e6b-IK-OTz" secondAttribute="centerY" constant="-0.5" id="m3O-5w-8ra"/>
-                                                <constraint firstItem="2lr-Ff-1VZ" firstAttribute="leading" secondItem="e6b-IK-OTz" secondAttribute="trailing" constant="15" id="zTY-d6-YX3"/>
+                                                <constraint firstItem="2lr-Ff-1VZ" firstAttribute="leading" secondItem="e6b-IK-OTz" secondAttribute="trailing" constant="13" id="zTY-d6-YX3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -395,13 +395,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVz-Oy-MIJ">
-                                                    <rect key="frame" x="15" y="14" width="80" height="16"/>
+                                                    <rect key="frame" x="15" y="14" width="90" height="16"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.42915013229999999" green="0.42915013229999999" blue="0.42915013229999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Weight (lb)" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HzJ-bj-5LT">
-                                                    <rect key="frame" x="110" y="15" width="196" height="16"/>
+                                                    <rect key="frame" x="118" y="15" width="188" height="16"/>
                                                     <color key="textColor" red="0.42915013229999999" green="0.42915013229999999" blue="0.42915013229999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -410,8 +410,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="HzJ-bj-5LT" secondAttribute="centerY" constant="-1.5" id="JSP-Sf-YA6"/>
                                                 <constraint firstItem="VVz-Oy-MIJ" firstAttribute="leading" secondItem="m7Q-xZ-DMC" secondAttribute="leadingMargin" constant="7" id="Lq8-i6-eaA"/>
-                                                <constraint firstItem="HzJ-bj-5LT" firstAttribute="leading" secondItem="VVz-Oy-MIJ" secondAttribute="trailing" constant="15" id="cbg-mS-aIX"/>
-                                                <constraint firstItem="HzJ-bj-5LT" firstAttribute="leading" secondItem="m7Q-xZ-DMC" secondAttribute="leadingMargin" constant="102" id="hor-NH-cck"/>
+                                                <constraint firstItem="HzJ-bj-5LT" firstAttribute="leading" secondItem="VVz-Oy-MIJ" secondAttribute="trailing" constant="13" id="cbg-mS-aIX"/>
+                                                <constraint firstItem="HzJ-bj-5LT" firstAttribute="leading" secondItem="m7Q-xZ-DMC" secondAttribute="leadingMargin" constant="110" id="hor-NH-cck"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="HzJ-bj-5LT" secondAttribute="trailing" constant="6" id="n9G-Ox-icJ"/>
                                                 <constraint firstAttribute="centerY" secondItem="VVz-Oy-MIJ" secondAttribute="centerY" constant="-0.5" id="p8X-OG-xJV"/>
                                             </constraints>
@@ -437,7 +437,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHB-28-Mns" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1458" y="2216"/>
+            <point key="canvasLocation" x="1458" y="2212"/>
         </scene>
     </scenes>
 </document>
