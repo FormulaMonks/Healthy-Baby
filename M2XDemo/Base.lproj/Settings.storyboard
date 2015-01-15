@@ -136,6 +136,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="8zY-aJ-AKf" firstAttribute="leading" secondItem="qWl-xt-CGA" secondAttribute="leadingMargin" constant="7" id="Iyr-0K-2dX"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8zY-aJ-AKf" secondAttribute="trailing" constant="99" id="Ju3-dc-8yk"/>
                                                 <constraint firstAttribute="centerY" secondItem="Kky-og-P2c" secondAttribute="centerY" id="XDD-8N-zam"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Kky-og-P2c" secondAttribute="trailing" constant="7" id="eKy-0T-6kp"/>
                                                 <constraint firstAttribute="centerY" secondItem="8zY-aJ-AKf" secondAttribute="centerY" id="sF7-p6-6zt"/>

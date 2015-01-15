@@ -8,14 +8,18 @@
 
 #import "UILabel+SystemFontOverride.h"
 
+static const float kDefaultBodySize = 17.0;
+
 @implementation UILabel (SystemFontOverride)
 
 -(void)awakeFromNib{
-    float fontSize = [self.font pointSize];
+    UIFontDescriptor *userFont = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
+    float userSize = [userFont pointSize];
+    float scale = userSize / kDefaultBodySize;
     if ([self.font.fontName containsString:@"Bold"]) {
-        self.font = [UIFont fontWithName:@"ProximaNova-Bold" size:fontSize];
+        self.font = [UIFont fontWithName:@"ProximaNova-Bold" size:[self.font pointSize] * scale];
     } else {
-        self.font = [UIFont fontWithName:@"Proxima Nova" size:fontSize];
+        self.font = [UIFont fontWithName:@"Proxima Nova" size:[self.font pointSize] * scale];
     }
 }
 
