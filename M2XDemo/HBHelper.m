@@ -10,7 +10,7 @@
 #import "NSDate+M2X.h"
 #import "NSDate+DateTools.h"
 
-static const float kDefaultBodySize = 17.0;
+const CGFloat kDefaultBodySize = 17.0;
 
 @implementation HBHelper
 

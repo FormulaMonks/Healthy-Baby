@@ -170,20 +170,28 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
             let minIndex = realIndexForIndex(0)
             let maxIndex = realIndexForIndex(numberOfPointsInLineGraph(graphView) - 1)
             
-            let font:UIFont? = UIFont(name: "Proxima Nova", size: 13.0)
-            let fontBold:UIFont? = UIFont(name: "ProximaNova-Bold", size: 14.0)
-
-            var str = (fullDateLabelForIndex(minIndex))
-            var attrString = NSMutableAttributedString(string: str)
-            attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
-            attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
-            sliderLowerLabel.attributedText = attrString
+            let userFont = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+            let userSize = userFont.pointSize
             
-            str = (fullDateLabelForIndex(maxIndex))
-            attrString = NSMutableAttributedString(string: str)
-            attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
-            attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
-            sliderHigherLabel.attributedText = attrString
+            if userSize == kDefaultBodySize {
+                let font:UIFont? = UIFont(name: "Proxima Nova", size: 13.0)
+                let fontBold:UIFont? = UIFont(name: "ProximaNova-Bold", size: 14.0)
+                
+                var str = fullDateLabelForIndex(minIndex)
+                var attrString = NSMutableAttributedString(string: str)
+                attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
+                attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
+                sliderLowerLabel.attributedText = attrString
+                
+                str = fullDateLabelForIndex(maxIndex)
+                attrString = NSMutableAttributedString(string: str)
+                attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
+                attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
+                sliderHigherLabel.attributedText = attrString
+            } else {
+                sliderLowerLabel.text = fullDateLabelForIndex(minIndex)
+                sliderHigherLabel.text = fullDateLabelForIndex(maxIndex)
+            }
             
             if updateDetail {
                 updateDetails()

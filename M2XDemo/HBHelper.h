@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+extern const CGFloat kDefaultBodySize;
+
 @interface HBHelper : NSObject
 
 // since sorting in swift is horrendous slow...
