@@ -76,6 +76,8 @@
 		E29C190C1A5BF7470088854E /* HBChartDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C190B1A5BF7470088854E /* HBChartDetailCell.m */; };
 		E29C19111A5C59320088854E /* TriggerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29C19101A5C59320088854E /* TriggerDetailTableViewController.swift */; };
 		E29F5AED1A124CF800FFBAAD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */; };
+		E2AD5E561A680A8400F59555 /* UITextField+SystemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AD5E551A680A8400F59555 /* UITextField+SystemFontOverride.m */; };
+		E2AD5E591A680AE600F59555 /* UIButton+SystemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AD5E581A680AE600F59555 /* UIButton+SystemFontOverride.m */; };
 		E2AE699B1A14EB48002A3D81 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */; };
 		E2AE9BE91A24046D008E9F7A /* TriggerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */; };
 		E2B78F841A3B5F7B006840D5 /* Kick.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B78F821A3B5F7B006840D5 /* Kick.storyboard */; };
@@ -268,6 +270,10 @@
 		E29C190B1A5BF7470088854E /* HBChartDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBChartDetailCell.m; sourceTree = "<group>"; };
 		E29C19101A5C59320088854E /* TriggerDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerDetailTableViewController.swift; sourceTree = "<group>"; };
 		E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E2AD5E541A680A8400F59555 /* UITextField+SystemFontOverride.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+SystemFontOverride.h"; path = "M2XDemo/UITextField+SystemFontOverride.h"; sourceTree = SOURCE_ROOT; };
+		E2AD5E551A680A8400F59555 /* UITextField+SystemFontOverride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+SystemFontOverride.m"; path = "M2XDemo/UITextField+SystemFontOverride.m"; sourceTree = SOURCE_ROOT; };
+		E2AD5E571A680AE500F59555 /* UIButton+SystemFontOverride.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+SystemFontOverride.h"; path = "M2XDemo/UIButton+SystemFontOverride.h"; sourceTree = SOURCE_ROOT; };
+		E2AD5E581A680AE600F59555 /* UIButton+SystemFontOverride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+SystemFontOverride.m"; path = "M2XDemo/UIButton+SystemFontOverride.m"; sourceTree = SOURCE_ROOT; };
 		E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerDetailViewController.swift; sourceTree = "<group>"; };
 		E2B78F831A3B5F7B006840D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Kick.storyboard; sourceTree = "<group>"; };
@@ -430,6 +436,10 @@
 			children = (
 				E25D44081A5AA76900363AA1 /* UILabel+SystemFontOverride.h */,
 				E25D44091A5AA76900363AA1 /* UILabel+SystemFontOverride.m */,
+				E2AD5E541A680A8400F59555 /* UITextField+SystemFontOverride.h */,
+				E2AD5E551A680A8400F59555 /* UITextField+SystemFontOverride.m */,
+				E2AD5E571A680AE500F59555 /* UIButton+SystemFontOverride.h */,
+				E2AD5E581A680AE600F59555 /* UIButton+SystemFontOverride.m */,
 				E25AF8E71A557C12005933F3 /* UIFont+SytemFontOverride.h */,
 				E25AF8E81A557C12005933F3 /* UIFont+SytemFontOverride.m */,
 				E20A56331A5466FE0035A44E /* NSDate+Time.h */,
@@ -932,6 +942,7 @@
 				E29C19031A5BED210088854E /* HBProfileViewController.m in Sources */,
 				E25E6A511A2CDEB300E1941F /* M2XResource.m in Sources */,
 				E27BC8261A23EECA006F2A6C /* TriggersViewController.swift in Sources */,
+				E2AD5E561A680A8400F59555 /* UITextField+SystemFontOverride.m in Sources */,
 				E25E6A4C1A2CDEB300E1941F /* M2XClient.m in Sources */,
 				E264FD2C1A1388A1004F0570 /* M13ProgressView.m in Sources */,
 				E2B919151A1A2B2900D67802 /* AddKickViewController.swift in Sources */,
@@ -943,6 +954,7 @@
 				E2953E7A1A3A3395006C5942 /* NSString+TextDirectionality.m in Sources */,
 				E264FD291A1388A1004F0570 /* M13ProgressHUD.m in Sources */,
 				E25E12911A3733C300599F6D /* ProgressHUD.swift in Sources */,
+				E2AD5E591A680AE600F59555 /* UIButton+SystemFontOverride.m in Sources */,
 				E264FD2B1A1388A1004F0570 /* UINavigationController+M13ProgressViewBar.m in Sources */,
 				E2DD64271A13ACB10071CEBB /* DTTimePeriodChain.m in Sources */,
 				E264FD281A1388A1004F0570 /* M13ProgressConsole.m in Sources */,

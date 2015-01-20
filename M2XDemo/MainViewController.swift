@@ -28,6 +28,10 @@ class MainViewController: HBBaseViewController {
         return [kickButton, weightButton, exerciseButton, glucoseButton, profileButton, settingsButton]
     }
     
+    var backgrounds: [UIView]! {
+        return [kickBackground, weightBackground, exerciseBackground, glucoseBackground, profileBackground, settingsBackground]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +43,24 @@ class MainViewController: HBBaseViewController {
         glucoseBackground.backgroundColor = Colors.glucoseColor
         profileBackground.backgroundColor = Colors.profileColor
         settingsBackground.backgroundColor = Colors.settingsColor
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "preferredContentSizeChanged:",
+            name: UIContentSizeCategoryDidChangeNotification,
+            object: nil)
+    }
+    
+    func preferredContentSizeChanged(notification: NSNotification) {
+        let userFont = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+        let font = UIFont(name: "ProximaNova-Bold", size: userFont.pointSize)
+
+        for background in backgrounds {
+            for view in background.subviews {
+                if let label = view as? UILabel {
+                    label.font = font
+                }
+            }
+        }
     }
     
     @IBAction func touchDown(sender: UIButton) {

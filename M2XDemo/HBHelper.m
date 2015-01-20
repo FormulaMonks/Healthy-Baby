@@ -10,6 +10,8 @@
 #import "NSDate+M2X.h"
 #import "NSDate+DateTools.h"
 
+const CGFloat kDefaultBodySize = 17.0;
+
 @implementation HBHelper
 
 + (NSArray *)sortValues:(NSArray *)values {
@@ -25,6 +27,21 @@
             return NSOrderedSame;
         }
     }];
+}
+
++ (void)configureDynamicTypeFor:(id)control keypath:(NSString *)keypath {
+    UIFontDescriptor *userFont = [UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody];
+    float userSize = [userFont pointSize];
+    float scale = userSize / kDefaultBodySize;
+    UIFont *font = (UIFont *)[control valueForKeyPath:keypath];
+    UIFont *newFont;
+    if ([font.fontName containsString:@"Bold"]) {
+        newFont = [UIFont fontWithName:@"ProximaNova-Bold" size:[font pointSize] * scale];
+    } else {
+        newFont = [UIFont fontWithName:@"Proxima Nova" size:[font pointSize] * scale];
+    }
+    
+    [control setValue:newFont forKeyPath:keypath];
 }
 
 @end

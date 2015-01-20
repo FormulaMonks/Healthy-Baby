@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="ProximaNova-Bold.otf">
@@ -58,13 +59,18 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is no active interval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNg-iV-qCC">
-                                <rect key="frame" x="27" y="82" width="266" height="20"/>
+                                <rect key="frame" x="0.0" y="82" width="320" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="266" id="Rg9-lJ-zTy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Rg9-lJ-zTy"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In order to start counting kicks, first start a new interval" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xzp-5N-WzN">
                                 <rect key="frame" x="27" y="110" width="266" height="34"/>
@@ -74,6 +80,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="zxU-rn-mm0"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,9 +94,11 @@
                             <constraint firstItem="LGo-vH-jaS" firstAttribute="top" secondItem="Xzp-5N-WzN" secondAttribute="bottom" constant="17" id="Co6-X5-hcf"/>
                             <constraint firstItem="zNg-iV-qCC" firstAttribute="top" secondItem="qmb-i1-iEn" secondAttribute="bottom" constant="62" id="E1j-pm-K4o"/>
                             <constraint firstAttribute="centerX" secondItem="fIW-E1-Rgh" secondAttribute="centerX" id="Gcu-hK-yk5"/>
+                            <constraint firstItem="zNg-iV-qCC" firstAttribute="width" secondItem="VvM-eI-3YN" secondAttribute="width" id="LAZ-5I-Msf"/>
                             <constraint firstAttribute="centerX" secondItem="zNg-iV-qCC" secondAttribute="centerX" id="MHx-GB-cdp"/>
                             <constraint firstAttribute="centerX" secondItem="Xzp-5N-WzN" secondAttribute="centerX" id="gRf-hG-xB7"/>
                             <constraint firstItem="Xzp-5N-WzN" firstAttribute="top" secondItem="zNg-iV-qCC" secondAttribute="bottom" constant="8" id="h0d-Mw-pGD"/>
+                            <constraint firstItem="Xzp-5N-WzN" firstAttribute="width" secondItem="VvM-eI-3YN" secondAttribute="width" multiplier="0.83" id="jNY-ff-Xbh"/>
                             <constraint firstItem="LGo-vH-jaS" firstAttribute="centerX" secondItem="fIW-E1-Rgh" secondAttribute="centerX" id="ms9-Z6-JcP"/>
                         </constraints>
                         <variation key="default">
@@ -163,7 +176,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02:10:02" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7J-FO-hai">
                                 <rect key="frame" x="105" y="91" width="110" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="isc-Wd-9HW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="isc-Wd-9HW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
@@ -209,8 +222,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 kicks in 2 hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKQ-uS-lu0">
-                                <rect key="frame" x="11" y="382" width="150" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 kicks in 2 hours" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKQ-uS-lu0">
+                                <rect key="frame" x="11" y="383" width="150" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="ir0-ZT-zz0"/>
                                 </constraints>
@@ -224,7 +237,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="November 6th, 2014" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="laG-Ax-6hT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="November 6th, 2014" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="laG-Ax-6hT">
                                 <rect key="frame" x="161" y="383" width="150" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="1Oe-X6-zNk"/>
@@ -260,7 +273,7 @@
                             <constraint firstItem="JYI-qs-n0m" firstAttribute="centerY" secondItem="ogy-ql-Mjt" secondAttribute="centerY" id="dIV-4F-SpX"/>
                             <constraint firstItem="SN5-Qs-d0t" firstAttribute="centerX" secondItem="nvO-9f-4Zf" secondAttribute="centerX" id="jZt-It-9HA"/>
                             <constraint firstItem="SN5-Qs-d0t" firstAttribute="top" secondItem="q7J-FO-hai" secondAttribute="bottom" constant="29" id="nyu-kc-ohR"/>
-                            <constraint firstItem="XKQ-uS-lu0" firstAttribute="top" secondItem="eMF-oF-Pra" secondAttribute="bottom" constant="7" id="oML-gv-plt"/>
+                            <constraint firstItem="XKQ-uS-lu0" firstAttribute="top" secondItem="eMF-oF-Pra" secondAttribute="bottom" constant="8" id="oML-gv-plt"/>
                             <constraint firstAttribute="centerX" secondItem="SN5-Qs-d0t" secondAttribute="centerX" id="oh5-e0-cuz"/>
                         </constraints>
                     </view>
@@ -441,13 +454,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k7r-WS-cOB" id="FDZ-hC-Fuy">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cio-Gs-y93">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cio-Gs-y93">
                                                     <rect key="frame" x="14" y="14" width="43" height="16"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.42915013229999999" green="0.42915013229999999" blue="0.42915013229999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trigger name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zt-Fx-o92">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trigger name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zt-Fx-o92">
                                                     <rect key="frame" x="150" y="14" width="156" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="156" id="7ll-cn-NBR"/>
@@ -470,13 +483,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZxZ-mV-Hca" id="96g-6I-oIu">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Condition" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdn-zF-vQN">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdn-zF-vQN">
                                                     <rect key="frame" x="14" y="15" width="71" height="16"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.42915013229999999" green="0.42915013229999999" blue="0.42915013229999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;= 10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwm-3T-6wN">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;= 10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwm-3T-6wN">
                                                     <rect key="frame" x="102" y="15" width="204" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="204" id="A40-Qu-mrF"/>
@@ -518,13 +531,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0g9-bS-VeZ" id="V6h-Ty-YlJ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q22-XI-j7q">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q22-XI-j7q">
                                                     <rect key="frame" x="14" y="14" width="41" height="16"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.42915013229999999" green="0.42915013229999999" blue="0.42915013229999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trigger Value" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbk-e6-sKp">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Trigger Value" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbk-e6-sKp">
                                                     <rect key="frame" x="209" y="14" width="97" height="16"/>
                                                     <color key="textColor" red="0.42915013229999999" green="0.42915013229999999" blue="0.42915013229999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -548,7 +561,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="agu-9Y-LY2" id="WTs-xh-EEo">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Callback URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5T-aO-AF5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Callback URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5T-aO-AF5">
                                                     <rect key="frame" x="14" y="15" width="300" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="k8U-KR-2zA"/>
