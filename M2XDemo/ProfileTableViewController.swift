@@ -29,7 +29,11 @@ class ProfileTableViewController: UITableViewController {
         dueLabel.text = "\(formatter.stringFromDate(NSDate().dateByAddingMonths(2)))"
 
         var defaults = NSUserDefaults.standardUserDefaults()
-        let sex = defaults.valueForKey("sex") as? Int ?? 0
+        let sexVal: AnyObject? = defaults.valueForKey("sex")
+        var sex = 0
+        if let val = sexVal as? Int {
+            sex = val
+        }
         boyCell.accessoryType = sex == 0 ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.None
         girlCell.accessoryType = sex == 1 ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.None
         nameLabel.text = defaults.valueForKey("name") as? String

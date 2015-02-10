@@ -17,13 +17,13 @@ class M2XHUD : M13ProgressHUD {
 
 @objc class ProgressHUD {
     class func showCBBProgress(status: String? = nil) -> M13ProgressHUD {
-        let window = (UIApplication.sharedApplication().delegate as AppDelegate).window
+        let window = (UIApplication.sharedApplication().delegate as! AppDelegate).window
 
         return ProgressHUD.showCBBProgress(status: status, center: window!.center)
     }
     
     class func showCBBProgress(status: String? = nil, center: CGPoint) -> M13ProgressHUD {
-        let window = (UIApplication.sharedApplication().delegate as AppDelegate).window
+        let window = (UIApplication.sharedApplication().delegate as! AppDelegate).window
         var hud = M2XHUD(progressView: M13ProgressViewRing())
         hud.primaryColor = UIColor.grayColor()
         hud.secondaryColor = UIColor.grayColor()
@@ -46,7 +46,7 @@ class M2XHUD : M13ProgressHUD {
     }
     
     class func hideCBBProgress() {
-        let window = (UIApplication.sharedApplication().delegate as AppDelegate).window
+        let window = (UIApplication.sharedApplication().delegate as! AppDelegate).window
         dispatchDelayed(0.1) {
             if let hud = window?.viewWithTag(CBBProgresViewTag) as? M13ProgressHUD {
                 hud.performAction(M13ProgressViewActionSuccess, animated: true)
@@ -57,7 +57,7 @@ class M2XHUD : M13ProgressHUD {
     }
     
     class func cancelCBBProgress() {
-        let window = (UIApplication.sharedApplication().delegate as AppDelegate).window
+        let window = (UIApplication.sharedApplication().delegate as! AppDelegate).window
         if let hud = window?.viewWithTag(CBBProgresViewTag) as? M13ProgressHUD {
             hud.performAction(M13ProgressViewActionFailure, animated: true)
             hud.indeterminate = false

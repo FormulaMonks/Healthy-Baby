@@ -113,13 +113,13 @@ class MainViewController: HBBaseViewController {
     
     @IBAction func showSettings(sender: AnyObject?) {
         let story = UIStoryboard(name: "Settings", bundle: nil)
-        let vc = story.instantiateViewControllerWithIdentifier("Settings") as UIViewController
+        let vc = story.instantiateViewControllerWithIdentifier("Settings") as! UIViewController
         presentViewController(vc, animated: true, completion: nil)
     }
 
     @IBAction func showProfile(sender: AnyObject?) {
         let story = UIStoryboard(name: "Settings", bundle: nil)
-        let vc = story.instantiateViewControllerWithIdentifier("Profile") as UIViewController
+        let vc = story.instantiateViewControllerWithIdentifier("Profile") as! UIViewController
         presentViewController(vc, animated: true, completion: nil)
     }
 

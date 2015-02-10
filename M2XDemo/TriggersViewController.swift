@@ -48,7 +48,7 @@ class TriggersViewController : HBBaseViewController, TriggerDetailViewController
 
             if segue.identifier == "EditTriggerSegue" {
                 let indexPath = self.tableView.indexPathForSelectedRow()
-                let obj = self.triggers![indexPath!.row] as M2XTrigger
+                let obj = self.triggers![indexPath!.row] as! M2XTrigger
                 dc.trigger = obj
             }
         }
@@ -108,12 +108,12 @@ class TriggersViewController : HBBaseViewController, TriggerDetailViewController
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         
-        let obj = triggers![indexPath.row] as M2XTrigger
+        let obj = triggers![indexPath.row] as! M2XTrigger
         
-        let name = obj["name"] as String
-        let condition = obj["condition"] as String
+        let name = obj["name"] as! String
+        let condition = obj["condition"] as! String
         let value: AnyObject = obj["value"]!
         
         cell.textLabel?.text = name

@@ -40,7 +40,8 @@ extension String  {
         
         result.destroy()
         
-        return String(format: hash)
+        let hashString = NSString(format: hash)
+        return hashString as! String
     }
 }
 
@@ -100,10 +101,10 @@ extension String  {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         self.devices(enumType).continueWithSuccessBlock { (task: BFTask!) -> AnyObject! in
-            let devices = task.result as [M2XDevice]
+            let devices = task.result as! [M2XDevice]
             
             return self.device(enumType, existingDevices: devices).continueWithSuccessBlock({ (task: BFTask!) -> AnyObject! in
-                let device = task.result as M2XDevice
+                let device = task.result as! M2XDevice
                 
                 self.fillSamples(enumType, device: device, completionHandler: { (values: [AnyObject]?, response: M2XResponse) -> () in
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -170,7 +171,7 @@ extension String  {
             
             var existingDevices = [M2XDevice]()
             for deviceType in DeviceType.allValues {
-                let device: M2XDevice? = self?.findDevice(deviceType, existingDevices: devices as [M2XDevice])
+                let device: M2XDevice? = self?.findDevice(deviceType, existingDevices: devices as! [M2XDevice])
                 
                 if device != nil {
                     existingDevices.append(device!)
@@ -179,7 +180,7 @@ extension String  {
             
             var count = 0
             for device in existingDevices {
-                let deviceId = device["id"] as String
+                let deviceId = device["id"] as! String
                 device.deleteWithCompletionHandler { (response: M2XResponse!) -> Void in
                     println("device \(deviceId) deleted")
                     
@@ -203,11 +204,11 @@ extension String  {
         devices.removeAllObjects()
         
         let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)
-        let dir = paths[0] as String
+        let dir = paths[0] as! String
         let manager = NSFileManager.defaultManager()
         let pathEnum = manager.enumeratorAtPath(dir)
-        while let file = pathEnum?.nextObject() as NSString? {
-            let path = dir.stringByAppendingPathComponent(file)
+        while let file = pathEnum?.nextObject() as! NSString? {
+            let path = dir.stringByAppendingPathComponent(file as! String)
             var dir: ObjCBool = false
             if manager.fileExistsAtPath(path, isDirectory: &dir) {
                 if !dir {
@@ -226,10 +227,10 @@ extension String  {
     }
     
     private func fillSamples(type: DeviceType, device: M2XDevice, completionHandler: (values: [AnyObject]?, response: M2XResponse) -> ()) {
-        let name = device["name"] as String
+        let name = device["name"] as! String
         var deviceEnum = DeviceType(rawValue: name)!
         
-        let deviceId = device["id"] as String
+        let deviceId = device["id"] as! String
         let streamType = streamsByDevice[deviceEnum]!
         let creationDays = daysByStreams[streamType]
         let params: [String: AnyObject] = ["limit": 1000]
@@ -242,8 +243,8 @@ extension String  {
                 return
             }
             
-            let dict = (valuesResponse.json as [String: AnyObject])
-            let values = dict["values"] as [AnyObject]
+            let dict = (valuesResponse.json as! [String: AnyObject])
+            let values = dict["values"] as! [AnyObject]
             
             if let foundCreation = creationDays { // auto creation of values
                 self.postMissingValues(type, streamType: streamType, existingValues: values, stream: stream, completionHandler: { (objects, response) -> () in
@@ -261,7 +262,7 @@ extension String  {
         
         var missingValues = [AnyObject]()
         for value in existingValues {
-            let date = NSDate.fromISO8601(value["timestamp"] as String)
+            let date = NSDate.fromISO8601(value["timestamp"] as! String)
 
             let index = find(previousDates, date)
 
@@ -272,7 +273,7 @@ extension String  {
         
         var value = 0.0
         if existingValues.count > 0 {
-            value = existingValues[0]["value"] as Double // last value
+            value = existingValues[0]["value"] as! Double // last value
         }
 
         let valueBlock = valuesByDevice[deviceType]!
@@ -295,7 +296,7 @@ extension String  {
     private func findDevice(type:DeviceType, existingDevices: [M2XDevice]) -> M2XDevice? {
         var foundDevice: M2XDevice? = nil
         for device in existingDevices {
-            let deviceName = device["name"] as String
+            let deviceName = device["name"] as! String
             if deviceName == type.rawValue {
                 foundDevice = device
                 break
@@ -329,7 +330,7 @@ extension String  {
     private func createStreamDelayed(stream: StreamType, device: M2XDevice, parameters: NSDictionary, completionHandler: M2XBaseCallback) {
         self.dispatchDelayed {
             let stream = M2XStream(client: self.client, device: device, attributes: ["name": stream.rawValue])
-            stream.updateWithParameters(parameters, completionHandler: { (object: M2XStream!, response: M2XResponse!) -> Void in
+            stream.updateWithParameters(parameters as! [NSObject : AnyObject], completionHandler: { (object: M2XStream!, response: M2XResponse!) -> Void in
                 completionHandler(M2XResponse())
             })
         }
@@ -348,7 +349,7 @@ extension DeviceData {
         get {
             return [ DeviceType.Weight: { (dates: [NSDate], startValue: AnyObject) -> [AnyObject] in
                 let endReference = 7.7
-                var value = startValue as Double
+                var value = startValue as! Double
                 var values = [AnyObject]()
                 for date in dates.reverse() {
                     value += (endReference - value)/Double(DeviceData.monthsMocked * self.daysByStreams[.Weight]!.count)
@@ -361,7 +362,7 @@ extension DeviceData {
                 },
                 DeviceType.Exercise: { (dates: [NSDate], startValue: AnyObject) -> [AnyObject] in
                     let endReference = 30.0
-                    var value = startValue as Double
+                    var value = startValue as! Double
                     var values = [AnyObject]()
                     for date in dates.reverse() {
                         value = endReference * 1.15 - ((Double(arc4random()) % endReference) * 0.3)
@@ -372,7 +373,7 @@ extension DeviceData {
                 },
                 DeviceType.Glucose: { (dates: [NSDate], startValue: AnyObject) -> [AnyObject] in
                     let endReference = 5.0
-                    var value = startValue as Double
+                    var value = startValue as! Double
                     var values = [AnyObject]()
                     for date in dates.reverse() {
                         value = endReference * 1.05 - ((Double(arc4random()) % endReference) * 0.1)
@@ -440,8 +441,8 @@ extension DeviceData {
 extension DeviceData {
     private func cachePathFor(request: NSURLRequest) -> NSString {
         let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)
-        let dir = paths[0] as String
-        let path = "\(dir)/\(request.URL.description.md5)"
+        let dir = paths[0] as! String
+        let path = "\(dir)/\(request.URL!.description.md5)"
         return path
     }
     
@@ -452,12 +453,12 @@ extension DeviceData {
             return
         }
         
-        let responseUrl = response?.URL? ?? NSURL()
+        let responseUrl = response?.URL ?? NSURL()
         
         let manager = NSFileManager.defaultManager()
         let path = cachePathFor(request)
         if error == nil {
-            manager.createFileAtPath(path, contents: data, attributes: nil)
+            manager.createFileAtPath(path as! String, contents: data, attributes: nil)
         }
         
         let m2xResponse = M2XResponse(response: response, data: data, error: error)
@@ -471,7 +472,7 @@ extension DeviceData {
             let manager = NSFileManager.defaultManager()
             let path = cachePathFor(request)
             
-            let cachedData = manager.contentsAtPath(path)
+            let cachedData = manager.contentsAtPath(path as! String)
             
             println("CACHE: using cached version of \(request.URL)")
             
@@ -489,7 +490,7 @@ extension DeviceData {
         } else {
             let path = cachePathFor(request)
             
-            let hasCache = NSFileManager.defaultManager().fileExistsAtPath(path)
+            let hasCache = NSFileManager.defaultManager().fileExistsAtPath(path as! String)
             
             return hasCache && DeviceData.isOffline()
         }
