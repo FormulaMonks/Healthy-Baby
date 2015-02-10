@@ -32,9 +32,9 @@ class TriggerDetailViewController : HBBaseViewController, TriggerDetailTableView
         navigationItem.rightBarButtonItem = saveButton
         
         if trigger != nil {
-            saveButton.possibleTitles = NSSet(array: ["Update"]) as! Set<NSObject>
+            saveButton.possibleTitles = NSSet(array: ["Update"]) as Set<NSObject>
         } else {
-            saveButton.possibleTitles = NSSet(array: ["Add"]) as! Set<NSObject>
+            saveButton.possibleTitles = NSSet(array: ["Add"]) as Set<NSObject>
         }
     }
     

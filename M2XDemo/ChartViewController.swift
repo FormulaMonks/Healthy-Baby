@@ -408,7 +408,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
                 UIView.animateWithDuration(1.0, animations: {
                     cell.value.alpha = 0
                 }) { (Bool) -> Void in
-                    cell.value.text = newValue as! String
+                    cell.value.text = newValue as? String
                     UIView.animateWithDuration(1.0, animations: {
                         cell.value.alpha = 1
                     })
@@ -417,9 +417,9 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         }
         
         if !animated {
-            cell.value.text = newValue as! String
+            cell.value.text = newValue as? String
         }
         
-        valuesByRow[indexPath.row] = newValue as! String
+        valuesByRow[indexPath.row] = newValue as? String
     }
 }
