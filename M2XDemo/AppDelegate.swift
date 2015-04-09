@@ -66,20 +66,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         defaults.setValue(1, forKey: migrationKey)
     }
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!) {
+//    @availability(iOS, introduced=3.0)
+//    optional func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData)
+//    
+//    @availability(iOS, introduced=3.0)
+//    optional func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError)
+//    
+//    @availability(iOS, introduced=3.0)
+//    optional func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject])
+//    
+//    @availability(iOS, introduced=4.0)
+//    optional func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification)
+
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let installation = PFInstallation.currentInstallation()
         installation.setDeviceTokenFromData(deviceToken)
         installation.saveInBackgroundWithBlock(nil)
         println("registered for PN")
     }
     
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         println("Couldn't register: \(error)")
     }
 
-    func application(application: UIApplication, didReceiveRemoteNotification info: NSDictionary!) {
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         println("PN received")
-        PFPush.handlePush(info)
+        PFPush.handlePush(userInfo)
     }
     
     func applicationWillResignActive(application: UIApplication) {

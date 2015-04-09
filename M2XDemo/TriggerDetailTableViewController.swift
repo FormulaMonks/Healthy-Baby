@@ -36,12 +36,12 @@ class TriggerDetailTableViewController: UITableViewController, UIPickerViewDataS
         assert(device != nil, "device can't be nil")
         
         if trigger != nil {
-            nameLabel.text = trigger!["name"] as String
-            valueLabel.text = trigger!["value"] as String
-            let conditionIndex = find(conditionsValue, trigger!["condition"] as String)
+            nameLabel.text = trigger!["name"] as! String
+            valueLabel.text = trigger!["value"] as! String
+            let conditionIndex = find(conditionsValue, trigger!["condition"] as! String)
             conditionPicker.selectRow(conditionIndex!, inComponent: 0, animated: true)
             conditionLabel.text = conditions[conditionIndex!]
-            let url = trigger!["callback_url"] as String
+            let url = trigger!["callback_url"] as! String
             if url == callbackUrl {
                 callbackLabel.text = callbackMockValue
                 callbackLabel.enabled = false
@@ -72,7 +72,7 @@ class TriggerDetailTableViewController: UITableViewController, UIPickerViewDataS
     }
     
     func save() {
-        if (nameLabel.text?.utf16Count == 0 || valueLabel.text?.utf16Count == 0 || callbackLabel.text?.utf16Count == 0) {
+        if (count(nameLabel.text!.utf16) == 0 || count(valueLabel.text!.utf16) == 0 || count(callbackLabel.text!.utf16) == 0) {
             var alert = UIAlertController(title: "Validation Failed", message: "Check your values they can't be empty!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
                 })
@@ -88,7 +88,7 @@ class TriggerDetailTableViewController: UITableViewController, UIPickerViewDataS
         let dict = ["name": nameLabel.text, "stream": StreamType.Kick.rawValue, "condition": conditionsValue[conditionPicker.selectedRowInComponent(0)], "value": valueLabel.text, "callback_url": callbackLabel.text == callbackMockValue ? callbackUrl : callbackLabel.text, "status": "enabled"]
         if trigger != nil {
             ProgressHUD.showCBBProgress(status: "Updating Trigger")
-            let triggerId = trigger!["id"] as String
+            let triggerId = trigger!["id"] as! String
             trigger?.updateWithParameters(dict, completionHandler: { (object: M2XResource!, response: M2XResponse!) -> Void in
                 ProgressHUD.hideCBBProgress()
                 

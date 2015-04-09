@@ -179,14 +179,14 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
                 
                 var str = fullDateLabelForIndex(minIndex)
                 var attrString = NSMutableAttributedString(string: str)
-                attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
-                attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
+                attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: count(str.utf16) - 6))
+                attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: count(str.utf16) - 5,length: 5))
                 sliderLowerLabel.attributedText = attrString
                 
                 str = fullDateLabelForIndex(maxIndex)
                 attrString = NSMutableAttributedString(string: str)
-                attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
-                attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
+                attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: count(str.utf16) - 6))
+                attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: count(str.utf16) - 5,length: 5))
                 sliderHigherLabel.attributedText = attrString
             } else {
                 sliderLowerLabel.text = fullDateLabelForIndex(minIndex)
@@ -234,26 +234,26 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: NSInteger) -> CGFloat {
         let realIndex = realIndexForIndex(index)
-        let value = values?[realIndex] as [String: AnyObject]
-        let val = value["value"] as Double
+        let value = values?[realIndex] as! [String: AnyObject]
+        let val = value["value"] as! Double
         let fl = Float(val)
         let ret = CGFloat(fl)
         return ret
     }
     
     private func dateLabelForIndex(index: NSInteger) -> String {
-        let value = values?[index] as [String: AnyObject]
-        let timestamp = value["timestamp"] as String
+        let value = values?[index] as! [String: AnyObject]
+        let timestamp = value["timestamp"] as! String
         
         let date = NSDate.fromISO8601(timestamp)
         let now = NSDate()
 
-        let minValue = values?[minIndex] as [String: AnyObject]
-        let minTimestamp = minValue["timestamp"] as String
+        let minValue = values?[minIndex] as! [String: AnyObject]
+        let minTimestamp = minValue["timestamp"] as! String
         let minDate = NSDate.fromISO8601(minTimestamp)
 
-        let maxValue = values?[maxIndex] as [String: AnyObject]
-        let maxTimestamp = maxValue["timestamp"] as String
+        let maxValue = values?[maxIndex] as! [String: AnyObject]
+        let maxTimestamp = maxValue["timestamp"] as! String
         let maxDate = NSDate.fromISO8601(maxTimestamp)
         
         var unit = ""
@@ -299,8 +299,8 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     }
 
     private func fullDateLabelForIndex(index: NSInteger) -> String {
-        let value = values?[index] as [String: AnyObject]
-        let timestamp = value["timestamp"] as String
+        let value = values?[index] as! [String: AnyObject]
+        let timestamp = value["timestamp"] as! String
         
         if delegate?.formatDate != nil {
             return delegate!.formatDate!(timestamp)
@@ -324,8 +324,8 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     }
 
     func valueForIndex(index: NSInteger) -> Double {
-        let value = values?[index] as [String: AnyObject]
-        var doubleValue = value["value"] as Double
+        let value = values?[index] as! [String: AnyObject]
+        var doubleValue = value["value"] as! Double
         return Double(Int(doubleValue * 100))/100.0
     }
     
@@ -349,7 +349,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         var min: CGFloat = CGFloat(INT16_MAX)
         
         for value in values! {
-            var val = value["value"] as CGFloat
+            var val = value["value"] as! CGFloat
             if val < min {
                 min = val
             }
@@ -385,7 +385,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as HBChartDetailCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! HBChartDetailCell
         cell.label.textColor = Colors.lightGrayColor
         cell.value.textColor = color
         cell.selectionStyle = .None
@@ -408,7 +408,7 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
                 UIView.animateWithDuration(1.0, animations: {
                     cell.value.alpha = 0
                 }) { (Bool) -> Void in
-                    cell.value.text = newValue
+                    cell.value.text = newValue as? String
                     UIView.animateWithDuration(1.0, animations: {
                         cell.value.alpha = 1
                     })
@@ -417,9 +417,9 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
         }
         
         if !animated {
-            cell.value.text = newValue
+            cell.value.text = newValue as? String
         }
         
-        valuesByRow[indexPath.row] = newValue
+        valuesByRow[indexPath.row] = newValue as? String
     }
 }

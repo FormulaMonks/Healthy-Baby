@@ -145,7 +145,7 @@
     NSDate *firstDate = [[NSDate fromISO8601:firstTimestamp] dateWithOutTime];
     NSDate *today = [[NSDate date] dateWithOutTime];
     
-    int days = [today daysFrom:firstDate];
+    int days = (int)[today daysFrom:firstDate];
     
     NSMutableDictionary *byDates = [[NSMutableDictionary alloc] init];
     NSMutableArray *newValues = [[NSMutableArray alloc] init];

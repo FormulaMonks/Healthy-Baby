@@ -50,7 +50,7 @@ class SettingsTableViewController: UITableViewController {
     }
 
     private func validateKey() -> Bool {
-        if textField.text.utf16Count > 0 {
+        if count(textField.text.utf16) > 0 {
             saveKey()
 
             return true
