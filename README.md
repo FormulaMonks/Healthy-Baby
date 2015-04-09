@@ -3,7 +3,7 @@ Healthy Baby is an iOS application that demonstrates how a consumer facing healt
 
 ## Installation
 
-* install Xcode 6.1
+* install Xcode 6.3
 * clone the repository
 * `git submodule update --init --recursive`
 * open M2XDemo.xcodeproj on Xcode and hit run
