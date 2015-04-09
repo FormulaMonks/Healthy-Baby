@@ -72,7 +72,7 @@ class TriggerDetailTableViewController: UITableViewController, UIPickerViewDataS
     }
     
     func save() {
-        if (nameLabel.text?.utf16Count == 0 || valueLabel.text?.utf16Count == 0 || callbackLabel.text?.utf16Count == 0) {
+        if (count(nameLabel.text!.utf16) == 0 || count(valueLabel.text!.utf16) == 0 || count(callbackLabel.text!.utf16) == 0) {
             var alert = UIAlertController(title: "Validation Failed", message: "Check your values they can't be empty!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
                 })

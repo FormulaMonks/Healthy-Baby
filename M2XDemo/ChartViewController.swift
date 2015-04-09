@@ -179,14 +179,14 @@ class ChartViewController : HBBaseViewController, UITableViewDelegate, UITableVi
                 
                 var str = fullDateLabelForIndex(minIndex)
                 var attrString = NSMutableAttributedString(string: str)
-                attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
-                attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
+                attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: count(str.utf16) - 6))
+                attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: count(str.utf16) - 5,length: 5))
                 sliderLowerLabel.attributedText = attrString
                 
                 str = fullDateLabelForIndex(maxIndex)
                 attrString = NSMutableAttributedString(string: str)
-                attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: str.utf16Count - 6))
-                attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: str.utf16Count - 5,length: 5))
+                attrString.addAttribute(NSFontAttributeName, value: fontBold!, range: NSRange(location: 0,length: count(str.utf16) - 6))
+                attrString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: count(str.utf16) - 5,length: 5))
                 sliderHigherLabel.attributedText = attrString
             } else {
                 sliderLowerLabel.text = fullDateLabelForIndex(minIndex)

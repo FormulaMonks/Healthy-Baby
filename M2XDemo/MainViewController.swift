@@ -96,13 +96,15 @@ class MainViewController: HBBaseViewController {
         } else {
             var defaults = NSUserDefaults.standardUserDefaults()
             let key = defaults.valueForKey("key") as? String
-            if key?.utf16Count > 0 {
-                return true
-            } else {
-                var alert = UIAlertView(title: "Warning", message: "Please go to Settings and configure a key", delegate: nil, cancelButtonTitle: "Ok")
-                alert.show()
-                return false
+            if key != nil {
+                if count(key!.utf16) > 0 {
+                    return true
+                }
             }
+            
+            var alert = UIAlertView(title: "Warning", message: "Please go to Settings and configure a key", delegate: nil, cancelButtonTitle: "Ok")
+            alert.show()
+            return false
         }
     }
     
