@@ -223,12 +223,17 @@
         PreKickViewController *pvc = (PreKickViewController *)segue.destinationViewController;
         pvc.deviceId = _deviceId;
         pvc.delegate = self;
+    } else if ([segue.destinationViewController isKindOfClass:[TriggersViewController class]]) {
+        TriggersViewController *pvc = (TriggersViewController *)segue.destinationViewController;
+        pvc.deviceId = _deviceId;
     }
 }
 
 - (void)showTriggers:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Sorry, we're not supporting M2X triggers, check M2X documentation for more info." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-    [alert show];
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Kick" bundle:nil];
+    TriggersViewController *vc = [story instantiateViewControllerWithIdentifier:@"Triggers"];
+    vc.deviceId = _deviceId;
+    [[self navigationController] pushViewController:vc animated:YES];
 }
 
 - (void)startKicking:(id)sender {
