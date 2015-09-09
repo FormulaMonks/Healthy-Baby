@@ -44,7 +44,6 @@
 		E25E6A511A2CDEB300E1941F /* M2XResource.m in Sources */ = {isa = PBXBuildFile; fileRef = E25E6A471A2CDEB300E1941F /* M2XResource.m */; };
 		E25E6A521A2CDEB300E1941F /* M2XResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E25E6A491A2CDEB300E1941F /* M2XResponse.m */; };
 		E25E6A531A2CDEB300E1941F /* M2XStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E25E6A4B1A2CDEB300E1941F /* M2XStream.m */; };
-		E25E6A591A2CF9A100E1941F /* M2XTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = E25E6A581A2CF9A100E1941F /* M2XTrigger.m */; };
 		E264FCFD1A129B26004F0570 /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E264FCFC1A129B26004F0570 /* DeviceData.swift */; };
 		E264FD281A1388A1004F0570 /* M13ProgressConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = E264FD021A1388A1004F0570 /* M13ProgressConsole.m */; };
 		E264FD291A1388A1004F0570 /* M13ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E264FD051A1388A1004F0570 /* M13ProgressHUD.m */; };
@@ -64,7 +63,6 @@
 		E264FD371A1388A1004F0570 /* M13ProgressViewSegmentedBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E264FD231A1388A1004F0570 /* M13ProgressViewSegmentedBar.m */; };
 		E264FD381A1388A1004F0570 /* M13ProgressViewSegmentedRing.m in Sources */ = {isa = PBXBuildFile; fileRef = E264FD251A1388A1004F0570 /* M13ProgressViewSegmentedRing.m */; };
 		E264FD391A1388A1004F0570 /* M13ProgressViewStripedBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E264FD271A1388A1004F0570 /* M13ProgressViewStripedBar.m */; };
-		E27BC8261A23EECA006F2A6C /* TriggersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */; };
 		E293173C1A6401A200E90A3D /* HBGlucoseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E293173B1A6401A200E90A3D /* HBGlucoseViewController.m */; };
 		E293173F1A64031400E90A3D /* HBKicksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E293173E1A64031400E90A3D /* HBKicksViewController.m */; };
 		E2953E761A3A3395006C5942 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953E711A3A3395006C5942 /* JVFloatLabeledTextField.m */; };
@@ -74,12 +72,10 @@
 		E29C19061A5BED300088854E /* HBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19051A5BED300088854E /* HBSettingsViewController.m */; };
 		E29C19091A5BEF430088854E /* HBExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C19081A5BEF430088854E /* HBExerciseViewController.m */; };
 		E29C190C1A5BF7470088854E /* HBChartDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C190B1A5BF7470088854E /* HBChartDetailCell.m */; };
-		E29C19111A5C59320088854E /* TriggerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29C19101A5C59320088854E /* TriggerDetailTableViewController.swift */; };
 		E29F5AED1A124CF800FFBAAD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */; };
 		E2AD5E561A680A8400F59555 /* UITextField+SystemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AD5E551A680A8400F59555 /* UITextField+SystemFontOverride.m */; };
 		E2AD5E591A680AE600F59555 /* UIButton+SystemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AD5E581A680AE600F59555 /* UIButton+SystemFontOverride.m */; };
 		E2AE699B1A14EB48002A3D81 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */; };
-		E2AE9BE91A24046D008E9F7A /* TriggerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */; };
 		E2B78F841A3B5F7B006840D5 /* Kick.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B78F821A3B5F7B006840D5 /* Kick.storyboard */; };
 		E2B78F881A3B6191006840D5 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B78F861A3B6191006840D5 /* Settings.storyboard */; };
 		E2B919151A1A2B2900D67802 /* AddKickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B919141A1A2B2900D67802 /* AddKickViewController.swift */; };
@@ -210,8 +206,6 @@
 		E25E6A491A2CDEB300E1941F /* M2XResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XResponse.m; sourceTree = "<group>"; };
 		E25E6A4A1A2CDEB300E1941F /* M2XStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XStream.h; sourceTree = "<group>"; };
 		E25E6A4B1A2CDEB300E1941F /* M2XStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XStream.m; sourceTree = "<group>"; };
-		E25E6A571A2CF9A100E1941F /* M2XTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2XTrigger.h; sourceTree = "<group>"; };
-		E25E6A581A2CF9A100E1941F /* M2XTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2XTrigger.m; sourceTree = "<group>"; };
 		E264FCFC1A129B26004F0570 /* DeviceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
 		E264FD011A1388A1004F0570 /* M13ProgressConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressConsole.h; sourceTree = "<group>"; };
 		E264FD021A1388A1004F0570 /* M13ProgressConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressConsole.m; sourceTree = "<group>"; };
@@ -249,7 +243,6 @@
 		E264FD251A1388A1004F0570 /* M13ProgressViewSegmentedRing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewSegmentedRing.m; sourceTree = "<group>"; };
 		E264FD261A1388A1004F0570 /* M13ProgressViewStripedBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewStripedBar.h; sourceTree = "<group>"; };
 		E264FD271A1388A1004F0570 /* M13ProgressViewStripedBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewStripedBar.m; sourceTree = "<group>"; };
-		E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggersViewController.swift; sourceTree = "<group>"; };
 		E293173A1A6401A200E90A3D /* HBGlucoseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGlucoseViewController.h; sourceTree = "<group>"; };
 		E293173B1A6401A200E90A3D /* HBGlucoseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBGlucoseViewController.m; sourceTree = "<group>"; };
 		E293173D1A64031400E90A3D /* HBKicksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBKicksViewController.h; sourceTree = "<group>"; };
@@ -268,14 +261,12 @@
 		E29C19081A5BEF430088854E /* HBExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBExerciseViewController.m; sourceTree = "<group>"; };
 		E29C190A1A5BF7470088854E /* HBChartDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBChartDetailCell.h; sourceTree = "<group>"; };
 		E29C190B1A5BF7470088854E /* HBChartDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBChartDetailCell.m; sourceTree = "<group>"; };
-		E29C19101A5C59320088854E /* TriggerDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerDetailTableViewController.swift; sourceTree = "<group>"; };
 		E29F5AEC1A124CF800FFBAAD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2AD5E541A680A8400F59555 /* UITextField+SystemFontOverride.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+SystemFontOverride.h"; path = "M2XDemo/UITextField+SystemFontOverride.h"; sourceTree = SOURCE_ROOT; };
 		E2AD5E551A680A8400F59555 /* UITextField+SystemFontOverride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+SystemFontOverride.m"; path = "M2XDemo/UITextField+SystemFontOverride.m"; sourceTree = SOURCE_ROOT; };
 		E2AD5E571A680AE500F59555 /* UIButton+SystemFontOverride.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+SystemFontOverride.h"; path = "M2XDemo/UIButton+SystemFontOverride.h"; sourceTree = SOURCE_ROOT; };
 		E2AD5E581A680AE600F59555 /* UIButton+SystemFontOverride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+SystemFontOverride.m"; path = "M2XDemo/UIButton+SystemFontOverride.m"; sourceTree = SOURCE_ROOT; };
 		E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
-		E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerDetailViewController.swift; sourceTree = "<group>"; };
 		E2B78F831A3B5F7B006840D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Kick.storyboard; sourceTree = "<group>"; };
 		E2B78F871A3B6191006840D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		E2B919141A1A2B2900D67802 /* AddKickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddKickViewController.swift; sourceTree = "<group>"; };
@@ -372,9 +363,6 @@
 				E2AE699A1A14EB48002A3D81 /* ChartViewController.swift */,
 				E25E12CA1A376DF300599F6D /* PreKickViewController.swift */,
 				E2B919141A1A2B2900D67802 /* AddKickViewController.swift */,
-				E27BC8251A23EECA006F2A6C /* TriggersViewController.swift */,
-				E2AE9BE81A24046D008E9F7A /* TriggerDetailViewController.swift */,
-				E29C19101A5C59320088854E /* TriggerDetailTableViewController.swift */,
 				E25AF8EF1A56EEC1005933F3 /* SettingsTableViewController.swift */,
 				E25AF8F21A56F61B005933F3 /* ProfileTableViewController.swift */,
 				E25AF8E31A557336005933F3 /* HBBaseViewController.h */,
@@ -564,8 +552,6 @@
 				E25E6A3D1A2CDEB300E1941F /* M2XClient.m */,
 				E25E6A3E1A2CDEB300E1941F /* M2XClient+HTTP.h */,
 				E25E6A3F1A2CDEB300E1941F /* M2XClient+HTTP.m */,
-				E25E6A571A2CF9A100E1941F /* M2XTrigger.h */,
-				E25E6A581A2CF9A100E1941F /* M2XTrigger.m */,
 				E25E6A401A2CDEB300E1941F /* M2XDevice.h */,
 				E25E6A411A2CDEB300E1941F /* M2XDevice.m */,
 				E25E6A421A2CDEB300E1941F /* M2XDistribution.h */,
@@ -941,7 +927,6 @@
 				E25D44121A5AAAFE00363AA1 /* HBDeviceData.m in Sources */,
 				E29C19031A5BED210088854E /* HBProfileViewController.m in Sources */,
 				E25E6A511A2CDEB300E1941F /* M2XResource.m in Sources */,
-				E27BC8261A23EECA006F2A6C /* TriggersViewController.swift in Sources */,
 				E2AD5E561A680A8400F59555 /* UITextField+SystemFontOverride.m in Sources */,
 				E25E6A4C1A2CDEB300E1941F /* M2XClient.m in Sources */,
 				E264FD2C1A1388A1004F0570 /* M13ProgressView.m in Sources */,
@@ -960,10 +945,8 @@
 				E264FD281A1388A1004F0570 /* M13ProgressConsole.m in Sources */,
 				E245D49A1A0D292900176398 /* BEMCircle.m in Sources */,
 				E2DD64291A13ACB10071CEBB /* DTTimePeriodGroup.m in Sources */,
-				E29C19111A5C59320088854E /* TriggerDetailTableViewController.swift in Sources */,
 				E29C19091A5BEF430088854E /* HBExerciseViewController.m in Sources */,
 				E264FD351A1388A1004F0570 /* M13ProgressViewRadiative.m in Sources */,
-				E25E6A591A2CF9A100E1941F /* M2XTrigger.m in Sources */,
 				E264FD301A1388A1004F0570 /* M13ProgressViewImage.m in Sources */,
 				E25E6A4E1A2CDEB300E1941F /* M2XDevice.m in Sources */,
 				E2953E781A3A3395006C5942 /* JVFloatLabeledTextView.m in Sources */,
@@ -974,7 +957,6 @@
 				E264FD341A1388A1004F0570 /* M13ProgressViewPie.m in Sources */,
 				E21ED93C1A1BB4CA002E820A /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				E25E6A4F1A2CDEB300E1941F /* M2XDistribution.m in Sources */,
-				E2AE9BE91A24046D008E9F7A /* TriggerDetailViewController.swift in Sources */,
 				E25AF8F31A56F61B005933F3 /* ProfileTableViewController.swift in Sources */,
 				E264FD2E1A1388A1004F0570 /* M13ProgressViewBorderedBar.m in Sources */,
 			);
