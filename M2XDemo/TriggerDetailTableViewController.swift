@@ -27,6 +27,7 @@ class TriggerDetailTableViewController: UITableViewController, UIPickerViewDataS
 
     private let conditions = ["< is less than", "<= is less than or equal to", "= is equal to", "> is greater than", ">= is greater than or equal to"]
     private let conditionsValue = ["<", "<=", "=", ">", ">="]
+    private let conditionsValueKeys = ["lt", "lte", "eq", "gt", "gte"]
     private var callbackUrl = "http://m2xdemo.parseapp.com/notify_trigger"
     private var callbackMockValue = "* WEBHOOK: can't edit this *"
     
@@ -36,11 +37,14 @@ class TriggerDetailTableViewController: UITableViewController, UIPickerViewDataS
         assert(device != nil, "device can't be nil")
         
         if trigger != nil {
-            nameLabel.text = trigger!["name"] as! String
-            valueLabel.text = trigger!["value"] as! String
-            let conditionIndex = find(conditionsValue, trigger!["condition"] as! String)
+            let stream = trigger!["conditions"].allKeys[0] as! String
+            let conditions = trigger!["conditions"][stream] as! NSDictionary
+            let condition = conditions.allKeys[0] as! String
+            nameLabel.text =  trigger!["name"] as! String
+            valueLabel.text = "\(conditions[condition]!)"
+            let conditionIndex = find(conditionsValueKeys, condition)
             conditionPicker.selectRow(conditionIndex!, inComponent: 0, animated: true)
-            conditionLabel.text = conditions[conditionIndex!]
+            conditionLabel.text = conditions[conditionIndex!] as? String
             let url = trigger!["callback_url"] as! String
             if url == callbackUrl {
                 callbackLabel.text = callbackMockValue
@@ -85,11 +89,15 @@ class TriggerDetailTableViewController: UITableViewController, UIPickerViewDataS
         
         var defaults = NSUserDefaults.standardUserDefaults()
         let key = defaults.valueForKey("key") as? String
-        let dict = ["name": nameLabel.text, "stream": StreamType.Kick.rawValue, "condition": conditionsValue[conditionPicker.selectedRowInComponent(0)], "value": valueLabel.text, "callback_url": callbackLabel.text == callbackMockValue ? callbackUrl : callbackLabel.text, "status": "enabled"]
+        let condition = conditionsValueKeys[conditionPicker.selectedRowInComponent(0)]
+        let value = valueLabel.text.toInt()!
+        let conditions = [StreamType.Kick.rawValue: [condition: value]]
+        let url = callbackLabel.text == callbackMockValue ? callbackUrl : callbackLabel.text!
+        let dict: NSDictionary = ["name": nameLabel.text, "conditions": conditions, "callback_url": url, "frequency": "single"]
         if trigger != nil {
             ProgressHUD.showCBBProgress(status: "Updating Trigger")
             let triggerId = trigger!["id"] as! String
-            trigger?.updateWithParameters(dict, completionHandler: { (object: M2XResource!, response: M2XResponse!) -> Void in
+            trigger?.updateWithParameters(dict as [NSObject : AnyObject], completionHandler: { (object: M2XResource!, response: M2XResponse!) -> Void in
                 ProgressHUD.hideCBBProgress()
                 
                 if response.error {
@@ -101,7 +109,7 @@ class TriggerDetailTableViewController: UITableViewController, UIPickerViewDataS
             })
         } else {
             ProgressHUD.showCBBProgress(status: "Creating Trigger")
-            self.device?.createTrigger(dict, withCompletionHandler: { (object: M2XTrigger!, response: M2XResponse!) -> Void in
+            self.device?.createTrigger(dict as [NSObject : AnyObject], withCompletionHandler: { (object: M2XTrigger!, response: M2XResponse!) -> Void in
                 ProgressHUD.hideCBBProgress()
                 
                 if response.error {

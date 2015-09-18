@@ -112,12 +112,14 @@ class TriggersViewController : HBBaseViewController, TriggerDetailViewController
         
         let obj = triggers![indexPath.row] as! M2XTrigger
         
-        let name = obj["name"] as! String
-        let condition = obj["condition"] as! String
-        let value: AnyObject = obj["value"]!
+        let stream = obj["conditions"].allKeys[0] as! String
+        let conditions = obj["conditions"][stream] as! NSDictionary
+        let condition = conditions.allKeys[0] as! String
         
-        cell.textLabel?.text = name
-        cell.detailTextLabel?.text = "\(condition) \(value)"
+        let conditionSymbols = ["lt": "<", "lte": "<=", "eq": "=", "gt": ">", "gte": ">="]
+
+        cell.textLabel?.text = obj["name"] as? String
+        cell.detailTextLabel?.text = "\(conditionSymbols[condition]!) \(conditions[condition]!)"
         
         return cell
     }
